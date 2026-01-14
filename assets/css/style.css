@@ -4,7 +4,6 @@
 
 .site-footer {
   background-color: #b7d6a4; /* зелёный фон */
-  padding: 20px 0 0 0;
   font-family: Arial, sans-serif;
   color: #000;
 }
@@ -68,7 +67,6 @@
   justify-content: space-between;
   align-items: center;
   font-size: 14px;
-  padding-bottom: 20px;
 }
 
 .footer-links a {
