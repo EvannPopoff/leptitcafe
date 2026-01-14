@@ -10,7 +10,7 @@
     </head>
 
     <body>
-        <header>    
+        <header> 
             <div class="in-header">
                 <!-- Logo -->
                 <a class="logo" href="index.php">
