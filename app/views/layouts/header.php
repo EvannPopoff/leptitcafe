@@ -15,7 +15,7 @@
                 <!-- Logo -->
                 <a class="logo" href="index.php">
                     <img src="assets/images/logo.webp" alt="logo">
-                </a>
+                </a>    
 
                 <nav class="main-nav">
                     <ul>
