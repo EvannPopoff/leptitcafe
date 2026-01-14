@@ -14,3 +14,6 @@ Projet Web SAE - Le P'tit Café - BUT MMI
 - `app/Models/`
 - `api/`
 
+IMPORTANT !!! Lien du tuto pour la compréhension de la structure fichiers du projet :
+
+https://www.swisstransfer.com/d/ef1ee6ec-4f60-481a-b331-1bdbe19141d9
