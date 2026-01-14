@@ -35,5 +35,10 @@
         <button onclick="alert('abcdef')">Cliquez-moi</button>
     </div>
 </body>
+
+
+<?php include 'app/views/layouts/header.php'; ?>
 <?php include 'app/views/layouts/footer.php'; ?>
+
+
 </html>
