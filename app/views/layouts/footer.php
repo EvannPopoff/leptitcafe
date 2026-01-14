@@ -14,7 +14,7 @@
   <div class="footer-top">
 
     <div class="footer-column logo">
-      <img src="assets/images/logo.png" alt="Le P'tit Café">
+      <img src="assets/images/logo.webp" alt="Le P'tit Café">
     </div>
 
     <div class="footer-column">

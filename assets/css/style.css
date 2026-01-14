@@ -97,11 +97,10 @@ header {
 
 .site-footer {
   background-color: #b7d6a4; /* зелёный фон */
-  padding: 20px 60px 0;
+  padding: 20px 0 0 0;
   font-family: Arial, sans-serif;
   color: #000;
 }
-
 /* ---------- TOP ---------- */
 
 .footer-top {
@@ -174,7 +173,12 @@ header {
 .footer-links a:hover {
   text-decoration: underline;
 }
-
+.footer-top, 
+.site-footer hr, 
+.footer-bottom {
+  padding-left: 60px;
+  padding-right: 60px;
+}
 /* ---------- IMAGE ---------- */
 
 .footer-image img {
