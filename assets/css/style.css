@@ -1,7 +1,8 @@
-* {
-    box-sizing: border-box;
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
-
 
 body {
     margin: 0;
@@ -18,7 +19,7 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
-    background: rgba(0, 0, 0, 1);
+    /*background: rgba(0, 0, 0, 1);*/
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
 }
@@ -55,7 +56,6 @@ header {
     align-items: center;
     gap: 38px;
 }
-  
 
 .main-nav a {
     text-decoration: none;
