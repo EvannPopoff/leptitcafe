@@ -31,11 +31,8 @@
     <div class="container">
         <h1>Bienvenue - Page d'exemple</h1>
         <p>Ceci est une page de test pour le site Le Petit Café.</p>
-<<<<<<< HEAD:index.html
         <button onclick="alert('Alert')">Cliquez-moi</button>
-=======
         <button onclick="alert('abcdef')">Cliquez-moi</button>
->>>>>>> d4544f0ce7108bbdc30c1849c0768edd547f98e7:index.php
     </div>
 </body>
 </html>
