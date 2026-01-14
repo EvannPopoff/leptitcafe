@@ -27,15 +27,18 @@
         }
     </style>
 </head>
-
 <body>
     <div class="container">
         <h1>Bienvenue - Page d'exemple</h1>
         <p>Ceci est une page de test pour le site Le Petit Café.</p>
+        <button onclick="alert('Alert')">Cliquez-moi</button>
         <button onclick="alert('abcdef')">Cliquez-moi</button>
     </div>
 </body>
+<<<<<<< HEAD
 
 <?php include 'app/views/layouts/header.php'; ?>
 
+=======
+>>>>>>> ba80ff24331d7f7ebbd8e6410a94489dc1303948
 </html>

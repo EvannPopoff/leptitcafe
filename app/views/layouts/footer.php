@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Footer – Le P'tit Café</title>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+<footer class="site-footer">
+  <div class="footer-top">
+
+    <div class="footer-column logo">
+      <img src="assets/images/logo.png" alt="Le P'tit Café">
+    </div>
+
+    <div class="footer-column">
+      <h3>Adresse</h3>
+      <p>
+        25 Place du Marché Couvert<br>
+        43000 Le Puy-en-Velay
+      </p>
+    </div>
+
+    <div class="footer-column">
+      <h3>Contact</h3>
+      <p>
+        07 78 68 53 37<br>
+        cafejeunespousses[at]gmail.com
+      </p>
+    </div>
+
+    <div class="footer-column">
+      <h3>Pages</h3>
+      <ul>
+        <li><a href="index.php?page=home">Accueil</a></li>
+        <li><a href="apropos.php?page=about">À propos</a></li>
+        <li><a href="activite.php?page=activities">Activités et événements</a></li>
+        <li><a href="adherer.php?page=membership">Adhérer</a></li>
+        <li><a href="contact.php?page=contact">Contact</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <hr>
+
+  <div class="footer-bottom">
+    <p>© 2026 – Tous droits réservés</p>
+    <div class="footer-links">
+      <a href="#">Politique de confidentialité</a>
+      <a href="#">Mentions légales</a>
+    </div>
+  </div>
+
+  <div class="footer-image">
+    <img src="assets/images/plantes_footer.png" alt="Plantes">
+  </div>
+</footer>
+
+</body>
+</html>

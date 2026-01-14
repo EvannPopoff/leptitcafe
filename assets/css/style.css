@@ -1,0 +1,90 @@
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer {
+  background-color: #b7d6a4; /* зелёный фон */
+  padding: 20px 60px 0;
+  font-family: Arial, sans-serif;
+  color: #000;
+}
+
+/* ---------- TOP ---------- */
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-column p,
+.footer-column li {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* logo */
+.footer-column.logo img {
+  width: 90px;
+}
+
+/* pages list */
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 6px;
+}
+
+.footer-column a {
+  color: #000;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- SEPARATOR ---------- */
+
+.site-footer hr {
+  margin: 40px 0 25px;
+  border: none;
+  border-top: 1px solid #000;
+}
+
+/* ---------- BOTTOM ---------- */
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+
+.footer-links a {
+  margin-left: 25px;
+  color: #000;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- IMAGE ---------- */
+
+.footer-image img {
+  width: 100%;
+  display: block;
+}
