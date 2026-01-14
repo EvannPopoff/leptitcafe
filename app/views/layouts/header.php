@@ -26,7 +26,7 @@
                     </ul>
                 </nav>
 
-                <a class="cta" href="">Réservation</a>
+                <a class="bouton-reservation" href="">Réservation</a>
             </div>
         </header>
     </body>
