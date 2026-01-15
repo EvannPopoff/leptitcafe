@@ -11,9 +11,10 @@
         case 'apropos':
            $title = "A propos - Le P'tit Café";
             break;
-case 'membership':
-$title = "Adhérer - Le P'tit Café";
-break;
+        
+        case 'membership':
+            $title = "Adhérer - Le P'tit Café";
+            break;
 
     }
 
@@ -48,9 +49,9 @@ break;
             include $viewPath . 'apropos.php';
             break;
 
-case 'membership':
-    include $viewPath . 'membership.php';
-    break;
+        case 'membership':
+            include $viewPath . 'membership.php';
+            break;
     
         // Erreur 404
         default:

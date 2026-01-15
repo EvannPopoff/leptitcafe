@@ -11,7 +11,7 @@
                     <ul>
                         <li><a href="index.php?page=apropos">À propos</a></li>
                         <li><a href="app/views/pages/evenement.php">Activités et Évènements</a></li>
-                        <li><a href="app/views/pages/adherer.php">Adhérer</a></li>
+                        <li><a href="index.php?page=membership">Adhérer</a></li>
                         <li><a href="app/views/pages/contact.php">Contact</a></li>
 
                     </ul>
