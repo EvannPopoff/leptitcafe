@@ -1,66 +1,55 @@
 <?php
-    // Ici c'est la partie pour le nom des pages
-    // On récupère la page demandée via l'URL sinon on met "home" par défaut.
-    $page = isset($_GET['page']) ? $_GET['page'] : 'home';
+// On récupère la page demandée via l'URL sinon on met "home" par défaut.
+$page = $_GET['page'] ?? 'home';
 
-    switch ($page) {
-        case 'home':
-            $title = "Accueil - Le P'tit Café";
-            break;
+// On définit le chemin du dossier des pages directement pour plus de clarté et d'automatisation.
+$viewPath = 'app/views/pages/';
+$layoutPath = 'app/views/layouts/';
+// On construit le chemin complet du fichier à inclure.
+$filePath = $viewPath . $page . '.php';
 
-        case 'apropos':
-           $title = "A propos - Le P'tit Café";
-            break;
-        
-        case 'membership':
-            $title = "Adhérer - Le P'tit Café";
-            break;
+//Nom des pages
+if ($page === 'home') { $title = "Accueil - Le P'tit Café"; }
+if ($page === 'membership') { $title = "Adhérer - Le P'tit Café"; }
+if ($page === 'apropos') { $title = "À propos - Le P'tit Café"; }
+if ($page === 'contact') { $title = "Contact - Le P'tit Café"; }
 
-    }
 
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $title; ?></title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="icon" type="image/x-icon" href="">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><?php echo $title; ?></title>
 
-    <?php 
-    //Header dispo sur toutes les pages pour éviter de les recopier sur les nouvelles pages.
-    include 'app/views/layouts/header.php'; 
-        
+        <link rel="stylesheet" href="assets/css/style.css">
 
-    // On définit le chemin du dossier des pages directement pour plus de clarté.
-    $viewPath = 'app/views/pages/';
+        <link rel="icon" type="image/x-icon" href="">
 
+        </head>
+        <body>
 
-    switch ($page) {
-        case 'home':
-            include $viewPath . 'home.php';
-            break;
-
-        case 'apropos':
-            include $viewPath . 'apropos.php';
-            break;
-
-        case 'membership':
-            include $viewPath . 'membership.php';
-            break;
-    
-        // Erreur 404
-        default:
-            echo "<main><h1>Erreur 404</h1><p>La page n'existe pas. Désolé :(</p></main>";
-            break;
+   <?php 
+    // On inclut le header commun
+    if (file_exists($layoutPath . 'header.php')) {
+        include $layoutPath . 'header.php';
     }
 
-    // Footer
-    include 'app/views/layouts/footer.php'; 
+    echo '<main>';
+    if (file_exists($filePath)) {
+        include $filePath;
+    } else {
+        // Si le fichier n'existe pas, on affiche la 404 sans casser le site
+        include $viewPath . 'home.php';
+    }
+    echo '</main>';
+
+    // On inclut le footer commun
+    if (file_exists($layoutPath . 'footer.php')) {
+        include $layoutPath . 'footer.php';
+    }
     ?>
 
 </body>
