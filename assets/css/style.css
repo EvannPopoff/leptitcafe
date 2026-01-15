@@ -11,9 +11,12 @@ body h1, h2 {
 body {
   font-family: 'Poppins-Regular', sans-serif;
 }
-
-
-
+.container {
+  max-width: 1200px; /* Максимальная ширина контента */
+  margin: 0 auto;    /* Центрирует контейнер по горизонтали */
+  padding: 0 50px;   /* Отступы по бокам (лево и право) */
+  box-sizing: border-box; /* Чтобы padding не увеличивал ширину сверх 1200px */
+}
 /* =========================
    HEADER
 ========================= */
@@ -349,29 +352,29 @@ header {
 }
 h1 {
   font-family: 'SigmarOne', sans-serif;
-  font-size: 75px;
+  font-size: 65px;
   line-height: 1.2;
   margin-bottom: 20px;
 }
 h2 {
   font-family: 'SigmarRegular', sans-serif;
-  font-size: 50px;
+  font-size: 40px;
   line-height: 1.2;
   margin-bottom: 15px;
 }
 h3 {
   font-family: 'Poppins-Medium', sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1.2;
   margin-bottom: 15px;
 }
 button, .button {
   font-family: 'Poppins-ExtraBold', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
 }
 p {
   font-family: 'Poppins-Regular', sans-serif;
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .hero {
@@ -399,8 +402,8 @@ p {
 }
 
 .section-title {
-    font-family: 'Poppins-ExtraBold', sans-serif;
-    font-size: 48px;
+    font-family: 'SigmarOne', sans-serif;
+    font-size: 35px;
     margin-bottom: 30px;
 }
 
@@ -435,14 +438,14 @@ p {
 
 .timeline-date {
     font-family: 'Poppins-Bold', sans-serif;
-    font-size: 28px;
+    font-size: 20px;
     color: #000;
     margin: 0 0 10px 0;
 }
 
 .timeline-event-title {
     font-family: 'Poppins-Bold', sans-serif;
-    font-size: 22px;
+    font-size: 20px;
     margin-bottom: 15px;
 }
 
@@ -450,4 +453,5 @@ p {
     font-family: 'Poppins-Regular', sans-serif;
     line-height: 1.6;
     color: #333;
+    font-size: 14px;
 }
