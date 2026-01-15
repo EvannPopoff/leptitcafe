@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Header</title>
-
-        <link rel="stylesheet" href="assets/css/style.css">
-        <script src="assets/js/header.js" defer></script>
-    </head>
-
-    <body>
+<body>
         <header>  
             <div class="in-header">
 
@@ -21,7 +9,7 @@
 
                 <nav class="main-nav">
                     <ul>
-                        <li><a href="app/views/pages/apropos.php">À propos</a></li>
+                        <li><a href="index.php?page=apropos">À propos</a></li>
                         <li><a href="app/views/pages/evenement.php">Activités et Évènements</a></li>
                         <li><a href="app/views/pages/adherer.php">Adhérer</a></li>
                         <li><a href="app/views/pages/contact.php">Contact</a></li>
