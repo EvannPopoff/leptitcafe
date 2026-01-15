@@ -1,4 +1,5 @@
- <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="fr">
 
     <head>
@@ -8,6 +9,7 @@
 
         <link rel="stylesheet" href="assets/css/style.css">
     </head>
+ <link rel="stylesheet" href="/assets/css/style.css">
  <body>
             <div class="hero">
             <img src="assets/images/image_header.webp" alt="hero">
