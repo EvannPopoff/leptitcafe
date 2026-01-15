@@ -1,4 +1,5 @@
 <?php
+    // Ici c'est la partie pour le nom des pages
     // On récupère la page demandée via l'URL sinon on met "home" par défaut.
     $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
@@ -22,18 +23,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $title; ?></title>
     <link rel="stylesheet" href="assets/css/style.css">
-
-    <!--lien favicon A METTRE-->
     <link rel="icon" type="image/x-icon" href="">
 </head>
 <body>
 
     <?php 
+    //Header dispo sur toutes les pages pour éviter de les recopier sur les nouvelles pages.
     include 'app/views/layouts/header.php'; 
         
 
-    // LOGIQUE D'AFFICHAGE
-    // On définit le chemin du dossier des pages pour plus de clarté
+    // On définit le chemin du dossier des pages directement pour plus de clarté.
     $viewPath = 'app/views/pages/';
 
 
