@@ -91,42 +91,40 @@ header {
 
 
 
-
 /* =========================
-   FOOTER
+   FOOTER 
 ========================= */
 
 .site-footer {
-  background-color: #b7d6a4; /* зелёный фон */
+  background-color: #B9DAA3;
   font-family: Arial, sans-serif;
   color: #000;
 }
-/* ---------- TOP ---------- */
 
 .footer-top {
   display: grid;
-  grid-template-columns: 120px 1fr 1fr 1fr;
-  gap: 60px;
-  align-items: start;
+  grid-template-columns: 1fr; 
+  gap: 30px;
+  padding: 40px 20px 0;
 }
 
 .footer-column h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
+  font-size: 16px;
+  margin-bottom: 8px;
 }
-
 .footer-column p,
 .footer-column li {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.6;
 }
 
-/* logo */
 .footer-column.logo img {
-  width: 90px;
+  width: auto;
+}
+.footer-column.logo {
+  padding-bottom: 40px; /* подгони визуально: 20–28px */
 }
 
-/* pages list */
 .footer-column ul {
   list-style: none;
   padding: 0;
@@ -146,25 +144,22 @@ header {
   text-decoration: underline;
 }
 
-/* ---------- SEPARATOR ---------- */
-
 .site-footer hr {
-  margin: 40px 0 25px;
+  margin: 30px 20px;
   border: none;
   border-top: 1px solid #000;
 }
 
-/* ---------- BOTTOM ---------- */
-
 .footer-bottom {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 14px;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 13px;
+  padding: 0 20px 30px;
 }
 
 .footer-links a {
-  margin-left: 25px;
+  margin: 0 15px 0 0;
   color: #000;
   text-decoration: none;
 }
@@ -172,15 +167,124 @@ header {
 .footer-links a:hover {
   text-decoration: underline;
 }
-.footer-top, 
-.site-footer hr, 
-.footer-bottom {
-  padding-left: 60px;
-  padding-right: 60px;
-}
+
 /* ---------- IMAGE ---------- */
 
 .footer-image img {
   width: 100%;
   display: block;
+}
+@media (min-width: 768px) {
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 50px 40px 0;
+  }
+
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px 30px;
+  }
+
+  .site-footer hr {
+    margin: 40px 40px 25px;
+  }
+}
+@media (min-width: 1024px) {
+  .footer-top {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 60px;
+    padding: 60px 60px 0;
+  }
+
+  .footer-column h3 {
+    font-size: 18px;
+  }
+
+  .footer-column p,
+  .footer-column li {
+    font-size: 15px;
+  }
+
+  .footer-bottom {
+    font-size: 14px;
+    padding: 0 60px 40px;
+  }
+
+  .site-footer hr {
+    margin: 40px 60px 25px;
+  }
+}
+
+
+
+
+
+
+/* =========================
+   TYPOGRAPHIE
+========================= */
+@font-face {
+  font-family: 'SigmarOne';
+  src: url('../typo/SigmarOne.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Poppins-ExtraBold';
+  src: url('../typo/Poppins-ExtraBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Poppins-Bold';
+  src: url('../typo/Poppins-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Poppins-Regular';
+  src: url('../typo/Poppins-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Poppins-Medium';
+  src: url('../typo/Poppins-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SigmarRegular';
+  src: url('../typo/Sigmar-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+h1 {
+  font-family: 'SigmarOne', sans-serif;
+  font-size: 75px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+h2 {
+  font-family: 'SigmarRegular', sans-serif;
+  font-size: 50px;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+h3 {
+  font-family: 'Poppins-Medium', sans-serif;
+  font-size: 24px;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+button, .button {
+  font-family: 'Poppins-ExtraBold', sans-serif;
+  font-size: 20px;
+}
+p {
+  font-family: 'Poppins-Regular', sans-serif;
+  font-size: 18px;
 }
