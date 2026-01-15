@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Header</title>
 
+        <script src="assets/js/header.js"></script>
         <link rel="stylesheet" href="assets/css/style.css">
     </head>
 
@@ -28,10 +29,18 @@
 
                 <a class="bouton-reservation" href="">Réservation</a>
 
-                <!-- Responsif -->
-                
-
+                <!-- Menu Burger-->
+                <button class="burger-bouton" type="button">
+                    <img src="assets/images/Burger.png" alt="menu-burger">
+                </button>
             </div>
+
+            <div class="mobile-menu">
+                <button class="close-bouton" type="button" aria-label="Fermer le menu">
+                <img src="assets/images/Close Burger.png" alt="close-burger">
+                </button>
+            </div>
+
         </header>
     </body>
 

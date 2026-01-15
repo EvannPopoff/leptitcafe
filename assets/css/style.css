@@ -12,6 +12,8 @@ body {
   font-family: 'Poppins-Regular', sans-serif;
 }
 
+
+
 /* =========================
    HEADER
 ========================= */
@@ -64,7 +66,7 @@ header {
 .main-nav a {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.95);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   padding: 10px 6px;
   border-radius: 10px;
@@ -74,7 +76,7 @@ header {
 .bouton-reservation {
   text-decoration: none;
   background: #e36a12;
-  color: #fff;
+  color: #ffffff;
   font-size: 18px;
   font-weight: 700;
   display: flex;
@@ -83,6 +85,62 @@ header {
   padding: 15px 25px;
   border-radius: 15px;
 }
+
+.burger-bouton,
+.close-bouton { 
+  display: none; 
+}
+
+
+
+/* =========================
+   HEADER MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .main-nav,
+  .bouton-reservation {
+    display: none;
+  }
+
+  .burger-bouton {
+    display: flex;
+  }
+
+
+  .in-header {
+    grid-template-columns: 1fr auto;
+    height: 110px;
+    padding: 0 18px;
+  }
+
+  .logo img {
+    height: 70px;
+  }
+
+
+  .burger-bouton {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    width: 52px;
+    height: 52px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .burger-bouton img {
+    width: 44px;
+    height: 44px;
+    display: block;
+  }
+
+}
+
+
+
 
 /* =========================
    PAGE D'ACCUEIL
