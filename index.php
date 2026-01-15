@@ -7,6 +7,10 @@
         <title>Le P'tit Café</title>
 
         <link rel="stylesheet" href="assets/css/style.css">
+
+        <!--lien favicon A METTRE-->
+        <link rel="icon" type="image/x-icon" href="">
+        
     </head>
 
 
