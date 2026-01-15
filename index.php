@@ -1,20 +1,32 @@
+<?php
+    // On récupère la page demandée via l'URL sinon on met "home" par défaut.
+    $page = isset($_GET['page']) ? $_GET['page'] : 'home';
+
+    switch ($page) {
+        case 'home':
+            $title = "Accueil - Le P'tit Café";
+            break;
+
+        case 'apropos':
+           $title = "A propos - Le P'tit Café";
+            break;
+
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le P'tit Café</title>
+    <title><?php echo $title; ?></title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
     <?php 
     include 'app/views/layouts/header.php'; 
-
-    // On récupère la page demandée dans l'URL
-    // Si l'URL est index.php?page=apropos, alors $page vaudra "apropos"
-    // Si aucune page n'est précisée, on met "home" par défaut qui est la page d'accueil.
-    $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
     // LOGIQUE D'AFFICHAGE
     // On définit le chemin du dossier des pages pour plus de clarté
