@@ -55,3 +55,52 @@
 
 </section>
 
+<section class="values-section">
+    <div class="container">
+        <h2 class="values-main-title">Nos valeurs</h2>
+        
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-image-container">
+                    <img src="../../../assets/images/placeholder.webp" alt="Valeur">
+                </div>
+                <div class="value-info">
+                    <h3 class="value-title">Long heading is what you see here in this feature section</h3>
+                    <p class="value-description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Suspendisse varius enim in eros elementum tristique.
+                    </p>
+                    <a href="#" class="value-button">Button <span class="arrow">→</span></a>
+                </div>
+            </div>
+
+            <div class="value-card">
+                <div class="value-image-container">
+                    <img src="../../../assets/images/placeholder.webp" alt="Valeur">
+                </div>
+                <div class="value-info">
+                    <h3 class="value-title">Long heading is what you see here in this feature section</h3>
+                    <p class="value-description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Suspendisse varius enim in eros elementum tristique.
+                    </p>
+                    <a href="#" class="value-button">Button <span class="arrow">→</span></a>
+                </div>
+            </div>
+
+            <div class="value-card">
+                <div class="value-image-container">
+                    <img src="../../../assets/images/placeholder.webp" alt="Valeur">
+                </div>
+                <div class="value-info">
+                    <h3 class="value-title">Long heading is what you see here in this feature section</h3>
+                    <p class="value-description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Suspendisse varius enim in eros elementum tristique.
+                    </p>
+                    <a href="#" class="value-button">Button <span class="arrow">→</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
