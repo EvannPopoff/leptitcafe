@@ -10,6 +10,7 @@
     </head>
 
     <?php include 'app/views/layouts/header.php'; ?>
+
     
     <body>
         <div class="hero">
@@ -19,6 +20,7 @@
     </body>
 
     <?php include 'app/views/layouts/footer.php'; ?>
+    
 
 
 </html>
