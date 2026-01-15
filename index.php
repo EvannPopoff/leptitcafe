@@ -24,7 +24,7 @@ if ($page === 'contact') { $title = "Contact - Le P'tit Café"; }
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title><?php echo $title; ?></title>
 
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/style.css?v=1.1">
 
         <link rel="icon" type="image/x-icon" href="">
 
