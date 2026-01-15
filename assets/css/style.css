@@ -153,14 +153,12 @@ header {
         background: #b7d6a4;
     }
 
-
     .mobile-menu .main-nav {
         display: flex;
         height: 100%;
         align-items: center;
         justify-content: center;
     }
-
 
     .mobile-menu .main-nav ul {
         flex-direction: column;
@@ -202,15 +200,13 @@ header {
         color: #ffffff;
     }
 
-
-
 }
 
 
 /* =========================
    PAGE D'ACCUEIL
 ========================= */
-
+  
 .hero-accueil {
     position: relative;
     width: 100%;
@@ -230,12 +226,10 @@ header {
     position: absolute;
     inset: 0;
     z-index: 2;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     text-align: center;
     color: white;
     padding: 1.5rem;
@@ -244,6 +238,8 @@ header {
 
 .hero-content h1 {
     font-size: clamp(2.5rem, 6vw, 4.5rem);
+    /*recommandation d'un tutoriel, j'utilise clamp () pour ajouter des éléments simple en responsif, 
+    sans utiliser les medias querys*/
     margin-bottom: 1rem;
 }
 
@@ -258,10 +254,10 @@ header {
 
 .btn-hero {
     padding: 0.8rem 1.6rem;
-    border: 2px solid #ff7a00;
+    border: 3px solid #ff7a00;
     color: #ff7a00;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: 15px;
     font-weight: 600;
 }
 
@@ -281,9 +277,88 @@ header {
 }
 
 
-/* =========================
-   CONTENT
-========================= */
+.events {
+    background-color: #fdf7ec;
+    padding: 4rem 1.5rem;
+}
+
+.events-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    color: #2f4f1e;
+    margin-bottom: 0.5rem;
+}
+
+.events-subtitle {
+    font-size: 1rem;
+    margin-bottom: 3rem;
+}
+
+/* LISTE */
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* CARD */
+.event-card img {
+    width: 160px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.event-card h3 {
+    font-size: 1.3rem;
+    color: #2f4f1e;
+    margin-bottom: 0.5rem;
+}
+
+.event-card p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* BOUTON */
+.btn-events {
+    display: inline-block;
+    margin-top: 3rem;
+    padding: 0.8rem 1.6rem;
+    border: 2px solid #ff7a00;
+    color: #ff7a00;
+    text-decoration: none;
+    border-radius: 15px;
+    font-weight: 600;
+}
+
+.btn-events:hover {
+    background-color: #ff7a00;
+    color: #ffffff;
+}
+
+
+
+@media (min-width: 768px) {
+    .events-list {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .event-card {
+        flex: 1;
+    }
+
+    .event-card img {
+        width: 180px;
+    }
+}
 
 
 
@@ -600,7 +675,7 @@ p {
 }
 
 .value-card {
-    background-color: #354a1d; 
+    background-color: #354a1d;
     border: 1px solid #354a1d;
     border-radius: 20px;
     padding: 20px;
