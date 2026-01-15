@@ -4,14 +4,13 @@ html, body {
   width: 100%;
 }
 
-body h1,h2 {
-  font-family: /* Sigmar One Font*/
+body h1, h2 {
+  font-family: 'SigmarOne', sans-serif;
 }
 
 body {
-  font-family: /* Poppins Font*/
+  font-family: 'Poppins-Regular', sans-serif;
 }
-
 
 /* =========================
    HEADER
@@ -124,20 +123,10 @@ header {
 ========================= */
 
 .site-footer {
-<<<<<<< HEAD
   background-color: #B9DAA3;
   font-family: Arial, sans-serif;
   color: #000;
 }
-=======
-  background-color: #b7d6a4;
-  /* зелёный фон */
-  font-family: Arial, sans-serif;
-  color: #000;
-}
-
-/* ---------- TOP ---------- */
->>>>>>> 667851eac3dc7d6f5a01a53cfa8964c9decb041a
 
 .footer-top {
   display: grid;
@@ -150,6 +139,7 @@ header {
   font-size: 16px;
   margin-bottom: 8px;
 }
+
 .footer-column p,
 .footer-column li {
   font-size: 14px;
@@ -158,9 +148,6 @@ header {
 
 .footer-column.logo img {
   width: auto;
-}
-.footer-column.logo {
-  padding-bottom: 40px; /* подгони визуально: 20–28px */
 }
 
 .footer-column ul {
@@ -206,22 +193,16 @@ header {
   text-decoration: underline;
 }
 
-<<<<<<< HEAD
-=======
-.footer-top,
-.site-footer hr,
-.footer-bottom {
-  padding-left: 60px;
-  padding-right: 60px;
-}
-
->>>>>>> 667851eac3dc7d6f5a01a53cfa8964c9decb041a
 /* ---------- IMAGE ---------- */
 
 .footer-image img {
   width: 100%;
   display: block;
 }
+.footer-column.logo {
+  padding-bottom: 24px; /* подгони визуально: 20–28px */
+}
+
 @media (min-width: 768px) {
   .footer-top {
     grid-template-columns: 1fr 1fr;
@@ -265,9 +246,6 @@ header {
     margin: 40px 60px 25px;
   }
 }
-
-
-
 
 
 
