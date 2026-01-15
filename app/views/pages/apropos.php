@@ -1,8 +1,10 @@
+  <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Page A propos</title>
 
-            <div class="hero">
-            <img src="assets/images/image_header.webp" alt="hero">
-        </div>
-</body>
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
 
 <div class="hero">
     <img src="assets/images/image_header.webp" alt="hero">
