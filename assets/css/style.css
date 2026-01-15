@@ -1,11 +1,15 @@
-* {
-    box-sizing: border-box;
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
+body h1,h2 {
+  font-family: /* Sigmar One Font*/
+}
 
 body {
-    margin: 0;
-    font-family: Poppins, Roboto, Arial, sans-serif;
+  font-family: /* Poppins Font*/
 }
 
 
@@ -14,73 +18,97 @@ body {
 ========================= */
 
 header {
-    position: sticky;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    background: rgba(0, 0, 0, 1);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  /*background: rgba(0, 0, 0, 1);*/
+  backdrop-filter: blur(8px);
 }
 
 
 .in-header {
-    margin: 0 auto;
-    height: 90px;
-    padding: 0 28px;
-    display: grid;
-    grid-template-columns: 140px 1fr 170px;
-    align-items: center;
+  grid-template-columns: 140px 1fr 170px;
+  margin: 0 auto;
+  height: 90px;
+  padding: 0 28px;
+  display: grid;
+  align-items: center;
 }
 
 
 .logo {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
-  
+
+
 .logo img {
-    height: 56px;
-    width: auto;
-    display: block;
+  height: 56px;
+  width: auto;
+  display: block;
 }
-  
+
 
 .main-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 38px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 38px;
 }
-  
 
 .main-nav a {
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.95);
-    font-size: 18px;
-    font-weight: 500;
-    padding: 10px 6px;
-    border-radius: 10px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 6px;
+  border-radius: 10px;
 }
 
 
 .bouton-reservation {
-    text-decoration: none;
-    background: #e36a12;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px 25px;
-    border-radius: 24px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  background: #e36a12;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 25px;
+  border-radius: 24px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
+/* =========================
+   PAGE D'ACCUEIL
+========================= */
+
+.hero{
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero::after{ /*Chat GPT - ajout d'un filtre devant le background*/
+  content: "";
+  position: absolute;
+  inset: 0; /* top,right,bottom et left= 0 */
+  background: rgba(0, 0, 0, 0.5);
+}
 
 
 /* =========================
@@ -96,10 +124,20 @@ header {
 ========================= */
 
 .site-footer {
+<<<<<<< HEAD
   background-color: #B9DAA3;
   font-family: Arial, sans-serif;
   color: #000;
 }
+=======
+  background-color: #b7d6a4;
+  /* зелёный фон */
+  font-family: Arial, sans-serif;
+  color: #000;
+}
+
+/* ---------- TOP ---------- */
+>>>>>>> 667851eac3dc7d6f5a01a53cfa8964c9decb041a
 
 .footer-top {
   display: grid;
@@ -168,6 +206,16 @@ header {
   text-decoration: underline;
 }
 
+<<<<<<< HEAD
+=======
+.footer-top,
+.site-footer hr,
+.footer-bottom {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+>>>>>>> 667851eac3dc7d6f5a01a53cfa8964c9decb041a
 /* ---------- IMAGE ---------- */
 
 .footer-image img {

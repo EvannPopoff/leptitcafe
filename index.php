@@ -1,44 +1,24 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page d'exemple - Test</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Page d'exemple - Test</title>
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
 
-        h1 {
-            color: #333;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Bienvenue - Page d'exemple</h1>
-        <p>Ceci est une page de test pour le site Le Petit Café.</p>
-        <button onclick="alert('Alert')">Cliquez-moi</button>
-        <button onclick="alert('abcdef')">Cliquez-moi</button>
-    </div>
-</body>
+    <?php include 'app/views/layouts/header.php'; ?>
+    
+    <body>
+        <div class="hero">
+            <img src="assets/images/img-hero.webp" alt="hero">
+        </div>
+        
+    </body>
 
-
-<?php include 'app/views/layouts/header.php'; ?>
-<?php include 'app/views/layouts/footer.php'; ?>
+    <?php include 'app/views/layouts/footer.php'; ?>
 
 
 </html>
