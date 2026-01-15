@@ -9,15 +9,14 @@
 <body>
 
     <?php 
-    // 1. On inclut le header (commun à toutes les pages)
     include 'app/views/layouts/header.php'; 
 
-    // 2. LE ROUTAGE : On récupère la page demandée dans l'URL
+    // On récupère la page demandée dans l'URL
     // Si l'URL est index.php?page=apropos, alors $page vaudra "apropos"
-    // Si aucune page n'est précisée (accueil), on met "home" par défaut
+    // Si aucune page n'est précisée, on met "home" par défaut qui est la page d'accueil.
     $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
-    // 3. LA LOGIQUE D'AFFICHAGE
+    // LOGIQUE D'AFFICHAGE
     // On définit le chemin du dossier des pages pour plus de clarté
     $viewPath = 'app/views/pages/';
 
@@ -30,13 +29,13 @@
             include $viewPath . 'apropos.php';
             break;
 
-        // Si la page demandée n'existe pas, on peut afficher une erreur 404
+        // Erreur 404
         default:
-            echo "<main><h1>Erreur 404</h1><p>La page n'existe pas.</p></main>";
+            echo "<main><h1>Erreur 404</h1><p>La page n'existe pas. Désolé :(</p></main>";
             break;
     }
 
-    // 4. On inclut le footer (commun à toutes les pages)
+    // Footer
     include 'app/views/layouts/footer.php'; 
     ?>
 
