@@ -36,11 +36,11 @@
     <div class="footer-column">
       <h3>Pages</h3>
       <ul>
-        <li><a href="index.php?page=home">Accueil</a></li>
-        <li><a href="apropos.php?page=about">À propos</a></li>
-        <li><a href="activite.php?page=activities">Activités et événements</a></li>
-        <li><a href="adherer.php?page=membership">Adhérer</a></li>
-        <li><a href="contact.php?page=contact">Contact</a></li>
+        <li><a href="index.php">Accueil</a></li>
+        <li><a href="app/views/pages/apropos.php">À propos</a></li>
+        <li><a href="app/views/pages/evenement">Activités et événements</a></li>
+        <li><a href="app/views/pages/adherer">Adhérer</a></li>
+        <li><a href="app/views/pages/contact">Contact</a></li>
       </ul>
     </div>
 

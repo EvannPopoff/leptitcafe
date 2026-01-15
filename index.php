@@ -1,24 +1,60 @@
+<?php
+    // On récupère la page demandée via l'URL sinon on met "home" par défaut.
+    $page = isset($_GET['page']) ? $_GET['page'] : 'home';
+
+    switch ($page) {
+        case 'home':
+            $title = "Accueil - Le P'tit Café";
+            break;
+
+        case 'apropos':
+           $title = "A propos - Le P'tit Café";
+            break;
+
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $title; ?></title>
+    <link rel="stylesheet" href="assets/css/style.css">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Le P'tit Café</title>
+    <!--lien favicon A METTRE-->
+    <link rel="icon" type="image/x-icon" href="">
+</head>
+<body>
 
-        <link rel="stylesheet" href="assets/css/style.css">
-
-        <!--lien favicon A METTRE-->
-        <link rel="icon" type="image/x-icon" href="">
+    <?php 
+    include 'app/views/layouts/header.php'; 
         
-    </head>
+
+    // LOGIQUE D'AFFICHAGE
+    // On définit le chemin du dossier des pages pour plus de clarté
+    $viewPath = 'app/views/pages/';
 
 
-    <?php include 'app/views/layouts/header.php'; ?>
-    
-    <?php include 'app/views/pages/home.php'; ?>
+    switch ($page) {
+        case 'home':
+            include $viewPath . 'home.php';
+            break;
 
-    <?php include 'app/views/layouts/footer.php'; ?>
+        case 'apropos':
+            include $viewPath . 'apropos.php';
+            break;
 
+        // Erreur 404
+        default:
+            echo "<main><h1>Erreur 404</h1><p>La page n'existe pas. Désolé :(</p></main>";
+            break;
+    }
 
+    // Footer
+    include 'app/views/layouts/footer.php'; 
+    ?>
+
+</body>
 </html>

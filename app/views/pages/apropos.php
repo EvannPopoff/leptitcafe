@@ -1,0 +1,49 @@
+<div class="hero">
+    <img src="assets/images/image_header.webp" alt="hero">
+</div>
+
+<section class="timeline-section">
+    <div class="container timeline-grid">
+        <div class="timeline-intro">
+            <h2 class="section-title">Une grande histoire</h2>
+            <p class="section-text">
+                Petit Café est né d’un désir simple : créer au Puy-en-Velay un lieu chaleureux, 
+                ouvert à toutes et tous, où l’on peut se rencontrer, échanger et partager.
+                Cette frise retrace les grandes étapes d'un projet collectif, construit pas à pas, 
+                au fil des rencontres et des engagements.
+            </p>
+        </div>
+
+        <div class="timeline-container">
+            <div class="timeline-line"></div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h3 class="timeline-date">Avril 2012</h3>
+                <h4 class="timeline-event-title">La naissance d’une idée</h4>
+                <p>L’association est née de la rencontre de parents et de non-parents animés par une même envie : créer un lieu convivial...</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h3 class="timeline-date">2012 – 2014</h3>
+                <h4 class="timeline-event-title">Un projet itinérant</h4>
+                <p>En attendant de trouver un local, l’association propose un programme d’animations itinérantes...</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h3 class="timeline-date">Mai 2014</h3>
+                <h4 class="timeline-event-title">Le Café Éphémère voit le jour</h4>
+                <p>L’association s’installe au 25 place du Marché Couvert...</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h3 class="timeline-date">2016</h3>
+                <h4 class="timeline-event-title">De l’éphémère au durable</h4>
+                <p>Le café devient pérenne et prend le nom de P’tit Café, fidèle aux valeurs du projet initial.</p>
+            </div>
+        </div>
+    </div>
+</section>
