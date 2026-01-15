@@ -1,6 +1,6 @@
- <link rel="stylesheet" href="/leptitcafe/assets/css/style.css">
+ <link rel="stylesheet" href="/assets/css/style.css">
  <body>
             <div class="hero">
-            <img src="/leptitcafe/assets/images/image_header.webp" alt="hero">
+            <img src="assets/images/image_header.webp" alt="hero">
         </div>
 </body>
