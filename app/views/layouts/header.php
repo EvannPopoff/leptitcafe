@@ -21,7 +21,6 @@
                 <nav class="main-nav">
                     <ul>
                         <li><a href="app/views/pages/apropos.php">À propos</a></li>
-                        <li><a href="apropos.php">À propos</a></li>
                         <li><a href="">Activités et Évènements</a></li>
                         <li><a href="">Adhérer</a></li>
                         <li><a href="">Contact</a></li>
