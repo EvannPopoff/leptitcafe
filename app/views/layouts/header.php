@@ -19,7 +19,7 @@
 
                 <nav class="main-nav">
                     <ul>
-                        <li><a href="">À propos</a></li>
+                        <li><a href="apropos.php">À propos</a></li>
                         <li><a href="">Activités et Évènements</a></li>
                         <li><a href="">Adhérer</a></li>
                         <li><a href="">Contact</a></li>
@@ -27,6 +27,10 @@
                 </nav>
 
                 <a class="bouton-reservation" href="">Réservation</a>
+
+                <!-- Responsif -->
+                
+
             </div>
         </header>
     </body>
