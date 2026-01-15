@@ -1,19 +1,20 @@
-<!DOCTYPE html>
-<html lang="fr">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Page d'Accueil</title>
-
-        <link rel="stylesheet" href="assets/css/style.css">
-    </head>
-    
-    <body>
-        <div class="hero">
-            <img src="assets/images/img-hero.webp" alt="hero">
-        </div>
+<body>
+    <div class="hero-accueil">
         
-    </body>
+        <img src="assets/images/img-hero.webp" alt="hero">
 
-</html>
+        <div class="hero-content">
+            <h1>LE P’TIT CAFÉ</h1>
+            <p>
+                Un café associatif au Puy-en-Velay,  
+                où chacun trouve sa place !<br>
+                Seul, en famille, pour un atelier ou toute la journée.
+            </p>
+
+            <a href="apropos.php" class="btn-hero">En savoir plus</a>
+        </div>
+    </div>
+        
+
+</body>
