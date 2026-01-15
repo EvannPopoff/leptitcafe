@@ -12,21 +12,25 @@ body {
   font-family: 'Poppins-Regular', sans-serif;
 }
 
+
+
 /* =========================
    HEADER
 ========================= */
 
 header {
   position: fixed;
-  width: 100%;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
-  /*background: rgba(0, 0, 0, 1);*/
+  /*background: rgba(0,0,0,.28);*/
   backdrop-filter: blur(8px);
 }
 
 
 .in-header {
+  max-width: 1300px;
   grid-template-columns: 140px 1fr 170px;
   margin: 0 auto;
   height: 90px;
@@ -46,7 +50,7 @@ header {
   height: 56px;
   width: auto;
   display: block;
-}
+} 
 
 
 .main-nav ul {
@@ -72,16 +76,71 @@ header {
 .bouton-reservation {
   text-decoration: none;
   background: #e36a12;
-  color: #fff;
+  color: #ffffff;
   font-size: 18px;
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 15px 25px;
-  border-radius: 24px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
 }
+
+.burger-bouton,
+.close-bouton { 
+  display: none; 
+}
+
+
+
+/* =========================
+   HEADER MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .main-nav,
+  .bouton-reservation {
+    display: none;
+  }
+
+  .burger-bouton {
+    display: flex;
+  }
+
+
+  .in-header {
+    grid-template-columns: 1fr auto;
+    height: 110px;
+    padding: 0 18px;
+  }
+
+  .logo img {
+    height: 70px;
+  }
+
+
+  .burger-bouton {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    width: 52px;
+    height: 52px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .burger-bouton img {
+    width: 44px;
+    height: 44px;
+    display: block;
+  }
+
+}
+
+
+
 
 /* =========================
    PAGE D'ACCUEIL
@@ -102,7 +161,7 @@ header {
   object-position: center;
 }
 
-.hero::after{ /*Chat GPT - ajout d'un filtre devant le background*/
+.hero::after{ /*Chat GPT - ajout d'un filtre noir devant le background*/
   content: "";
   position: absolute;
   inset: 0; /* top,right,bottom et left= 0 */
