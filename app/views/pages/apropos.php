@@ -67,7 +67,20 @@
         <div class="values-grid">
             <div class="value-card">
                 <div class="value-image-container">
-                    <img src="../../../assets/images/placeholder.webp" alt="Valeur">
+                    <img src="assets/images/flower.webp" alt="Valeur">
+                </div>
+                <div class="value-info">
+                    <h3 class="value-title">Bienveillance</h3>
+                    <p class="value-description">
+                        
+                    </p>
+                    <a href="#" class="value-button">Button <span class="arrow">→</span></a>
+                </div>
+            </div>
+
+            <div class="value-card">
+                <div class="value-image-container">
+                    <img src="assets/images/family.webp" alt="Valeur">
                 </div>
                 <div class="value-info">
                     <h3 class="value-title">Long heading is what you see here in this feature section</h3>
@@ -81,7 +94,7 @@
 
             <div class="value-card">
                 <div class="value-image-container">
-                    <img src="../../../assets/images/placeholder.webp" alt="Valeur">
+                    <img src="assets/images/friends.webp" alt="Valeur">
                 </div>
                 <div class="value-info">
                     <h3 class="value-title">Long heading is what you see here in this feature section</h3>
@@ -93,9 +106,10 @@
                 </div>
             </div>
 
-            <div class="value-card">
+
+  <div class="value-card">
                 <div class="value-image-container">
-                    <img src="../../../assets/images/placeholder.webp" alt="Valeur">
+                    <img src="assets/images/ecologie.webp" alt="Valeur">
                 </div>
                 <div class="value-info">
                     <h3 class="value-title">Long heading is what you see here in this feature section</h3>
@@ -106,6 +120,7 @@
                     <a href="#" class="value-button">Button <span class="arrow">→</span></a>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
