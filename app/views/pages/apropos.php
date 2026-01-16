@@ -1,5 +1,10 @@
+<link rel="stylesheet" href="assets/css/apropos.css">
 <div class="hero">
-    <img src="assets/images/image_header.webp" alt="hero">
+    <img src="assets/images/image_header.webp" alt="hero" class="hero-bg">
+    <div class="hero-overlay"></div> <div class="hero-content">
+        <h1>Là où tout commence</h1>
+        <p>Une grande histoire commence par un petit pas.</p>
+    </div>
 </div>
 
 <section class="timeline-section">
