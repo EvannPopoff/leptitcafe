@@ -144,7 +144,7 @@ header {
     }
 
 
-    /* MENU */
+    /* MENU BURGER */
     .mobile-menu {
         display: none;
         position: fixed;
@@ -206,7 +206,7 @@ header {
 /* =========================
    PAGE D'ACCUEIL
 ========================= */
-  
+
 .hero-accueil {
     position: relative;
     width: 100%;
@@ -251,7 +251,7 @@ header {
     margin-bottom: 1.5rem;
 }
 
-
+/* Bouton différent car légèrement plus gros*/
 .btn-hero {
     padding: 0.8rem 1.6rem;
     border: 3px solid #ff7a00;
@@ -277,6 +277,7 @@ header {
 }
 
 
+/* SECTION 2 EVENEMENTS */
 .events {
     background-color: #fdf7ec;
     padding: 4rem 1.5rem;
@@ -289,10 +290,8 @@ header {
 }
 
 
-h2 {
-    font-size: clamp(2rem, 4vw, 2.8rem);
-    color: #2f4f1e;
-    margin-bottom: 0.5rem;
+.activities-content h2 {
+    color: #B9DAA3;
 }
 
 .events-subtitle {
@@ -300,24 +299,16 @@ h2 {
     margin-bottom: 3rem;
 }
 
-/* LISTE */
 .events-list {
     display: flex;
     flex-direction: column;
     gap: 3rem;
 }
 
-/* CARD */
 .event-card img {
     width: 160px;
     height: auto;
     margin-bottom: 1rem;
-}
-
-.event-card h3 {
-    font-size: 1.3rem;
-    color: #2f4f1e;
-    margin-bottom: 0.5rem;
 }
 
 .event-card p {
@@ -325,12 +316,49 @@ h2 {
     line-height: 1.4;
 }
 
-/* BOUTON */
+.activities {
+    background: #2f4f1e;
+    padding: 4rem 1.5rem;
+    color: #fff;
+}
+
+.activities-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.activities-affiche img {
+    width: min(340px, 100%);
+    height: auto;
+    display: block;
+    border-radius: 6px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+}
+
+.activities-content {
+    max-width: 520px;
+    text-align: left;
+}
+
+
+.activities-content p {
+    margin: 0 0 1rem;
+    line-height: 1.5;
+    opacity: 0.95;
+}
+
+
+/* BOUTON réutilisable */
 .btn-events {
     display: inline-block;
     margin-top: 3rem;
     padding: 0.8rem 1.6rem;
-    border: 2px solid #ff7a00;
+    border: 3px solid #ff7a00;
     color: #ff7a00;
     text-decoration: none;
     border-radius: 15px;
@@ -345,6 +373,8 @@ h2 {
 
 
 @media (min-width: 768px) {
+
+    /* SECTION 2 EVENEMENTS*/
     .events-list {
         flex-direction: row;
         justify-content: space-between;
@@ -357,6 +387,27 @@ h2 {
 
     .event-card img {
         width: 180px;
+    }
+
+
+    /* SECTION 3 ACTIVITES*/
+    .activities-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 4rem;
+    }
+
+    .activities-content {
+        order: 1;
+    }
+
+    .activities-affiche {
+        order: 2;
+    }
+
+    .activities-affiche img {
+        width: 420px;
     }
 }
 

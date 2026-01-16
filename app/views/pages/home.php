@@ -12,10 +12,11 @@
                 Seul, en famille, pour un atelier ou toute la journée.
             </p>
 
-            <a href="apropos.php" class="btn-hero">En savoir plus</a>
+            <a href="index.php?page=apropos" class="btn-hero">En savoir plus</a>
         </div>
     </div>
 
+    <!-- Section 2 Evenements - Je remet en page plus tard les affiches -->
     <section class="events">
         <div class="events-container">
 
@@ -49,9 +50,39 @@
 
         </div>
 
-        <a href="#" class="btn-events">Découvrir plus</a>
+        <a href="index.php?page=evenement" class="btn-events">Découvrir plus</a>
 
     </section>
+
+    <!-- Section 3 Activites -->
+
+    <section class="activities">
+        <div class="activities-container">
+
+            <div class="activities-affiche">
+                <img src="assets/images/affiche_activite.webp" alt="Programme">
+            </div>
+
+            <div class="activities-content">
+                <h2>Activités proposées</h2>
+
+                <p>
+                    Le P’tit Café est un lieu à la disposition des habitants et des adhérents
+                    de l’association Jeunes Pousses.</p>
+
+                <p>
+                    Vous pouvez participer à l’élaboration du programme en proposant d’animer
+                    un atelier, une conférence… En tout cas, quelque chose qui vous tient à cœur !
+                    Ou faire des demandes de chose que vous aimeriez trouver.</p>
+
+                <a href="index.php?page=evenement" class="btn-events">Consulter l’Agenda</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 4 Réserver -->
+
 
 
 </body>
