@@ -1,5 +1,5 @@
 <header>  
-    <div class="in-header">
+    <div class="in-header container">
 
         <a class="logo" href="index.php">
             <img src="assets/images/logo.webp" alt="logo">
@@ -25,5 +25,5 @@
         <button class="close-bouton" type="button" aria-label="Fermer le menu">
             <img src="assets/images/Close-Burger.png" alt="close-burger">
         </button>
-        </div>
+    </div>
 </header>

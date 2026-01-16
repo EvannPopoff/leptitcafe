@@ -14,13 +14,12 @@ body {
     font-family: 'Poppins-Regular', sans-serif;
 }
 
-.container {
-    max-width: 1200px;
+.container { /*me permet d'avoir des marges égales sur toute ma page*/
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 0 50px;
-    box-sizing: border-box;
-}
-
+    padding-left: clamp(18px, 4vw, 60px);
+    padding-right: clamp(18px, 4vw, 60px);
+  }
 
 /* =========================
    HEADER
@@ -38,11 +37,9 @@ header {
 
 
 .in-header {
-    max-width: 1300px;
     grid-template-columns: 140px 1fr 170px;
     margin: 0 auto;
     height: 90px;
-    padding: 0 28px;
     display: grid;
     align-items: center;
 }
@@ -119,7 +116,6 @@ header {
     .in-header {
         grid-template-columns: 1fr auto;
         height: 110px;
-        padding: 0 18px;
     }
 
     .logo img {
@@ -167,7 +163,7 @@ header {
     }
 
     .mobile-menu .main-nav a {
-        font-size: 34px;
+        font-size: 25px;
         font-weight: 600;
         color: #ffffff;
         padding: 0;
@@ -193,7 +189,7 @@ header {
     .mobile-menu.is-open .cta-mobile {
         display: inline-flex;
         margin-bottom: 62px;
-        font-size: 30px;
+        font-size: 25px;
         padding: 18px 36px;
         border-radius: 20px;
         background: #e36a12;
@@ -281,12 +277,10 @@ header {
 /* SECTION 2 EVENEMENTS */
 .events {
     background-color: #fdf7ec;
-    padding: 4rem 1.5rem;
+    padding: 4rem 0;
 }
 
 .events-container {
-    max-width: 1200px;
-    margin: 0 auto;
     text-align: center;
 }
 
@@ -297,7 +291,6 @@ header {
 }
 
 .events-subtitle {
-    font-size: 1rem;
     margin-bottom: 3rem;
 }
 
@@ -320,7 +313,7 @@ header {
 
 .activities {
     background: #2f4f1e;
-    padding: 4rem 1.5rem;
+    padding: 4rem 0;
     color: #fff;
     display: flex;
     align-items: center;
@@ -328,8 +321,6 @@ header {
 }
 
 .activities-container {
-    max-width: 1200px;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -346,7 +337,6 @@ header {
 }
 
 .activities-content {
-    max-width: 520px;
     text-align: center;
 }
 
@@ -420,6 +410,8 @@ header {
     }
 
     /* SECTION 4 RESERVER*/
+
+
 }
 
 
@@ -440,7 +432,7 @@ header {
     display: grid;
     grid-template-columns: 1fr;
     gap: 30px;
-    padding: 40px 20px 0;
+    padding: 40px 0 0;
 }
 
 .footer-column h3 {
@@ -478,7 +470,7 @@ header {
 }
 
 .site-footer hr {
-    margin: 30px 20px;
+    margin: 30px 0;
     border: none;
     border-top: 1px solid #000;
 }
@@ -487,8 +479,7 @@ header {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    font-size: 13px;
-    padding: 0 20px 30px;
+    padding: 0 0 30px;
 }
 
 .footer-links a {
