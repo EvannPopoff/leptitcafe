@@ -1,4 +1,3 @@
-
 <body>
     <div class="hero-accueil">
         
@@ -63,7 +62,7 @@
                 <img src="assets/images/affiche_activite.webp" alt="Programme">
             </div>
 
-            <div class="activities-content">
+            <div class="activities-content"> 
                 <h2>Activités proposées</h2>
 
                 <p>
@@ -72,7 +71,7 @@
 
                 <p>
                     Vous pouvez participer à l’élaboration du programme en proposant d’animer
-                    un atelier, une conférence… En tout cas, quelque chose qui vous tient à cœur !
+                    un atelier, une conférence… </br>En tout cas, quelque chose qui vous tient à cœur !
                     Ou faire des demandes de chose que vous aimeriez trouver.</p>
 
                 <a href="index.php?page=evenement" class="btn-events">Consulter l’Agenda</a>

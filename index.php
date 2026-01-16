@@ -2,7 +2,7 @@
 // On récupère la page demandée via l'URL sinon on met "home" par défaut.
 $page = $_GET['page'] ?? 'home';
 
-// On définit le chemin du dossier des pages directement pour plus de clarté et d'automatisation.
+// On définit le chemin du dossier des pages directement pour plus de clarté et d'automatisation
 $viewPath = 'app/views/pages/';
 $layoutPath = 'app/views/layouts/';
 // On construit le chemin complet du fichier à inclure.
