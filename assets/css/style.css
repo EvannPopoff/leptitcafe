@@ -17,9 +17,9 @@ body {
 .container { /*me permet d'avoir des marges égales sur toute ma page*/
     max-width: 1000px;
     margin: 0 auto;
-    padding-left: clamp(18px, 4vw, 60px);
-    padding-right: clamp(18px, 4vw, 60px);
-  }
+    padding-left: clamp(12px, 3vw, 60px);
+    padding-right: clamp(12px, 3vw, 60px);
+}
 
 /* =========================
    HEADER
@@ -518,7 +518,7 @@ header {
     }
 
     .site-footer hr {
-        margin: 40px 40px 25px;
+        margin: 40px 40px 0;
     }
 }
 
