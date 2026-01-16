@@ -1,4 +1,11 @@
 <?php
+
+// On lance la session directement
+session_start();
+
+// On charge l'outil de connexion à la base de données pour toutes les pages.
+require_once 'app/config/database.php';
+
 // On récupère la page demandée via l'URL sinon on met "home" par défaut.
 $page = $_GET['page'] ?? 'home';
 
