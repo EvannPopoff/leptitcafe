@@ -81,7 +81,30 @@
         </div>
     </section>
 
-    <!-- Section 3 Activites -->
+    <!-- Section 4 Réserver -->
+    <section class="reserver">
+        <div class="container reserver-container">
+
+            <h2>Un projet, un Anniversaire ?</h2>
+
+            <p class="reserver-intro">
+            Pour un repas de famille, pour des retrouvailles entre amis, pour une réunion professionnelles,
+            pour une table ronde, ou pour le plaisir tout simplement, nous mettons le P’tit Café à votre disposition.
+            </p>
+
+            <div class="reserver-visuel">
+            <img src="assets/images/" alt="plante">
+            </div>
+
+            <p class="reserver-info">
+            C’est assez simple, prenez contact avec nous par téléphone, en ligne
+            ou directement au P’tit Café.
+            </p>
+
+            <a href="index.php?page=reservation" class="btn-events">Réserver</a>
+
+        </div>
+    </section>
 
 
 </body>
