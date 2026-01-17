@@ -39,51 +39,11 @@
     color: white;
 }
 
-/* --- NOS VALEURS (КАРТОЧКИ) --- */
-.values-section {
-    padding: 80px 0;
-    text-align: center;
-}
-
-.values-main-title {
-    font-family: 'SigmarOne', sans-serif;
-    font-size: 48px;
-    margin-bottom: 50px;
-}
-
-.values-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.value-card {
-    background: #354a1d; 
-    border-radius: 20px;
-    padding: 20px;
-    color: white;
-    text-align: center;
-}
-
-.value-image-container {
-    height: 200px;
-    background: #eee;
-    border-radius: 15px;
-    margin-bottom: 20px;
-    overflow: hidden;
-}
-
-.value-image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 
 
 /* --- TIMELINE SECTION --- */
 .timeline-section {
-    padding: 80px 0;
+    padding: 40px 0;
     background-color: #fff;
 }
 
@@ -152,7 +112,7 @@
 
 /* --- SECTION NOS VALEURS --- */
 .values-section {
-    padding: 100px 0;
+    padding: 20px 0;
     background-color: #fff;
     text-align: center;
 }
