@@ -48,3 +48,23 @@
         </div>
     </div>
 </section>
+<section class="etapes-adhesion">
+    <div class="container">
+        <h2>Comment adhérer en 3 étapes ?</h2>
+        <p>Vous pouvez effectuer votre adhésion directement en ligne via notre plateforme sécurisée.</p>
+        <div class="etapes-container">
+            <div class="etape">
+                <span class="numero">1</span>
+                <p>Créer un compte</p>
+            </div>
+            <div class="etape">
+                <span class="numero">2</span>
+                <p>Choisissez la formule</p>
+            
+            <div class="etape">
+                <span class="numero">3</span>
+                <p>Validez et réglez</p>
+            </div>
+        </div>
+    </div>
+</section>
