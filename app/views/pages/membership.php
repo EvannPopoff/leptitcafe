@@ -3,14 +3,14 @@
     <h1>ADHÉRER & SOUTENIR</h1>
     <p>Devenez acteur de votre café associatif</p>
 </section>
-
+<!-- Section Pourquoi adhérer -->
 <section class="pourquoi-adherer">
     <div class="container">
         <h2>Pourquoi adhérer à l'association ?</h2>
         <p>Pour profiter du lieu et de nos activités, recevoir le programme et soutenir l'Association Jeunes Pousses.</p>
     </div>
 </section>
-
+<!-- Section Formules -->
 <section class="formules-adhesion">
     <div class="container">
         <h2>Nos formules d'adhésion annuelles</h2>
@@ -48,6 +48,7 @@
         </div>
     </div>
 </section>
+<!-- Section Etapes -->
 <section class="etapes-adhesion">
     <div class="container">
         <h2>Comment adhérer en 3 étapes ?</h2>
@@ -68,7 +69,7 @@
         </div>
     </div>
 </section>
-
+<!-- Section Témoignages -->
 <section class="temoignages">
     <div class="container">
         <h2>Ce qu'en pensent nos adhérents</h2>
@@ -88,7 +89,7 @@
         </div>
     </div>
 </section>
-
+<!-- Section Bénévole -->
 <section class="cta-benevole">
     <div class="container">
         <h2>ENVIE D'ALLER PLUS LOIN ?</h2>
