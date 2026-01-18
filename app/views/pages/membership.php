@@ -68,3 +68,23 @@
         </div>
     </div>
 </section>
+
+<section class="temoignages">
+    <div class="container">
+        <h2>Ce qu'en pensent nos adhérents</h2>
+        <div class="temoignages-container">
+            <div class="temoignage">
+                <p>"Super association, très accueillante !"</p>
+                <span class="auteur">- Marie<span>
+            </div>
+            <div class="temoignage">
+                <p>"Un lieu convivial pour toute la famille."</p>
+                <span class="auteur">- Pierre</span>
+            
+            <div class="temoignage">
+                <p>"Je recommande vivement !"</p>
+                <span class="auteur">- Sophie</span>
+            </div>
+        </div>
+    </div>
+</section>
