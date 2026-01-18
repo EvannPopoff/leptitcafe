@@ -1,15 +1,11 @@
 <?php
-header('Content-Type: application/json; charset=utf-8');
 
-// Sécurité : offset/limit propres
-$offset = isset($_GET['offset']) ? (int)$_GET['offset'] : 0;
-$limit  = isset($_GET['limit']) ? (int)$_GET['limit'] : 2;
+header('Content-Type: application/json; charset=utf-8'); // JSON encodé en UTF 8, obligatoire pour une api. C'est mieux d'utiliser du JSON car c'est mieux pour le green coding
 
-if ($offset < 0) $offset = 0;
-if ($limit < 1) $limit = 1;
-if ($limit > 6) $limit = 6; // évite les abus
+$offset = isset($_GET['offset']) ? (int)$_GET['offset'] : 0; // à partir de quel événement on commence
+$limit  = isset($_GET['limit']) ? (int)$_GET['limit'] : 2; // combien d’événements on renvoie
 
-// Données (sans BDD) : tu peux changer les images/alt
+// Données sans BDD
 $events = [
   ["title" => "Événement 1", "image" => "assets/images/event1.avif"],
   ["title" => "Événement 2", "image" => "assets/images/event2.avif"],
@@ -18,9 +14,11 @@ $events = [
   ["title" => "Événement 5", "image" => "assets/images/event5.png"],
 ];
 
-$items = array_slice($events, $offset, $limit);
-$hasMore = ($offset + $limit) < count($events);
+$items = array_slice($events, $offset, $limit); //array_slide coupe le tableau et renvoie une portion du tableau de données (offset et limlt cf ligne 5/6)
+$hasMore = ($offset + $limit) < count($events); //reste des éléments après ceux qui ont été envoyé - 
+//offset + limit = jusqu'à quel event on va / count event = nbre total d'events.
 
+//charger les éléments JSON (Chat GPT)
 echo json_encode([
   "items" => $items,
   "hasMore" => $hasMore
