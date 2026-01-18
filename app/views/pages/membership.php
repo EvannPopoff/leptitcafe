@@ -88,3 +88,11 @@
         </div>
     </div>
 </section>
+
+<section class="cta-benevole">
+    <div class="container">
+        <h2>ENVIE D'ALLER PLUS LOIN ?</h2>
+        <p>Le P'tit Café fonctionne grâce à ses bénévoles ! Que ce soit pour aider lors des événements ou bricoler, votre aide est la bienvenue.</p>
+        <a href="#" class="btn-benevole">Devenir bénévole</a>
+    </div>
+</section>
