@@ -4,7 +4,14 @@
 session_start();
 
 // On charge l'outil de connexion à la base de données pour toutes les pages et les récupérer.
-require_once 'app/config/database.php';
+require_once 'app/config/Database.php';
+
+// On charge les models (managers et entities)
+require_once 'app/models/entities/Administrateur.php';
+require_once 'app/models/managers/AdministrateurManager.php';
+
+// On charge les controllers.
+require_once 'app/controllers/AuthController.php';
 
 // On récupère la page demandée via l'URL sinon on met "home" par défaut.
 $page = $_GET['page'] ?? 'home';
