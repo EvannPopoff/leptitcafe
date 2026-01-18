@@ -16,6 +16,7 @@ if ($page === 'contact') { $title = "Contact - Le P'tit Café"; }
 if ($page === 'evenement') { $title = "Activités et Évènements - Le P'tit Café"; }
 
 
+
 ?>
 
 <!DOCTYPE html>

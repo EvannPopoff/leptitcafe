@@ -1,17 +1,22 @@
+<script src="assets/js/evenement.js"></script>
+
 <link rel="stylesheet" href="assets/css/evenement.css">
 <link rel="stylesheet" href="assets/css/style.css">
+
 
 <body>
     <div class="hero-evenement">
         <img src="assets/images/evenement_hero.avif" alt="hero" class="hero-bg">
     </div>
+
+    <!-- Section 2 Evenements / Lazy loading-->
     <section class="recent-events">
         <div class="container recent-events-container">
 
             <h2>Événements Récents</h2>
             <p class="recent-events-subtitle">Retrouvez nos événements les plus marquants</p>
 
-            <div class="recent-events-grid">
+            <div class="recent-events-grid" id="recentGrid">
             <article class="recent-card">
                 <img src="assets/images/event1.avif" alt="Événement 1">
             </article>
@@ -25,9 +30,13 @@
             </article>
             </div>
 
-            <a href="#" class="btn-events">Charger plus</a>
+            <button class="btn-events" id="btnLoadMore" type="button">
+                Charger plus
+            </button>
 
         </div>
     </section>
+
+    <!-- Section 3 Activités -->
 
 </body>
