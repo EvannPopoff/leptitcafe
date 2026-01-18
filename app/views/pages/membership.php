@@ -21,4 +21,45 @@
             </div>
         </div>
     </section>
+<div class="card-adhesion">
+                    <h3>Famille</h3>
+                    <p class="price">20€ / an</p>
+                    <a href="#" class="btn-choisir">Choisir</a>
+                    <ul>
+                        <li>Toute la famille</li>
+                        <li>Jusqu'à 10 personnes</li>
+                        <li>Idéal couples</li>
+                    </ul>
+                </div>
+
+                <div class="card-adhesion">
+                    <h3>Donateur</h3>
+                    <p class="price">Don Libre</p>
+                    <a href="#" class="btn-don">Faire un don</a>
+                    <ul>
+                        <li>Soutien au projet</li>
+                        <li>Déduction fiscale</li>
+                        <li>Don ponctuel</li>
+                    </ul>
+                </div>
+                <div class="card-adhesion">
+                    <h3>Famille</h3>
+                    <p class="price">20€ / an</p>
+                    <a href="#" class="btn-choisir">Choisir</a>
+                    <ul>
+                        <li>Toute la famille</li>
+                        <li>Jusqu'à 10 personnes</li>
+                        <li>Idéal couples</li>
+                    </ul>
+                </div>
+                <div class="card-adhesion">
+                    <h3>Donateur</h3>
+                    <p class="price">Don Libre</p>
+                    <a href="#" class="btn-don">Faire un don</a>
+                    <ul>
+                        <li>Soutien au projet</li>
+                        <li>Déduction fiscale</li>
+                        <li>Don ponctuel</li>
+                    </ul>
+                </div>
 </main>
