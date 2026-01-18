@@ -39,4 +39,41 @@
 
     <!-- Section 3 Activités -->
 
+    <section class="activities-info">
+        <div class="container">
+
+            <h2>Activités</h2>
+            <p class="activities-info-subtitle">
+            Retrouvez notre Programme d’Activités, de Septembre à Décembre 2025
+            </p>
+
+            <div class="activities-gallery" id="activitiesGallery">
+            <button class="activities-thumb" type="button"
+                data-full="assets/images/affiche_activite.webp">
+                <img src="assets/images/affiche_activite.webp" alt="Programme1" loading="lazy">
+            </button>
+
+            <button class="activities-thumb" type="button"
+                data-full="assets/images/affiche_activite.webp">
+                <img src="assets/images/affiche_activite.webp" alt="Programme2" loading="lazy">
+            </button>
+
+            <button class="activities-thumb" type="button"
+                data-full="assets/images/affiche_activite.webp">
+                <img src="assets/images/affiche_activite.webp" alt="Programme3" loading="lazy">
+            </button>
+            </div>
+
+            <p class="activities-info-text">
+            Le P’tit Café est un lieu à la disposition des habitants et des adhérents de l’association Jeunes Pousses.
+            </p>
+
+            <p class="activities-info-text">
+            Vous pouvez participer à l’élaboration du programme en proposant d’animer un atelier, une conférence…
+            </p>
+
+            <a href="index.php?page=contact" class="btn-events">Consulter l’agenda</a>
+
+        </div>
+    </section>
 </body>
