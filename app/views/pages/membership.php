@@ -80,7 +80,7 @@
             <div class="temoignage">
                 <p>"Un lieu convivial pour toute la famille."</p>
                 <span class="auteur">- Pierre</span>
-            
+                </div>
             <div class="temoignage">
                 <p>"Je recommande vivement !"</p>
                 <span class="auteur">- Sophie</span>
