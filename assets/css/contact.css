@@ -120,3 +120,49 @@
         padding-top: 0;
     }
 }
+/* Контейнер всей секции */
+.map-section {
+    padding: 60px 0;
+    text-align: center;
+    background-color: #fff;
+}
+
+.map-title {
+    font-family: 'SigmarOne', sans-serif; /* Ваш основной шрифт */
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+/* Контейнер для самой карты */
+.map-container {
+    width: 100%;
+    max-width: 940px; /* Максимальная ширина как в дизайне */
+    margin: 0 auto;
+    border-radius: 15px; /* Скругление углов карты */
+    overflow: hidden; /* Чтобы карта не вылезала за углы */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* Легкая тень */
+}
+
+/* Убираем лишние отступы у iframe */
+.map-container iframe {
+    display: block;
+}
+
+.map-info {
+    margin-top: 25px;
+}
+
+.map-info h3 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.get-directions {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+    border-bottom: 2px solid #000;
+    padding-bottom: 2px;
+}
