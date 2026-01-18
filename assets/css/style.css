@@ -585,3 +585,25 @@ p {
         padding: 0 20px;
     }
 }
+/* Окно остается таким же */
+.values-carousel-window {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Лента карточек */
+.values-grid {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    /* Убираем gap или делаем его фиксированным */
+    gap: 0; 
+}
+
+/* Теперь каждая карточка занимает всю ширину окна */
+.value-card {
+    flex: 0 0 100%; 
+    min-width: 100%;
+    box-sizing: border-box;
+    /* Ваши стили отступов внутри карточки */
+    padding: 20px;
+}

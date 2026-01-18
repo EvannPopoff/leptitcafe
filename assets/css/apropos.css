@@ -201,3 +201,81 @@
         padding: 0 20px;
     }
 }
+h2 {
+    color: black;
+}
+
+
+.values-carousel-window {
+    width: 100%;
+    overflow: hidden; 
+    padding: 20px 0;
+}
+
+.values-grid {
+    display: flex; 
+    gap: 24px;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+}
+
+.value-card {
+   
+    flex: 0 0 calc(33.333% - 16px); 
+    min-width: 300px; 
+    background-color: #354a1d;
+    border-radius: 20px;
+    padding: 20px;
+    color: #fff;
+    text-align: left;
+    box-sizing: border-box; 
+}
+
+.slide-button {
+    margin-top: 30px;
+    padding: 12px 30px;
+    background-color: #d97732; 
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Poppins-Bold', sans-serif;
+    transition: background 0.3s;
+}
+
+.slide-button:hover {
+    background-color: #bf6528;
+}
+/* Контейнер для заголовка и стрелок */
+.values-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 0 10px;
+}
+
+/* Стили кнопок-стрелок */
+.arrow-btn {
+    background-color: #d97732; /* Ваш оранжевый цвет */
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background 0.3s, opacity 0.3s;
+    margin-left: 10px;
+}
+
+.arrow-btn:hover:not(:disabled) {
+    background-color: #bf6528;
+}
+
+/* Состояние, когда кнопка неактивна */
+.arrow-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #ccc;
+}

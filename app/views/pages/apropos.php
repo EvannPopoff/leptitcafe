@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="assets/css/apropos.css">
+
 <div class="hero">
     <img src="assets/images/image_header.webp" alt="hero" class="hero-bg">
     <div class="hero-overlay"></div> <div class="hero-content">
@@ -63,8 +64,12 @@
 <section class="values-section">
     <div class="container">
         <h2 class="values-main-title">Nos valeurs</h2>
-        
-        <div class="values-grid">
+        <div class="carousel-controls">
+        <button id="prevBtn" class="arrow-btn" disabled>&#8592;</button>
+        <button id="nextBtn" class="arrow-btn">&#8594;</button>
+    </div>
+        <div class="values-carousel-window">
+        <div class="values-grid" id="valuesGrid">
             <div class="value-card">
                 <div class="value-image-container">
                     <img src="assets/images/flower.webp" alt="Valeur">
@@ -113,7 +118,9 @@
                     </p>
                 </div>
             </div>
+            </div>
 
         </div>
     </div>
 </section>
+<script src="assets/js/apropos.js"></script>
