@@ -60,7 +60,7 @@
             <div class="etape">
                 <span class="numero">2</span>
                 <p>Choisissez la formule</p>
-            
+            </div>
             <div class="etape">
                 <span class="numero">3</span>
                 <p>Validez et réglez</p>
