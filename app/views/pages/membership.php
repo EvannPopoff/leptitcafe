@@ -75,7 +75,7 @@
         <div class="temoignages-container">
             <div class="temoignage">
                 <p>"Super association, très accueillante !"</p>
-                <span class="auteur">- Marie<span>
+                <span class="auteur">- Marie</span>
             </div>
             <div class="temoignage">
                 <p>"Un lieu convivial pour toute la famille."</p>
