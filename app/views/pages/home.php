@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="assets/css/home.css">
+
 <body>
     <div class="hero-accueil">
         <img src="assets/images/img-hero.webp" alt="hero">
@@ -105,6 +106,5 @@
 
         </div>
     </section>
-
 
 </body>

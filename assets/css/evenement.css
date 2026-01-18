@@ -1,0 +1,67 @@
+/* =========================
+   PAGE EVENEMENTS - MOBILE FIRT
+========================= */
+
+
+.hero-evenement {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+
+.recent-events {
+    background: #fdf7ec;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.recent-events-subtitle {
+    margin-bottom: 3rem;
+}
+
+.recent-events-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.recent-card {
+    background: #d9d9d9;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recent-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+
+/* DESKTOP */
+@media (min-width: 992px) {
+    .recent-events-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

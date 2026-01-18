@@ -179,26 +179,6 @@
 
 
 
-/* BOUTON réutilisable */
-.btn-events {
-    display: inline-block;
-    margin-top: 3rem;
-    padding: 0.8rem 1.6rem;
-    border: 3px solid #ff7a00;
-    color: #ff7a00;
-    text-decoration: none;
-    border-radius: 15px;
-    font-weight: 600;
-    margin-bottom: 3rem;
-}
-
-.btn-events:hover {
-    background-color: #ff7a00;
-    color: #ffffff;
-}
-
-
-
 /*DESKTOP*/
 
 @media (min-width: 768px) {
