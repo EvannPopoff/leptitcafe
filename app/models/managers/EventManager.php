@@ -14,7 +14,7 @@ class EventManager {
     *@return Event[] */
 
     public function findAll(): array {
-        $sql = "SELECT * FROM evenement ORDER BY date_evenement ASC, heure ASC";
+        $sql = "SELECT * FROM EVENEMENT ORDER BY date_evenement ASC, heure ASC";
         $stmt = $this->db->query($sql);
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -27,7 +27,7 @@ class EventManager {
     }
 
     public function findById(int $id): ?Event {
-        $sql = "SELECT * FROM evenement WHERE id_evenement = :id";
+        $sql = "SELECT * FROM EVENEMENT WHERE id_evenement = :id";
         $stmt = $this->db->prepare($sql);
         $stmt->execute(['id' => $id]);
         $data = $stmt->fetch(PDO::FETCH_ASSOC);
