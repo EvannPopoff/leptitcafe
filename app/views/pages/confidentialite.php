@@ -1,15 +1,17 @@
+<link rel="stylesheet" href="assets/css/mentions.css">
+
 <body>
     <section class="page-layout">
         
         <div class="page-header">
-            <h2>Politique de Confidentialité</h1>
+            <h2>Politique de Confidentialité</h>
             <p>Nous nous engageons à protéger les données personnelles de nos membres et visiteurs.</p>
         </div>
 
         <div class="card-box">
             
             <article>
-                <h2>1 - Collecte des données</h2>
+                <h3>1 - Collecte des données</h3>
                 <p>
                     Nous collectons uniquement les données strictement nécessaires au traitement de votre demande via notre formulaire de contact ou lors de votre adhésion.
                 </p>
@@ -25,9 +27,9 @@
                 <h3>2 - Utilisation des données</h3>
                 <p>Vos données sont utilisées pour les finalités suivantes :</p>
                 <ul class="custom-list">
-                    <li>Répondre à vos demandes de renseignements (vols d'initiation, école de pilotage...).</li>
-                    <li>Gestion administrative des membres de l'association (pour les adhérents).</li>
-                    <li>Envoi d'informations sur la vie du club (si vous avez accepté de les recevoir).</li>
+                    <li>Répondre à vos demandes de renseignements.</li>
+                    <li>Gérer les échanges liés à l’activité du café.</li>
+                    <li>Vous recontacter si nécessaire suite à votre message.</li>
                 </ul>
                 <p>
                     <strong>Important :</strong> Nous ne vendons ni ne louons jamais vos données personnelles à des tiers.
@@ -61,7 +63,7 @@
                 </p>
                 <p>Pour exercer ces droits, contactez-nous par mail :</p>
                 <p>
-                    <a href="mailto:cafejeunespousses@gmail.com">cafejeunespousses@gmail.com/a>
+                    <a href="mailto:cafejeunespousses@gmail.com">cafejeunespousses@gmail.com</a>
                 </p>
             </article>
 
