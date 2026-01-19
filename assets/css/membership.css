@@ -11,3 +11,15 @@
 .hero-adhesion h1 {
     font-size: 45px;
 }
+.hero-adhesion p {
+    font-size: 20px;
+    margin-top: 15px;
+}
+.hero-adhesion .btn-primary {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
