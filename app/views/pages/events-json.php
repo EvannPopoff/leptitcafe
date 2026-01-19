@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 // Fichier JSON indispensable pour faire communiquer le PHP et JavaScript pour le calendrier.
 
 // On dit au navigateur que le contenu est du JSON
@@ -6,10 +9,10 @@ header('Content-Type: application/json');
 
 // On inclut le fichier de configuration et de connexion à la base de données
 use app\models\managers\EventManager;
-use app\config\database;
+use app\config\Database;
 
 // On récupère la connexion de la BDD et du manager qu'on a crée
-$db = database::getInstance();
+$db = Database::getInstance();
 $manager = new EventManager($db);
 
 // On récupère tous les événements
