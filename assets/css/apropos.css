@@ -246,7 +246,7 @@ h2 {
 .slide-button:hover {
     background-color: #bf6528;
 }
-/* Контейнер для заголовка и стрелок */
+
 .values-header {
     display: flex;
     justify-content: space-between;
@@ -255,9 +255,9 @@ h2 {
     padding: 0 10px;
 }
 
-/* Стили кнопок-стрелок */
+
 .arrow-btn {
-    background-color: #d97732; /* Ваш оранжевый цвет */
+    background-color: #d97732; 
     color: white;
     border: none;
     width: 50px;
@@ -273,9 +273,75 @@ h2 {
     background-color: #bf6528;
 }
 
-/* Состояние, когда кнопка неактивна */
 .arrow-btn:disabled {
     opacity: 0.5;
     cursor: not-allowed;
     background-color: #ccc;
+}
+
+/* --- Styles spécifiques à la section Réservation --- */
+
+/* On cible le main pour le fond beige et l'alignement */
+main.container {
+    background-color: #FFFCF4;
+    max-width: 100%; /* Permet au fond de s'étendre si besoin */
+    padding: 80px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Titre H2 centré et vert */
+main.container h2 {
+    color: #4A5D23;
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Description centrée avec largeur max pour la lisibilité */
+main.container .description {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    color: #333;
+}
+
+/* Texte de contact */
+main.container .contact-text {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Bouton : Fond orange, Texte blanc */
+main.container .btn-reserve {
+    display: inline-block;
+    background-color: #E67E22; /* Fond orange */
+    color: #FFFFFF !important; /* Texte blanc (force le style si un lien global existe) */
+    padding: 15px 45px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+}
+
+/* Effet au survol du bouton */
+main.container .btn-reserve:hover {
+    background-color: #D35400; /* Orange plus foncé */
+    transform: translateY(-2px);
+}
+
+/* Correction responsive pour mobile */
+@media (max-width: 768px) {
+    main.container h2 {
+        font-size: 1.8rem;
+    }
+    main.container {
+        padding: 50px 15px;
+    }
 }
