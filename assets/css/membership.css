@@ -83,10 +83,10 @@
     flex-wrap: wrap;
 }
 .etape {
-    background-color: white;
+    background-color: transparent;
     padding: 30px 20px;
     border-radius: 10px;
-    width: 220px;
+    width: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -94,13 +94,13 @@
 
 .etape .numero {
     display: inline-block;
-    background-color: #4a7c59;
-    color: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    background-color: #B9DAA3;
+    color: #294F0C;
+    width: auto;
+    height: auto;
+    border-radius: 0;
     line-height: 50px;
-    font-size: 28px;
+    font-size: 45px;
 
 }
 
