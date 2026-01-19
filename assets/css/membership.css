@@ -198,3 +198,98 @@
     font-size: 32px;
     margin-bottom: 10px;
 }
+
+.temoignages-intro {
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.temoignages-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.temoignage-card {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 25px;
+    width: 300px;
+    text-align: left;
+}
+
+.stars {
+    color: #294F0C;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.temoignage-card p {
+    color: #294F0C;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.temoignage-auteur {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar {
+    width: 35px;
+    height: 35px;
+    background-color: #ddd;
+    border-radius: 50%;
+}
+
+.temoignage-auteur span {
+    color: #333;
+    font-size: 14px;
+}
+
+/* Bénévole */
+.cta-benevole {
+    background-color: #294F0C;
+    padding: 60px 20px;
+}
+
+.benevole-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.benevole-left h2 {
+    color: #FFFCF4;
+    font-size: 36px;
+}
+
+.benevole-image {
+    width: 200px;
+    height: 200px;
+    background-color: #ffffff33;
+}
+
+.benevole-right {
+    max-width: 400px;
+}
+
+.benevole-right p {
+    color: #FFFCF4;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.btn-benevole {
+    background-color: #DD5D13;
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 25px;
+}
