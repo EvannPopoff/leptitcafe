@@ -109,8 +109,13 @@
     font-size: 16px;
 }
 
-.etapes-adhesion h2,
-.etapes-adhesion p {
+.etapes-adhesion h2{
     color: #294F0C;
     font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.etapes-adhesion p {
+    color: #294F0C; 
+    font-weight: 500;
 }
