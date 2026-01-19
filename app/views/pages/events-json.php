@@ -1,7 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 // Fichier JSON indispensable pour faire communiquer le PHP et JavaScript pour le calendrier.
 
 // On dit au navigateur que le contenu est du JSON
@@ -22,7 +19,7 @@ $events = $manager->findAll();
 $fullCalendarEvents = [];
 
 // On transforme chaque événement pour le format attendu par FullCalendar. Je le mets ici pour la lisibilité en dessous.
-foreach  ($events as $event) {
+foreach ($events as $event) {
     $start = $event->getDateEvent() . 'T' . $event->getHour();
 
 // IL faut également d'après la doc, combiner la date et l'heure en un seul champ pour le format "start" de FullCalendar : YYYY-MM-DDTHH:MM:SS
