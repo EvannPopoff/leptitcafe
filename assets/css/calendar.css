@@ -1,0 +1,30 @@
+/* Style spécifique au Calendrier */
+#calendar-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Style spécifique à la Pop-up */
+.custom-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    width: 60%;
+    border-radius: 10px;
+}
+
+/* CSS lie aux événements -> */
