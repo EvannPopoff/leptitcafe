@@ -7,8 +7,7 @@
         <div class="hero-content">
             <h1>Le P’tit Café</h1>
             <p>
-                Un café associatif au Puy-en-Velay,
-                où chacun trouve sa place !<br>
+                Un café associatif au Puy-en-Velay, où chacun trouve sa place !<br>
                 Seul, en famille, pour un atelier ou toute la journée.
             </p>
 
@@ -29,19 +28,19 @@
             <div class="events-list">
 
                 <article class="event-card">
-                    <img src="assets/images/event1.avif" alt="Calendrier de l’Après">
+                    <a href="index.php?page=apropos"><img src="assets/images/event1.avif" alt="Calendrier de l’Après"> </a>
                     <h3>Calendrier de l’Après</h3>
                     <p>Une programmation culturelle et artistique, offerte pendant les 24 jours avant Noël.</p>
                 </article>
 
                 <article class="event-card">
-                    <img src="assets/images/event2.avif" alt="Festin Nomade">
+                    <a href="index.php?page=apropos"><img src="assets/images/event2.avif" alt="Festin Nomade"> </a>
                     <h3>Festin Nomade</h3>
                     <p>Le Festin Nomade s’installe le samedi 15 octobre pour une journée festive, succulente et familiale.</p>
                 </article>
 
                 <article class="event-card">
-                    <img src="assets/images/event5.webp" alt="Printemps de l'Education">
+                    <a href="index.php?page=apropos"><img src="assets/images/event5.webp" alt="Printemps de l'Education"> </a>
                     <h3>Printemps de l'Education</h3>
                     <p>Un véritable phénomène d'éclosion d'initiatives est en train de se mettre en place dans l'éducation.</p>
                 </article>
@@ -59,7 +58,8 @@
         <div class="activities-container container">
 
             <div class="activities-affiche">
-                <img src="assets/images/affiche_activite.webp" alt="Programme">
+                <a href="https://drive.google.com/file/d/1ebVDKNcNawgnvQSmhQkfKweU5myhno5q/view" target="_blank" rel="noopener" class="programme">
+                <img src="assets/images/affiche_activite.webp" alt="Programme"> </a>
             </div>
 
             <div class="activities-content">
@@ -102,7 +102,7 @@
             ou directement au P’tit Café.
             </p>
 
-            <a href="index.php?page=reservation" class="btn-events">Réserver</a>
+            <a href="index.php?page=reservation" class="btn-events">Réserver le P'tit Café</a>
 
         </div>
     </section>
