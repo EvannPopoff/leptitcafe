@@ -24,20 +24,11 @@ $layoutPath = 'app/views/layouts/';
 // On construit le chemin complet du fichier à inclure.
 $filePath = $viewPath . $page . '.php';
 
-if ($page === 'events-json') {
-    if (file_exists($filePath)) {
-        include $filePath;
-        exit; // Pas de HTML, pas de Header, juste le JSON
-    }
-}
 // Pour intercepter la requête JSON avant le système de template mis en place.
 if ($page === 'events-json') {
     if (file_exists($filePath)) {
         include $filePath;
         exit; // Pas de HTML, pas de Header, juste le JSON
-    } else {
-        header('Content-Type: text/plain');
-        die("ERREUR : Le fichier est introuvable. PHP le cherche ici : " . $filePath);
     }
 }
 
