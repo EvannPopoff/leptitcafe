@@ -69,8 +69,9 @@
     font-weight: bold;
 }
 .etapes-adhesion {
-    background-color: #FFFCF4;
+    background-color: #4a7c59;
     text-align: center;
+    padding: 50px 30px;
 }
 .etapes-container {
     display: flex;
