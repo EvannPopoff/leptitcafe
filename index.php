@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 session_start();
 
 // On charge l'outil de connexion à la base de données pour toutes les pages et les récupérer.
-require_once 'app/config/Database.php';
+require_once 'app/config/database.php';
 
 // On charge les models (managers et entities)
 require_once 'app/models/entities/Administrateur.php';
