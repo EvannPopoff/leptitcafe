@@ -44,7 +44,7 @@ if ($page === 'mentions') { $title = "Mentions Légales - Le P'tit Café"; }
 
         <link rel="stylesheet" href="assets/css/style.css?v=1.1">
 
-        <link rel="icon" type="image/x-icon" href="">
+        <link rel="icon" type="image/png" href="app/assets/images/favicon.png">
 
         </head>
         <body>
