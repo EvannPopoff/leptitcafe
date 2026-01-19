@@ -16,7 +16,8 @@
     margin-top: 15px;
 }
 .card-adhesion {
-    background-color: #f0f0f0;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
     padding: 20px;
     border-radius: 8px;
 }
