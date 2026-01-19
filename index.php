@@ -24,15 +24,6 @@ $layoutPath = 'app/views/layouts/';
 // On construit le chemin complet du fichier à inclure.
 $filePath = $viewPath . $page . '.php';
 
-if ($page === 'events-json') {
-    if (file_exists($filePath)) {
-        include $filePath;
-        exit;
-    } else {
-        die("Erreur, fichier introuvable : " . $filePath);
-    }
-}
-
 //Nom des pages
 $title = "Le P'tit Café";
 if ($page === 'home') { $title = "Accueil - Le P'tit Café"; }
