@@ -43,7 +43,7 @@ if ($page === 'evenement') { $title = "Activités et Évènements - Le P'tit Caf
 
         <link rel="stylesheet" href="assets/css/style.css?v=1.1">
 
-        <link rel="icon" type="image/x-icon" href="">
+        <link rel="icon" type="image/png" href="app/assets/images/favicon.png">
 
         </head>
         <body>
