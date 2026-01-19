@@ -3,10 +3,6 @@
 // On lance la session directement
 session_start();
 
-if (isset($_GET['page']) && $_GET['page'] === 'events-json') {
-    die("Je cherche el fichier CARAJOOOO");
-}
-
 // On charge l'outil de connexion à la base de données pour toutes les pages et les récupérer.
 require_once 'app/config/database.php';
 
@@ -27,6 +23,16 @@ $viewPath = 'app/views/pages/';
 $layoutPath = 'app/views/layouts/';
 // On construit le chemin complet du fichier à inclure.
 $filePath = $viewPath . $page . '.php';
+
+if ($page === 'events-json') {
+    if (file_exists($filePath)) {
+        include $filePath;
+        exit; // Pas de HTML, pas de Header, juste le JSON
+    } else {
+        header('Content-Type: text/plain');
+        die("ERREUR : Le fichier est introuvable. PHP le cherche ici : " . $filePath);
+    }
+}
 
 //Nom des pages
 $title = "Le P'tit Café";
