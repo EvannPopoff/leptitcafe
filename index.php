@@ -4,7 +4,7 @@
 session_start();
 
 // On charge l'outil de connexion à la base de données pour toutes les pages et les récupérer.
-require_once 'app/config/Database.php';
+require_once 'app/config/database.php';
 
 // On charge les models (managers et entities)
 require_once 'app/models/entities/Administrateur.php';
@@ -29,6 +29,8 @@ if ($page === 'apropos') { $title = "À propos - Le P'tit Café"; }
 if ($page === 'contact') { $title = "Contact - Le P'tit Café"; }
 if ($page === 'evenement') { $title = "Activités et Évènements - Le P'tit Café"; }
 
+if ($page === 'confidentialite') { $title = "Politique de Confidentialité - Le P'tit Café"; }
+if ($page === 'mentions') { $title = "Mentions Légales - Le P'tit Café"; }
 
 
 ?>
@@ -42,7 +44,7 @@ if ($page === 'evenement') { $title = "Activités et Évènements - Le P'tit Caf
 
         <link rel="stylesheet" href="assets/css/style.css?v=1.1">
 
-        <link rel="icon" type="image/x-icon" href="">
+        <link rel="icon" type="image/png" href="/assets/images/favicon.png">
 
         </head>
         <body>
