@@ -9,6 +9,8 @@ require_once 'app/config/database.php';
 // On charge les models (managers et entities)
 require_once 'app/models/entities/Administrateur.php';
 require_once 'app/models/managers/AdministrateurManager.php';
+require_once 'app/models/entities/Event.php';
+require_once 'app/models/managers/EventManager.php';
 
 // On charge les controllers.
 require_once 'app/controllers/AuthController.php';
