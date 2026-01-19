@@ -15,11 +15,8 @@
     font-size: 20px;
     margin-top: 15px;
 }
-.hero-adhesion .btn-primary {
-    background-color: #e74c3c;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.card-adhesion {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
 }
