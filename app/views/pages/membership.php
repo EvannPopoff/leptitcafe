@@ -61,28 +61,47 @@
     <div class="container">
         <h2>Comment adhérer en 3 étapes ?</h2>
         <p>Vous pouvez effectuer votre adhésion directement en ligne via notre plateforme sécurisée.</p>
+
         <div class="etapes-container">
             <div class="etape">
+                <div class="etape-icon">
+                    <i class="fa-solid fa-user-plus"></i>
+                    </div>
                 <span class="numero">1</span>
-                <p>Créer un compte</p>
+                <h3>Créez un compte</h3>
+                <p>Rendez-vous sur Pep's Up. Si vous n'avez pas encore de compte, créez-en un gratuitement en quelques clics.</p>
             </div>
+
             <div class="etape">
+                <div class="etape-icon">
+                    <i class="fa-solid fa-file-lines"></i>
+                </div>
                 <span class="numero">2</span>
-                <p>Choisissez la formule</p>
+                <h3>Choisissez la formule</h3>
+                <p>Sélectionnez le dossier d'adhésion (Individuelle ou Famille) et remplissez vos informations personnelles.</p>
             </div>
+
             <div class="etape">
-                <span class="numero">3</span>
-                <p>Validez et réglez</p>
+                <div class="etape-icon">
+                    <i class="fa-solid fa-credit-card"></i>
+                </div>
+                <div class="etape-numero">3</div>
+                <h3>Validez et Réglez</h3>
+                <p>Une fois le dossier validé, effectuez votre paiement en ligne par carte bancaire ou sur place au café.</p>
             </div>
         </div>
+
+        <div class="etapes-timeline">
+            <span class="timeline-dot"></span>
+            <span class="timeline-line"></span>
+            <span class="timeline-dot"></span>
+            <span class="timeline-line"></span>
+            <span class="timeline-dot"></span>
+        </div>
+
         <a href="#" class="btn-adherer">Adhérer maintenant sur Pep's Up →</a>
         <p class="paiement-info">Paiement sécurisé en ligne (CB) ou sur place</p>
     </div>
-    <div class="etape">
-    <i class="fa-solid fa-user-plus"></i>
-    <span class="numero">1</span>
-    <p>Créer un compte</p>
-</div>
 </section>
 
 <!-- Section Témoignages -->

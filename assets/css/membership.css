@@ -59,6 +59,10 @@
     position: absolute;
     left: 0;
 }
+.formules-adhesion {
+    padding: 60px 20px;
+    text-align: center;
+}
 .btn-choisir,
 .btn-don {
     display: inline-block;
