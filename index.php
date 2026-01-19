@@ -3,32 +3,6 @@
 // On lance la session directement
 session_start();
 
-$page = $_GET['page'] ?? 'home';
-$viewPath = 'app/views/pages/';
-$filePath = $viewPath . $page . '.php';
-
-if ($page === 'events-json') {
-    echo "<h3>Diagnostic du fichier JSON :</h3>";
-    echo "1. Page demandée : <b>" . $page . "</b><br>";
-    echo "2. Chemin construit : <b>" . $filePath . "</b><br>";
-    
-    if (file_exists($filePath)) {
-        echo "3. Résultat : <span style='color:green'>TROUVÉ !</span><br>";
-        include $filePath;
-        exit;
-    } else {
-        echo "3. Résultat : <span style='color:red'>NON TROUVÉ</span><br>";
-        echo "4. Dossier actuel : " . getcwd() . "<br>";
-        echo "5. Contenu du dossier <i>" . $viewPath . "</i> :<br>";
-        
-        $files = scandir($viewPath);
-        echo "<ul>";
-        foreach($files as $f) { echo "<li>$f</li>"; }
-        echo "</ul>";
-        exit;
-    }
-}
-
 // On charge l'outil de connexion à la base de données pour toutes les pages et les récupérer.
 require_once 'app/config/database.php';
 
@@ -54,6 +28,13 @@ if ($page === 'events-json') {
     if (file_exists($filePath)) {
         include $filePath;
         exit; // Pas de HTML, pas de Header, juste le JSON
+    }
+}
+// Pour intercepter la requête JSON avant le système de template mis en place.
+if ($page === 'events-json') {
+    if (file_exists($filePath)) {
+        include $filePath;
+        exit; // Pas de HTML, pas de Header, juste le JSON
     } else {
         header('Content-Type: text/plain');
         die("ERREUR : Le fichier est introuvable. PHP le cherche ici : " . $filePath);
@@ -70,8 +51,6 @@ if ($page === 'evenement') { $title = "Activités et Évènements - Le P'tit Caf
 
 if ($page === 'confidentialite') { $title = "Politique de Confidentialité - Le P'tit Café"; }
 if ($page === 'mentions') { $title = "Mentions Légales - Le P'tit Café"; }
-
-// Pour intercepter la requête JSON avant le système de template mis en place.
 
 ?>
 
