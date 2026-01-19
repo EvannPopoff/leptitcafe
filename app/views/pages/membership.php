@@ -78,6 +78,11 @@
         <a href="#" class="btn-adherer">Adhérer maintenant sur Pep's Up →</a>
         <p class="paiement-info">Paiement sécurisé en ligne (CB) ou sur place</p>
     </div>
+    <div class="etape">
+    <i class="fa-solid fa-user-plus"></i>
+    <span class="numero">1</span>
+    <p>Créer un compte</p>
+</div>
 </section>
 
 <!-- Section Témoignages -->
