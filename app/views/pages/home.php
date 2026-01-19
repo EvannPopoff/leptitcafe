@@ -41,9 +41,9 @@
                 </article>
 
                 <article class="event-card">
-                    <img src="assets/images/event3.avif" alt="Quinzaine des Droits de l’enfant">
-                    <h3>Droits de l’Enfant</h3>
-                    <p>Ces ateliers permettent de mettre en lumière les droits de l’enfant auprès du grand public.</p>
+                    <img src="assets/images/event5.webp" alt="Printemps de l'Education">
+                    <h3>Printemps de l'Education</h3>
+                    <p>Un véritable phénomène d'éclosion d'initiatives est en train de se mettre en place dans l'éducation.</p>
                 </article>
 
             </div>
@@ -94,7 +94,7 @@
             </p>
 
             <div class="reserver-visuel">
-            <img src="assets/images/" alt="plante">
+            <img src="assets/images/plante2.png" alt="plante">
             </div>
 
             <p class="reserver-info">
