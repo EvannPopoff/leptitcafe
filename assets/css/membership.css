@@ -129,8 +129,22 @@
     display: inline-block;
     background-color: #DD5D13;
     color: white;
-    padding: 20px 50px;
+    padding: 15px 40px;
     border-radius: 50px;
-    font-size: 30px;
+    font-size: 20px;
     border: 2px solid #DD5D13;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+.btn-adherer:hover {
+    background-color: white;
+    color: #DD5D13;
+    transform: scale(1.05);
+}
+
+.paiement-info {
+    font-size: 20px;
+    color: #294F0C;
+    margin-top: 25px;
+    opacity: 0.8;
 }
