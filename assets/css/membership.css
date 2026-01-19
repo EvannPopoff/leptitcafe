@@ -77,56 +77,93 @@
     background-color: #B9DAA3;
     text-align: center;
     padding: 60px 20px;
-    color: #294F0C;
-}
-.etapes-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-.etape {
-    background-color: transparent;
-    padding: 10px;
-    width: 250px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-.etape .numero {
-    display: inline-block;
-    background: none;
-    color: #294F0C;
-    width: 60%;
-    border-bottom: 3px solid #294F0C;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-
-}
-
-.etape p {
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #294F0C;
-}
-
-.etapes-adhesion h2{
+.etapes-adhesion h2 {
     color: #294F0C;
     font-size: 32px;
     margin-bottom: 10px;
 }
 
-.etapes-adhesion p {
-    color: #294F0C; 
-    font-weight: 500;
+.etapes-intro {
+    color: #294F0C;
+    font-size: 16px;
+    margin-bottom: 40px;
 }
 
-.cta-container {
-    margin-top: 50px;
+.etapes-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.etape {
+    width: 280px;
     text-align: center;
+}
+
+.etape-icon {
+    width: 120px;
+    height: 100px;
+    background-color: #D9D9D9;
+    border-radius: 8px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.etape-icon i {
+    font-size: 36px;
+    color: #666;
+}
+
+.etape-numero {
+    font-size: 18px;
+    color: #294F0C;
+    margin-bottom: 5px;
+}
+
+.etape h3 {
+    color: #294F0C;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.etape p {
+    color: #294F0C;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.etapes-timeline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+    gap: 0;
+}
+
+.timeline-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #294F0C;
+    border-radius: 50%;
+}
+
+.timeline-line {
+    width: 150px;
+    height: 2px;
+    background: repeating-linear-gradient(
+        to right,
+        #294F0C,
+        #294F0C 5px,
+        transparent 5px,
+        transparent 10px
+    );
 }
 
 .btn-adherer {
@@ -135,20 +172,17 @@
     color: white;
     padding: 15px 40px;
     border-radius: 50px;
-    font-size: 20px;
-    border: 2px solid #DD5D13;
+    font-size: 18px;
     text-decoration: none;
-    transition: transform 0.2s;
+    margin-top: 20px;
 }
+
 .btn-adherer:hover {
-    background-color: white;
-    color: #DD5D13;
-    transform: scale(1.05);
+    background-color: #c44f0f;
 }
 
 .paiement-info {
-    font-size: 20px;
     color: #294F0C;
-    margin-top: 25px;
-    opacity: 0.8;
+    font-size: 16px;
+    margin-top: 20px;
 }
