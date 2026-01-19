@@ -39,6 +39,10 @@ if ($page === 'mentions') { $title = "Mentions Légales - Le P'tit Café"; }
 if ($page === 'events-json') {
     if (file_exists($filePath)) {
         include $filePath;
+        exit;
+    } else {
+        header('Content-Type: text/plain');
+        die("Erreur, fichier introuvable : " . $filePath);
     }
 }
 
