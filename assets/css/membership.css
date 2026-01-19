@@ -119,3 +119,18 @@
     color: #294F0C; 
     font-weight: 500;
 }
+
+.cta-container {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.btn-adherer {
+    display: inline-block;
+    background-color: #DD5D13;
+    color: white;
+    padding: 20px 50px;
+    border-radius: 50px;
+    font-size: 30px;
+    border: 2px solid #DD5D13;
+}
