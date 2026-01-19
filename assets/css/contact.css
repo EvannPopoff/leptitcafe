@@ -1,0 +1,168 @@
+.contact-section {
+    padding: 100px 0;
+    background-color: #fff;
+    color: #000;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 80px;
+}
+
+.contact-tagline {
+    font-family: 'Poppins-Bold', sans-serif;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.contact-main-title {
+    font-family: 'SigmarOne', sans-serif;
+    font-size: 48px;
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.contact-description {
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-family: 'Poppins-Medium', sans-serif;
+}
+
+.actual-form input, 
+.actual-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #000; 
+    font-family: 'Poppins-Regular', sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.actual-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.form-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.form-checkbox input {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #000;
+}
+
+.contact-submit-btn {
+    background-color: #000;
+    color: #fff;
+    padding: 12px 32px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.contact-submit-btn:hover {
+    opacity: 0.8;
+}
+
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 120px; 
+}
+
+.detail-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.detail-icon {
+    font-size: 24px;
+}
+
+.detail-text strong {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.detail-text p {
+    margin: 0;
+    font-size: 15px;
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .contact-details {
+        padding-top: 0;
+    }
+}
+/* Контейнер всей секции */
+.map-section {
+    padding: 60px 0;
+    text-align: center;
+    background-color: #fff;
+}
+
+.map-title {
+    font-family: 'SigmarOne', sans-serif; /* Ваш основной шрифт */
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+/* Контейнер для самой карты */
+.map-container {
+    width: 100%;
+    max-width: 940px; /* Максимальная ширина как в дизайне */
+    margin: 0 auto;
+    border-radius: 15px; /* Скругление углов карты */
+    overflow: hidden; /* Чтобы карта не вылезала за углы */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* Легкая тень */
+}
+
+/* Убираем лишние отступы у iframe */
+.map-container iframe {
+    display: block;
+}
+
+.map-info {
+    margin-top: 25px;
+}
+
+.map-info h3 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.get-directions {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+    border-bottom: 2px solid #000;
+    padding-bottom: 2px;
+}

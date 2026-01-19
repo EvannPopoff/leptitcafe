@@ -14,11 +14,34 @@ body {
     font-family: 'Poppins-Regular', sans-serif;
 }
 
-.container {
-    max-width: 1200px;
+.container { /*me permet d'avoir des marges égales sur toute mes pages
+    A CONDITION D'AJOUTER UNE CLASS .container svp*/
+    
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 0 50px;
-    box-sizing: border-box;
+    padding-left: clamp(12px, 3vw, 60px);
+    padding-right: clamp(12px, 3vw, 60px);
+}
+
+
+
+/* BOUTON réutilisable */
+.btn-events {
+    display: inline-block;
+    margin-top: 3rem;
+    padding: 0.8rem 1.6rem;
+    border: 3px solid #ff7a00;
+    color: #ff7a00;
+    text-decoration: none;
+    border-radius: 15px;
+    font-weight: 600;
+    margin-bottom: 3rem;
+}
+
+.btn-events:hover {
+    background-color: #ff7a00;
+    color: #ffffff;
+    cursor: pointer;
 }
 
 
@@ -38,11 +61,9 @@ header {
 
 
 .in-header {
-    max-width: 1300px;
     grid-template-columns: 140px 1fr 170px;
     margin: 0 auto;
     height: 90px;
-    padding: 0 28px;
     display: grid;
     align-items: center;
 }
@@ -119,11 +140,10 @@ header {
     .in-header {
         grid-template-columns: 1fr auto;
         height: 110px;
-        padding: 0 18px;
     }
 
     .logo img {
-        height: 70px;
+        height: 60px;
     }
 
     .burger-bouton {
@@ -131,20 +151,20 @@ header {
         border: 0;
         padding: 0;
         cursor: pointer;
-        width: 52px;
-        height: 52px;
+        width: 35px;
+        height: 30px;
         align-items: center;
         justify-content: center;
     }
 
     .burger-bouton img {
-        width: 44px;
-        height: 44px;
+        width: 35px;
+        height: 30px;
         display: block;
     }
 
 
-    /* MENU */
+    /* MENU BURGER */
     .mobile-menu {
         display: none;
         position: fixed;
@@ -167,7 +187,7 @@ header {
     }
 
     .mobile-menu .main-nav a {
-        font-size: 34px;
+        font-size: 25px;
         font-weight: 600;
         color: #ffffff;
         padding: 0;
@@ -193,7 +213,7 @@ header {
     .mobile-menu.is-open .cta-mobile {
         display: inline-flex;
         margin-bottom: 62px;
-        font-size: 30px;
+        font-size: 25px;
         padding: 18px 36px;
         border-radius: 20px;
         background: #e36a12;
@@ -201,166 +221,6 @@ header {
     }
 
 }
-
-
-/* =========================
-   PAGE D'ACCUEIL
-========================= */
-  
-.hero-accueil {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-}
-
-
-.hero-accueil img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-
-.hero-content {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    padding: 1.5rem;
-}
-
-
-.hero-content h1 {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    /*recommandation d'un tutoriel, j'utilise clamp () pour ajouter des éléments simple en responsif, 
-    sans utiliser les medias querys*/
-    margin-bottom: 1rem;
-}
-
-
-.hero-content p {
-    max-width: 600px;
-    font-size: clamp(1rem, 2.5vw, 1.1rem);
-    line-height: 1.4;
-    margin-bottom: 1.5rem;
-}
-
-
-.btn-hero {
-    padding: 0.8rem 1.6rem;
-    border: 3px solid #ff7a00;
-    color: #ff7a00;
-    text-decoration: none;
-    border-radius: 15px;
-    font-weight: 600;
-}
-
-.btn-hero:hover {
-    background: #ff7a00;
-    color: #ffffff;
-}
-
-
-.hero-accueil::after {
-    /*Chat GPT - ajout d'un filtre noir devant le background*/
-    content: "";
-    position: absolute;
-    inset: 0;
-    /* top,right,bottom et left= 0 */
-    background: rgba(0, 0, 0, 0.5);
-}
-
-
-.events {
-    background-color: #fdf7ec;
-    padding: 4rem 1.5rem;
-}
-
-.events-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-
-h2 {
-    font-size: clamp(2rem, 4vw, 2.8rem);
-    color: #2f4f1e;
-    margin-bottom: 0.5rem;
-}
-
-.events-subtitle {
-    font-size: 1rem;
-    margin-bottom: 3rem;
-}
-
-/* LISTE */
-.events-list {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-}
-
-/* CARD */
-.event-card img {
-    width: 160px;
-    height: auto;
-    margin-bottom: 1rem;
-}
-
-.event-card h3 {
-    font-size: 1.3rem;
-    color: #2f4f1e;
-    margin-bottom: 0.5rem;
-}
-
-.event-card p {
-    font-size: 0.95rem;
-    line-height: 1.4;
-}
-
-/* BOUTON */
-.btn-events {
-    display: inline-block;
-    margin-top: 3rem;
-    padding: 0.8rem 1.6rem;
-    border: 2px solid #ff7a00;
-    color: #ff7a00;
-    text-decoration: none;
-    border-radius: 15px;
-    font-weight: 600;
-}
-
-.btn-events:hover {
-    background-color: #ff7a00;
-    color: #ffffff;
-}
-
-
-
-@media (min-width: 768px) {
-    .events-list {
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 2rem;
-    }
-
-    .event-card {
-        flex: 1;
-    }
-
-    .event-card img {
-        width: 180px;
-    }
-}
-
-
 
 
 
@@ -378,7 +238,7 @@ h2 {
     display: grid;
     grid-template-columns: 1fr;
     gap: 30px;
-    padding: 40px 20px 0;
+    padding: 40px 0 0;
 }
 
 .footer-column h3 {
@@ -416,7 +276,7 @@ h2 {
 }
 
 .site-footer hr {
-    margin: 30px 20px;
+    margin: 30px 0;
     border: none;
     border-top: 1px solid #000;
 }
@@ -425,8 +285,7 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    font-size: 13px;
-    padding: 0 20px 30px;
+    padding: 0 0 30px;
 }
 
 .footer-links a {
@@ -465,7 +324,7 @@ h2 {
     }
 
     .site-footer hr {
-        margin: 40px 40px 25px;
+        margin: 40px 40px 0;
     }
 }
 
@@ -553,14 +412,15 @@ h2 {
     font-family: 'SigmarRegular', sans-serif;
     font-size: 40px;
     line-height: 1.2;
-    margin-bottom: 15px;
+    margin-bottom: 2rem;
+    color: #294F0C;
 }
 
 h3 {
     font-family: 'Poppins-Medium', sans-serif;
     font-size: 20px;
     line-height: 1.2;
-    margin-bottom: 15px;
+    margin-bottom: 2rem;
 }
 
 button,
@@ -745,4 +605,26 @@ p {
         grid-template-columns: 1fr;
         padding: 0 20px;
     }
+}
+/* Окно остается таким же */
+.values-carousel-window {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Лента карточек */
+.values-grid {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    /* Убираем gap или делаем его фиксированным */
+    gap: 0; 
+}
+
+/* Теперь каждая карточка занимает всю ширину окна */
+.value-card {
+    flex: 0 0 100%; 
+    min-width: 100%;
+    box-sizing: border-box;
+    /* Ваши стили отступов внутри карточки */
+    padding: 20px;
 }

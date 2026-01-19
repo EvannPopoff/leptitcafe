@@ -1,0 +1,105 @@
+ .hero-adhesion {
+    background-color: #2c3e50;
+    color: white;
+    padding: 40px;
+}
+
+.hero-adhesion h1 {
+    font-size: 45px;
+}
+.hero-adhesion p {
+    font-size: 20px;
+    margin-top: 15px;
+}
+.card-adhesion {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+}
+.cards-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.card-adhesion h3 {
+    font-size: 28px;
+    color: #4a7c59;
+}
+
+.card-adhesion .price {
+    font-size: 24px;
+    color: #4a7c59;
+}
+
+.pourquoi-adherer {
+    background-color: #FFFCF4;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.card-adhesion ul {
+    list-style: none;
+    padding: 0;
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.card-adhesion li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 8px;
+}
+
+.card-adhesion li::before {
+    content: "✓";
+    color: #4a7c59;
+    position: absolute;
+    left: 0;
+}
+.btn-choisir,
+.btn-don {
+    display: inline-block;
+    background-color: #e67e22;
+    color: white;
+    padding: 12px 40px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.etapes-adhesion {
+    background-color: #4a7c59;
+    text-align: center;
+    padding: 60px 20px;
+}
+.etapes-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 40px;
+}
+.etape {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 200px;
+}
+
+.etape .numero {
+    display: inline-block;
+    background-color: #4a7c59;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    line-height: 50px;
+    font-size: 28px;
+
+}
+
+.etape p {
+    margin-top: 15px;
+    font-size: 16px;
+}

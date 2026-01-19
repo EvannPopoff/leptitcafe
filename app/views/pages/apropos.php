@@ -1,5 +1,11 @@
+<link rel="stylesheet" href="assets/css/apropos.css">
+
 <div class="hero">
-    <img src="assets/images/image_header.webp" alt="hero">
+    <img src="assets/images/image_header.webp" alt="hero" class="hero-bg">
+    <div class="hero-overlay"></div> <div class="hero-content">
+        <h1>Là où tout commence</h1>
+        <p>Une grande histoire commence par un petit pas.</p>
+    </div>
 </div>
 
 <section class="timeline-section">
@@ -58,49 +64,63 @@
 <section class="values-section">
     <div class="container">
         <h2 class="values-main-title">Nos valeurs</h2>
-        
-        <div class="values-grid">
+        <div class="carousel-controls">
+        <button id="prevBtn" class="arrow-btn" disabled>&#8592;</button>
+        <button id="nextBtn" class="arrow-btn">&#8594;</button>
+    </div>
+        <div class="values-carousel-window">
+        <div class="values-grid" id="valuesGrid">
             <div class="value-card">
                 <div class="value-image-container">
-                    <img src="../../../assets/images/placeholder.webp" alt="Valeur">
+                    <img src="assets/images/flower.webp" alt="Valeur">
                 </div>
                 <div class="value-info">
-                    <h3 class="value-title">Long heading is what you see here in this feature section</h3>
+                    <h3 class="value-title">Bienveillance</h3>
                     <p class="value-description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Suspendisse varius enim in eros elementum tristique.
+                        Nous accueillons les enfants et leurs parents, dans le respect de leur individualité. Nous sommes attentifs à sensibiliser et à développer une attitude non-violente.
                     </p>
-                    <a href="#" class="value-button">Button <span class="arrow">→</span></a>
                 </div>
             </div>
 
             <div class="value-card">
                 <div class="value-image-container">
-                    <img src="../../../assets/images/placeholder.webp" alt="Valeur">
+                    <img src="assets/images/family.webp" alt="Valeur">
                 </div>
                 <div class="value-info">
-                    <h3 class="value-title">Long heading is what you see here in this feature section</h3>
+                    <h3 class="value-title">Soutien à la relation parent-enfant</h3>
                     <p class="value-description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Suspendisse varius enim in eros elementum tristique.
+                        Nous proposons des temps d’activité et de partage, afin de favoriser les échanges entre les parents et les enfants.
                     </p>
-                    <a href="#" class="value-button">Button <span class="arrow">→</span></a>
                 </div>
             </div>
 
             <div class="value-card">
                 <div class="value-image-container">
-                    <img src="../../../assets/images/placeholder.webp" alt="Valeur">
+                    <img src="assets/images/friends.webp" alt="Valeur">
                 </div>
                 <div class="value-info">
-                    <h3 class="value-title">Long heading is what you see here in this feature section</h3>
+                    <h3 class="value-title">Convivialité et partage</h3>
                     <p class="value-description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Suspendisse varius enim in eros elementum tristique.
+                    Nous offrons un lieu accueillant, intergénérationnel, de rencontres et d’initiatives, ouvert à tous, dans le respect de chacun, quel que soit son âge.
                     </p>
-                    <a href="#" class="value-button">Button <span class="arrow">→</span></a>
                 </div>
             </div>
+
+
+  <div class="value-card">
+                <div class="value-image-container">
+                    <img src="assets/images/ecologie.webp" alt="Valeur">
+                </div>
+                <div class="value-info">
+                    <h3 class="value-title">Conscience écologique</h3>
+                    <p class="value-description">
+                        Nous apportons une grande importance au respect de l'environnement et à notre responsabilité à tous envers celui-ci.
+                    </p>
+                </div>
+            </div>
+            </div>
+
         </div>
     </div>
 </section>
+<script src="assets/js/apropos.js"></script>
