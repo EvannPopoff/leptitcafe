@@ -108,18 +108,31 @@
 <section class="temoignages">
     <div class="container">
         <h2>Ce qu'en pensent nos adhérents</h2>
+        <p class="temoignages-intro">Découvrez pourquoi ils ont choisi de rejoindre la communauté du P'tit Café.</p>
         <div class="temoignages-container">
-            <div class="temoignage">
-                <p>"Super association, très accueillante !"</p>
-                <span class="auteur">- Marie</span>
+            <div class="temoignage-card">
+                <div class="stars">★★★★★</div>
+                <p>"L'ambiance est incroyable ! C'est mon endroit préféré pour travailler ou boire un café tranquille."</p>
+                <div class="temoignage-auteur">
+                    <div class="avatar"></div>
+                    <span>Julie M.</span>
+                </div>
             </div>
-            <div class="temoignage">
-                <p>"Un lieu convivial pour toute la famille."</p>
-                <span class="auteur">- Pierre</span>
+            <div class="temoignage-card">
+                <div class="stars">★★★★★</div>
+                <p>"Les prix sont très accessibles et l'équipe est toujours souriante. Je recommande vivement !"</p>
+                <div class="temoignage-auteur">
+                    <div class="avatar"></div>
+                    <span>Paul R.</span>
+                </div>
             </div>
-            <div class="temoignage">
-                <p>"Je recommande vivement !"</p>
-                <span class="auteur">- Sophie</span>
+            <div class="temoignage-card">
+                <div class="stars">★★★★★</div>
+                <p>"J'ai participé à l'atelier jardinage, c'était génial. On se sent vraiment utile et entouré."</p>
+                <div class="temoignage-auteur">
+                    <div class="avatar"></div>
+                    <span>Sarah L.</span>
+                </div>
             </div>
         </div>
     </div>
