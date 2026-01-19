@@ -29,7 +29,8 @@ if ($page === 'apropos') { $title = "À propos - Le P'tit Café"; }
 if ($page === 'contact') { $title = "Contact - Le P'tit Café"; }
 if ($page === 'evenement') { $title = "Activités et Évènements - Le P'tit Café"; }
 
-
+if ($page === 'confidentialite') { $title = "Politique de Confidentialité - Le P'tit Café"; }
+if ($page === 'mentions') { $title = "Mentions Légales - Le P'tit Café"; }
 
 
 ?>
