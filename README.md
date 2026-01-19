@@ -4,7 +4,7 @@ Projet Web SAE - Le P'tit Café - BUT MMI
 # Guide pour l'équipe Front --->
 
 ## Où vous pouvez travailler ?
-- HTML : `app/Views/pages/`
+- HTML : `app/Views/pages/` et `app/Views/layouts/`
 - CSS : `assets/css/`
 - JS : `assets/js/`
 - Images : `assets/images/static/`
