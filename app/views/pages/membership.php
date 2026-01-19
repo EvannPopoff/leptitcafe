@@ -68,6 +68,8 @@
             <div class="etape">
                 <span class="numero">3</span>
                 <p>Validez et réglez</p>
+                <a href="#" class="btn-adherer">Adhérer maintenant sur Pep's Up →</a>
+<p class="paiement-info">Paiement sécurisé en ligne (CB) ou sur place (Espèces / Chèque)</p>
             </div>
         </div>
     </div>
