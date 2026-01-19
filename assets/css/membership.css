@@ -71,13 +71,13 @@
 .etapes-adhesion {
     background-color: #4a7c59;
     text-align: center;
-    padding: 50px 30px;
+    padding: 60px 20px;
 }
 .etapes-container {
     display: flex;
     justify-content: center;
     margin-top: 30px;
-    gap: 50px;
+    gap: 40px;
 }
 .etape {
     background-color: white;
