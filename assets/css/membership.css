@@ -79,13 +79,12 @@
     display: flex;
     justify-content: center;
     margin-top: 50px;
-    gap: 20px;
+    gap: 30px;
     flex-wrap: wrap;
 }
 .etape {
     background-color: transparent;
-    padding: 30px 20px;
-    border-radius: 10px;
+    padding: 10px;
     width: 250px;
     display: flex;
     flex-direction: column;
@@ -94,13 +93,12 @@
 
 .etape .numero {
     display: inline-block;
-    background-color: #B9DAA3;
+    background: none;
     color: #294F0C;
-    width: auto;
-    height: auto;
-    border-radius: 0;
-    line-height: 50px;
-    font-size: 45px;
+    width: 60%;
+    border-bottom: 3px solid #294F0C;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
 
 }
 
@@ -112,7 +110,7 @@
 .etapes-adhesion h2{
     color: #294F0C;
     font-size: 32px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .etapes-adhesion p {
