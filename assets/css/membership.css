@@ -103,3 +103,8 @@
     margin-top: 15px;
     font-size: 16px;
 }
+
+.etapes-adhesion h2,
+.etapes-adhesion p {
+    color: white;
+}
