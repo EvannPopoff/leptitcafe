@@ -40,7 +40,6 @@ if ($page === 'events-json') {
     if (file_exists($filePath)) {
         include $filePath;
     }
-    exit;
 }
 
 ?>
