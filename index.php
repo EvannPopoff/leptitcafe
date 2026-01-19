@@ -3,6 +3,10 @@
 // On lance la session directement
 session_start();
 
+// TEST DE RÉCEPTION
+var_dump($_GET['page']); 
+exit;
+
 // On charge l'outil de connexion à la base de données pour toutes les pages et les récupérer.
 require_once 'app/config/database.php';
 
