@@ -47,6 +47,10 @@ class Event {
         return $this->date_event;
     }
 
+    public function getHour(): string {
+        return $this->hour;
+    }
+
     public function getPlace(): string {
         return $this->place;
     }
