@@ -29,5 +29,11 @@
 
 .card-adhesion .price {
     font-size: 24px;
-    color: orange;
+    color: #e67e22;
+}
+
+.pourquoi-adherer {
+    background-color: #f8f9fa;
+    padding: 60px 20px;
+    text-align: center;
 }
