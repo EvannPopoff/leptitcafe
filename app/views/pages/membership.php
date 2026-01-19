@@ -1,11 +1,13 @@
 <!-- Page Adhésion -->
-
+ 
 <link rel="stylesheet" href="assets/css/membership.css">
 
+<!-- Hero Section -->
 <section class="hero-adhesion">
     <h1>ADHÉRER & SOUTENIR</h1>
     <p>Devenez acteur de votre café associatif</p>
 </section>
+
 <!-- Section Pourquoi adhérer -->
 <section class="pourquoi-adherer">
     <div class="container">
@@ -13,6 +15,7 @@
         <p>Pour profiter du lieu et de nos activités, recevoir le programme et soutenir l'Association Jeunes Pousses.</p>
     </div>
 </section>
+
 <!-- Section Formules -->
 <section class="formules-adhesion">
     <div class="container">
@@ -51,6 +54,7 @@
         </div>
     </div>
 </section>
+
 <!-- Section Etapes -->
 <section class="etapes-adhesion">
     <div class="container">
@@ -68,14 +72,13 @@
             <div class="etape">
                 <span class="numero">3</span>
                 <p>Validez et réglez</p>
-
+            </div>
         </div>
-        <div class="cta-container" style="margin-top: 40px;">
-            <a href="#" class="btn-adherer">Adhérer maintenant sur Pep's Up →</a>
-            <p class="paiement-info">Paiement sécurisé en ligne (CB) ou sur place</p>
-        </div>
+        <a href="#" class="btn-adherer">Adhérer maintenant sur Pep's Up →</a>
+        <p class="paiement-info">Paiement sécurisé en ligne (CB) ou sur place</p>
     </div>
 </section>
+
 <!-- Section Témoignages -->
 <section class="temoignages">
     <div class="container">
@@ -88,7 +91,7 @@
             <div class="temoignage">
                 <p>"Un lieu convivial pour toute la famille."</p>
                 <span class="auteur">- Pierre</span>
-                </div>
+            </div>
             <div class="temoignage">
                 <p>"Je recommande vivement !"</p>
                 <span class="auteur">- Sophie</span>
@@ -96,6 +99,7 @@
         </div>
     </div>
 </section>
+
 <!-- Section Bénévole -->
 <section class="cta-benevole">
     <div class="container">
