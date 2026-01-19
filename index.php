@@ -24,6 +24,15 @@ $layoutPath = 'app/views/layouts/';
 // On construit le chemin complet du fichier à inclure.
 $filePath = $viewPath . $page . '.php';
 
+if ($page === 'events-json') {
+    if (file_exists($filePath)) {
+        include $filePath;
+        exit;
+    } else {
+        die("Erreur, fichier introuvable : " . $filePath);
+    }
+}
+
 //Nom des pages
 $title = "Le P'tit Café";
 if ($page === 'home') { $title = "Accueil - Le P'tit Café"; }
@@ -36,15 +45,6 @@ if ($page === 'confidentialite') { $title = "Politique de Confidentialité - Le 
 if ($page === 'mentions') { $title = "Mentions Légales - Le P'tit Café"; }
 
 // Pour intercepter la requête JSON avant le système de template mis en place.
-if ($page === 'events-json') {
-    if (file_exists($filePath)) {
-        include $filePath;
-        exit;
-    } else {
-        header('Content-Type: text/plain');
-        die("Erreur, fichier introuvable : " . $filePath);
-    }
-}
 
 ?>
 
