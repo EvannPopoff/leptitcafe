@@ -12,8 +12,8 @@ use Exception;
 class Database {
 private string $host = 'localhost';
 private string $db   = 'u822133654_bddleptitcafe';
-private string $user = 'root';
-private string $pass = '';
+private string $user = 'u822133654_leptitcafe';
+private string $pass = 'hxYUmc3gbNTjiD!C';
 
 // "Tuyau" de connexion
 private ?\PDO $pdo = null;
