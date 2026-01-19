@@ -103,8 +103,10 @@
 }
 
 .etape p {
-    margin-top: 15px;
-    font-size: 16px;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #294F0C;
 }
 
 .etapes-adhesion h2{
