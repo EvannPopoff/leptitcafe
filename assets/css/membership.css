@@ -73,18 +73,23 @@
     background-color: #4a7c59;
     text-align: center;
     padding: 60px 20px;
+    color: white;
 }
 .etapes-container {
     display: flex;
     justify-content: center;
     margin-top: 30px;
     gap: 40px;
+    flex-wrap: wrap;
 }
 .etape {
     background-color: white;
-    padding: 30px;
+    padding: 30px 20px;
     border-radius: 10px;
-    width: 200px;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .etape .numero {
@@ -102,4 +107,9 @@
 .etape p {
     margin-top: 15px;
     font-size: 16px;
+}
+
+.etapes-adhesion h2,
+.etapes-adhesion p {
+    color: white;
 }
