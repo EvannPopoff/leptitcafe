@@ -30,8 +30,8 @@ body {
     display: inline-block;
     margin-top: 3rem;
     padding: 0.8rem 1.6rem;
-    border: 3px solid #ff7a00;
-    color: #ff7a00;
+    border: 3px solid #DD5D13;
+    color: #DD5D13;
     text-decoration: none;
     border-radius: 15px;
     font-weight: 600;
@@ -39,7 +39,7 @@ body {
 }
 
 .btn-events:hover {
-    background-color: #ff7a00;
+    background-color: #DD5D13;
     color: #ffffff;
     cursor: pointer;
 }
@@ -104,14 +104,14 @@ header {
 
 .bouton-reservation {
     text-decoration: none;
-    background: #e36a12;
+    background: #DD5D13;
     color: #ffffff;
     font-size: 18px;
     font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 15px 25px;
+    padding: 13px 18px;
     border-radius: 15px;
 }
 
@@ -216,7 +216,7 @@ header {
         font-size: 25px;
         padding: 18px 36px;
         border-radius: 20px;
-        background: #e36a12;
+        background: #DD5D13;
         color: #ffffff;
     }
 

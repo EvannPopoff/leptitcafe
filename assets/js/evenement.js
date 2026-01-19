@@ -26,9 +26,16 @@ function getApiUrl(offsetValue, limitValue) {
 function appendCard(item) {
     const card = document.createElement("article");
     card.className = "recent-card";
-    card.innerHTML = `<img src="${item.image}" alt="${item.title}" loading="lazy">`;
+
+    card.innerHTML = `
+        <a href="${item.url}">
+            <img src="${item.image}" alt="${item.title}" loading="lazy">
+        </a>
+    `;
+
     grid.appendChild(card);
 }
+
 
 /* appel Ajax et ajout des cards au clic sur le bouton */
 async function handleLoadMoreClick() {
