@@ -2,7 +2,7 @@
    PAGE EVENEMENTS - MOBILE FIRT
 ========================= */
 
-
+/* Section 1 - Hero */
 .hero-evenement {
     position: relative;
     width: 100%;
@@ -24,13 +24,14 @@
 }
 
 .hero-evenement::after {
-    /*Chat GPT - ajout d'un filtre noir devant le background*/
     content: "";
     position: absolute;
     inset: 0;
     /* top,right,bottom et left= 0 */
     background: rgba(0, 0, 0, 0.5);
 }
+
+/* Section 2 - Events */
 
 .recent-events {
     background: #fdf7ec;
@@ -50,7 +51,6 @@
 }
 
 .recent-card {
-    background: #d9d9d9;
     border-radius: 10px;
     overflow: hidden;
     display: flex;
@@ -66,16 +66,61 @@
 }
 
 
-.btn-events.is-loading {
-    opacity: 0.6;
-    pointer-events: none;
-  }
-  
+/* Section 3 - Activités */
+.activities-info {
+    background: #2f4f1e;
+    color: #ffffff;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.activities-info h2 {
+    color: #B9DAA3;
+    margin-bottom: 0.8rem;
+}
+
+.activities-info-subtitle {
+    margin: 0 auto 2.2rem;
+    opacity: 0.95;
+}
+
+.activities-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    margin: 2rem auto;
+}
+
+.activities-thumb {
+    border: 0;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
+.activities-thumb img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease;
+}
+
+.activities-info-text {
+    margin: 0 auto 1rem;
+    line-height: 1.6;
+    opacity: 0.95;
+}
 
 
 /* DESKTOP */
 @media (min-width: 992px) {
     .recent-events-grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .activities-gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.6rem;
     }
 }

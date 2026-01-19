@@ -41,6 +41,7 @@ body {
 .btn-events:hover {
     background-color: #ff7a00;
     color: #ffffff;
+    cursor: pointer;
 }
 
 
