@@ -25,6 +25,7 @@ $layoutPath = 'app/views/layouts/';
 $filePath = $viewPath . $page . '.php';
 
 //Nom des pages
+$title = "Le P'tit Café";
 if ($page === 'home') { $title = "Accueil - Le P'tit Café"; }
 if ($page === 'membership') { $title = "Adhérer - Le P'tit Café"; }
 if ($page === 'apropos') { $title = "À propos - Le P'tit Café"; }
@@ -34,6 +35,13 @@ if ($page === 'evenement') { $title = "Activités et Évènements - Le P'tit Caf
 if ($page === 'confidentialite') { $title = "Politique de Confidentialité - Le P'tit Café"; }
 if ($page === 'mentions') { $title = "Mentions Légales - Le P'tit Café"; }
 
+// Pour intercepter la requête JSON avant le système de template mis en place.
+if ($page === 'events-json') {
+    if (file_exists($filePath)) {
+        include $filePath;
+    }
+    exit;
+}
 
 ?>
 
