@@ -35,7 +35,7 @@
     <div class="footer-bottom">
       <p>© 2026 - Tous droits réservés</p>
       <div class="footer-links">
-        <a href="#">Politique de confidentialité</a>
+        <a href="index.php?page=confidentialite">Politique de confidentialité</a>
         <a href="#">Mentions légales</a>
       </div>
     </div>
