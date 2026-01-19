@@ -3,6 +3,10 @@
 // On lance la session directement
 session_start();
 
+if (isset($_GET['page']) && $_GET['page'] === 'events-json') {
+    die("Je cherche el fichier CARAJOOOO");
+}
+
 // On charge l'outil de connexion à la base de données pour toutes les pages et les récupérer.
 require_once 'app/config/database.php';
 
