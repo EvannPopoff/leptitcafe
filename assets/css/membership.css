@@ -70,10 +70,10 @@
     font-weight: bold;
 }
 .etapes-adhesion {
-    background-color: #4a7c59;
+    background-color: #B9DAA3;
     text-align: center;
     padding: 60px 20px;
-    color: white;
+    color: #294F0C;
 }
 .etapes-container {
     display: flex;
@@ -111,5 +111,6 @@
 
 .etapes-adhesion h2,
 .etapes-adhesion p {
-    color: white;
+    color: #294F0C;
+    font-size: 32px;
 }
