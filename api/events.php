@@ -10,8 +10,8 @@ $events = [
   ["title" => "Événement 1", "image" => "assets/images/event1.avif"],
   ["title" => "Événement 2", "image" => "assets/images/event2.avif"],
   ["title" => "Événement 3", "image" => "assets/images/event3.avif"],
-  ["title" => "Événement 4", "image" => "assets/images/event4.png"],
-  ["title" => "Événement 5", "image" => "assets/images/event5.png"],
+  ["title" => "Événement 4", "image" => "assets/images/event4.webp"],
+  ["title" => "Événement 5", "image" => "assets/images/event5.webp"],
 ];
 
 $items = array_slice($events, $offset, $limit); //array_slide coupe le tableau et renvoie une portion du tableau de données (offset et limlt cf ligne 5/6)
