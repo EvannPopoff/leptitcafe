@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/evenement.css">
 
-<script src="assets/js/evenement.js" defer></script>
+    <script src="assets/js/evenement.js" defer></script>
 
 
     <div class="hero-evenement">
@@ -19,11 +19,11 @@
 
     <!-- Section 2 - Evenements / Lazy loading -->
     <section class="recent-events">
-        <div class="container recent-events-container">
-            <h2>Évènements Récents</h2>
-            <p class="recent-events-subtitle">
-            Retrouvez nos évènements les plus marquants
-            </p>
+      <div class="container recent-events-container">
+        <h2>Évènements Récents</h2>
+        <p class="recent-events-subtitle">
+          Retrouvez nos évènements les plus marquants
+        </p>
 
         <div class="recent-events-grid" id="recentGrid">
           <article class="recent-card" data-id="1">
@@ -37,17 +37,25 @@
           <article class="recent-card" data-id="3">
             <img src="assets/images/page_home_evenements/event3.webp" alt="Événement 3">
           </article>
-        </div>
+          
+        <button class="btn-events" id="btnLoadMore" type="button">
+          Charger plus
+        </button>
+      </div>
+
+        <button class="btn-events" id="btnLoadMore" type="button">
+          Charger plus
+        </button>
+      </div>
     </section>
 
     <!-- Section 3 - Activités -->
     <section class="activities-info">
-        <div class="container">
-            <h2>Activités</h2>
-            <p class="activities-info-subtitle">
-            Retrouvez notre Programme d’Activités, de Septembre à Décembre 2025
-            </p>
-
+      <div class="container">
+        <h2>Activités</h2>
+        <p class="activities-info-subtitle">
+          Retrouvez notre Programme d’Activités, de Septembre à Décembre 2025
+        </p>
 
         <div class="activities-gallery" id="activitiesGallery">
           <button
@@ -97,4 +105,3 @@
       </div>
     </section>
   </body>
-
