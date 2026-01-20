@@ -39,7 +39,11 @@
     color: white;
 }
 
-
+.hero-content p {
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+}
 
 /* --- TIMELINE SECTION --- */
 .timeline-section {
@@ -266,8 +270,7 @@
 /* --- SECTION RESERVATION --- */
 
 section.reservation {
-    background-color: #FFFCF4;
-    width: 100%;
+    width: 100vw;
     padding: 50px 15px;
     display: flex;
     flex-direction: column;
