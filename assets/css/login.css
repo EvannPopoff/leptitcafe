@@ -38,3 +38,20 @@
     border: none;
     border-radius: 4px;
     }
+    .btn-login {
+    width: 100%;
+    padding: 12px;
+    background-color: white;
+    color: #333;
+    border: none;
+    margin-top: 15px;
+}
+
+.btn-google {
+    width: 100%;
+    padding: 12px;
+    background-color: #444;
+    color: white;
+    border: none;
+    margin-top: 10px;
+}
