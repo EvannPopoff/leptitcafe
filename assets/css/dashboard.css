@@ -1,0 +1,130 @@
+/* Mise en page globale du Dashboard */
+.dashboard-container {
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* La Grille Admin (Formulaire + Calendrier)*/
+.admin-grid {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    /* Formulaire à 350px, le reste pour le calendrier */
+    gap: 30px;
+    margin-top: 20px;
+    align-items: start;
+}
+
+/* Carte du Formulaire (la sidebar) */
+.form-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    /* Le formulaire reste à l'écran quand on défile le calendrier */
+    top: 20px;
+}
+
+.form-card h3 {
+    margin-top: 0;
+    color: #8B4513;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #fdf5e6;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Éléments du formulaire */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="time"],
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    /* Évite que les inputs dépassent */
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+/* Alertes de retour AJAX  */
+.alert {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 0.85rem;
+    display: none;
+    /* Caché par défaut */
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Boutons */
+.btn-submit {
+    width: 100%;
+    background-color: #a0522d;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #8B4513;
+}
+
+.btn-submit:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Responsive : Passage en une seule colonne */
+@media (max-width: 1100px) {
+    .admin-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-card {
+        position: static;
+        max-width: 600px;
+        margin: 0 auto 30px auto;
+    }
+}

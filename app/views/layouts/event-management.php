@@ -1,21 +1,9 @@
-<?php
-// On vérifie si l'admin est connecté
-if (!isset($_SESSION['admin_id'])) {
-    // Si non, on le renvoie vers la page de login
-    header('Location: index.php?page=login');
-    exit();
-}
-?>
-
-<h2>Ajouter un nouvel événement</h2>
-
-<form action="index.php?page=save-event" method="POST" enctype="multipart/form-data" class="admin-form"> <!-- enctype pour l'upload d'images -->
+<form id="addEventForm" enctype="multipart/form-data">
     <div class="form-group">
-        <label>Titre de l'événement</label>
+        <label>Titre</label>
         <input type="text" name="titre" required>
     </div>
-
-    <div class="form-grid">
+    <div class="form-row">
         <div class="form-group">
             <label>Date</label>
             <input type="date" name="date_evenement" required>
@@ -25,27 +13,22 @@ if (!isset($_SESSION['admin_id'])) {
             <input type="time" name="heure" required>
         </div>
     </div>
-
     <div class="form-group">
         <label>Lieu</label>
         <input type="text" name="lieu">
     </div>
-
     <div class="form-group">
         <label>Description</label>
-        <textarea name="description" rows="4"></textarea>
+        <textarea name="description" rows="3"></textarea>
     </div>
-
     <div class="form-group">
-        <label>Image d'illustration</label>
+        <label>Image</label>
         <input type="file" name="image_event" accept="image/*">
     </div>
-
     <div class="form-group">
         <label>
-            <input type="checkbox" name="mis_en_avant" value="1"> Mettre en avant cet événement
+            <input type="checkbox" name="mis_en_avant" value="1"> Mettre en avant
         </label>
     </div>
-
-    <button type="submit" class="btn-submit">Enregistrer l'événement</button>
+    <button type="submit" id="submitBtn" class="btn-submit">Enregistrer l'événement</button>
 </form>
