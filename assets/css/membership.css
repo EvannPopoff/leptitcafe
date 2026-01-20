@@ -113,7 +113,7 @@
 .etape-icon {
     width: 120px;
     height: 100px;
-    background-color: #FFFCF4;
+    background-color: #FFFCF4 !important;
     border-radius: 8px;
     margin: 0 auto 20px;
     display: flex;
