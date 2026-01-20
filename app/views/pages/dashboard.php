@@ -60,3 +60,18 @@ if (!isset($_SESSION['admin_id'])) {
             </tbody>
         </table>
     </div>
+
+    <div class="events-section">
+        <h2>Gestion des Événements</h2>
+        <div class="events-cards">
+            <div class="event-card">
+                <div class="event-header">
+                    <div>
+                        <h3>Soirée Jazz Live</h3>
+                        <span>14 Fév 2026</span>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet...</p>
+                <button class="btn-modifier">Modifier</button>
+            </div>
+            </div>
