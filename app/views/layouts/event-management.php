@@ -1,3 +1,5 @@
+DÉBUT DU FORMULAIRE TEST
+
 <form id="addEventForm" enctype="multipart/form-data">
     <input type="hidden" name="id" id="event_id">
 
