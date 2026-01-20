@@ -134,15 +134,14 @@
 </section>
 
 <section class="container reservation">
-    <h2>Créez vos plus beaux souvenirs au P'tit Café</h2>
+    <h2>Vivez l’expérience unique du P’tit Café</h2>
 
     <p class="description">
-        Que ce soit pour souffler vos bougies, réunir votre tribu ou simplement partager un moment hors du temps entre
-        amis, notre espace devient le vôtre. Nous privatisons le P'tit Café pour transformer vos événements personnels
-        en instants inoubliables. Le bonheur de se retrouver, tout simplement.
+        Rejoindre notre communauté, c’est bien plus qu’un simple moment autour d’un café.
+Chaque visite devient un souvenir, chaque rencontre une nouvelle histoire. Devenez membre dès aujourd’hui et faites partie de notre famille du P’tit Café !
     </p>
 
-    <a href="index.php?page=contact" class="btn-reserve">Réserver</a>
+    <a href="index.php?page=contact" class="btn-reserve">Adhérer maintenant</a>
 </section>
 
 <script src="assets/js/apropos.js"></script>

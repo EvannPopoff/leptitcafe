@@ -270,46 +270,57 @@
 /* --- SECTION RESERVATION --- */
 
 section.reservation {
-    width: 100vw;
-    padding: 50px 15px;
+    width: 100%; 
+    padding: 40px 20px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center; 
+    text-align: center;
+    box-sizing: border-box;
 }
 
 section.reservation h2 {
     color: #4A5D23;
-    font-size: 1.8rem;
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
     font-weight: 900;
-    margin-bottom: 20px;
-    width: 100%;
-    text-align: center; 
+    margin-bottom: 15px;
 }
 
 section.reservation .description {
     font-size: 1rem;
     line-height: 1.6;
-    max-width: 100%;
+    max-width: 600px; 
     margin-bottom: 25px;
-    color: #333;
-    align-items: center; 
-    text-align: center; 
+    color: black;
 }
 
+/* BOUTON réutilisable */
 section.reservation .btn-reserve {
-    background-color: #E67E22;
-    color: #fff;
-    padding: 14px 35px;
-    font-weight: bold;
-    border-radius: 8px;
+    display: inline-block;
+    margin: 20px 0;
+    padding: 0.8rem 1.6rem;
+    border: 3px solid #DD5D13;
+    color: #DD5D13;
     text-decoration: none;
-    align-self: center; 
+    border-radius: 15px;
+    font-weight: 600;
+    transition: all 0.3s ease; 
 }
 
 section.reservation .btn-reserve:hover {
-    background-color: #D35400;
-    transform: translateY(-2px);
+    background-color: #DD5D13;
+    color: #ffffff;
+    cursor: pointer;
 }
 
+/* --- RESPONSIVE (Desktop) --- */
 
+@media (min-width: 768px) {
+    section.reservation {
+        padding: 80px 50px;
+    }
 
+    section.reservation .description {
+        margin-bottom: 40px;
+    }
+}
