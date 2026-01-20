@@ -14,7 +14,7 @@
             </ul>
         </nav>
 
-        <a class="bouton-reservation cta-mobile" href="">Réservation</a>
+        <a href="app/views/layouts/calendar.php" class="bouton-reservation cta-mobile" href="">Réservation</a>
 
         <button class="burger-bouton" type="button">
             <img src="assets/images/footer_header/Burger.png" alt="menu-burger">

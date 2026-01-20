@@ -28,19 +28,19 @@
             <div class="events-list">
 
                 <article class="event-card">
-                    <a href="index.php?page=apropos"><img src="assets/images/page_home_evenements/event1.avif" alt="Calendrier de l’Après"> </a>
+                    <img src="assets/images/page_home_evenements/event1.avif" alt="Calendrier de l’Après"> </a>
                     <h3>Calendrier de l’Après</h3>
                     <p>Une programmation culturelle et artistique, offerte pendant les 24 jours avant Noël.</p>
                 </article>
 
                 <article class="event-card">
-                    <a href="index.php?page=apropos"><img src="assets/images/page_home_evenements/event2.avif" alt="Festin Nomade"> </a>
+                    <img src="assets/images/page_home_evenements/event2.avif" alt="Festin Nomade"> </a>
                     <h3>Festin Nomade</h3>
                     <p>Le Festin Nomade s’installe le samedi 15 octobre pour une journée festive, succulente et familiale.</p>
                 </article>
 
                 <article class="event-card">
-                    <a href="index.php?page=apropos"><img src="assets/images/page_home_evenements/event5.webp" alt="Printemps de l'Education"> </a>
+                    <img src="assets/images/page_home_evenements/event5.webp" alt="Printemps de l'Education"> </a>
                     <h3>Printemps de l'Education</h3>
                     <p>Un véritable phénomène d'éclosion d'initiatives est en train de se mettre en place dans l'éducation.</p>
                 </article>
