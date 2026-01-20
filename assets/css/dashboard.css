@@ -1,0 +1,201 @@
+/* En-tête */
+.dashboard-container {
+    padding: 10px 20px;
+    max-width: 100%;
+    /* Prend toute la largeur de l'écran */
+    margin: 0;
+}
+
+.admin-grid {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    /* Sidebar fixe à gauche, Calendrier à droite */
+    gap: 30px;
+    align-items: start;
+}
+
+/* Colonne de gauche (Infos Admin & Formulaire) */
+.user-info-box {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.user-info-box p {
+    margin: 0 0 5px 0;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.logout-link {
+    font-size: 0.8rem;
+    color: #d9534f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logout-link:hover {
+    text-decoration: underline;
+}
+
+.form-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-card h3 {
+    margin-top: 0;
+    color: #8B4513;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/* Sidebar qui reste visible au scroll */
+.admin-sidebar {
+    position: sticky;
+    top: 10px;
+}
+
+/* Colonne de droite (Titre & Calendrier) */
+.main-title {
+    margin: 0 0 15px 0;
+    font-size: 1.4rem;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Style du formulaire et boutons */
+.form-group {
+    margin-bottom: 12px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 0.9rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+/* Bouton d'enregistrement */
+.btn-submit {
+    width: 100%;
+    background-color: #a0522d;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #8B4513;
+}
+
+.btn-submit:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Alertes AJAX */
+.alert {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 0.85rem;
+    display: none;
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+    .admin-grid {
+        grid-template-columns: 1fr;
+        /* On empile sur tablette/mobile */
+    }
+
+    .admin-sidebar {
+        position: static;
+        margin-bottom: 30px;
+    }
+}
+
+/* Optimisations Smartphones */
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: 10px;
+    }
+
+    .admin-grid {
+        gap: 15px;
+    }
+
+    .main-title {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .user-info-box {
+        text-align: center;
+    }
+
+    .form-card {
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    /* Ajustement de la pop-up pour petit écran */
+    .modal-content {
+        width: 95%;
+        margin: 5% auto;
+        padding: 15px;
+        height: auto;
+        max-height: 95vh;
+    }
+
+    .modal-grid {
+        flex-direction: column;
+        height: auto;
+        overflow-y: visible;
+    }
+
+    .modal-image-container {
+        max-height: 200px;
+        min-width: 100%;
+    }
+
+    .modal-info {
+        padding-right: 0;
+    }
+}

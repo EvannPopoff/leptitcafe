@@ -1,0 +1,127 @@
+/* d'après la doc FullCalendar : https://fullcalendar.io/docs */
+
+:root {
+    --fc-event-bg-color: #8B4513;
+    --fc-event-border-color: #5D2E0A;
+    --fc-today-bg-color: #fdf5e6;
+    --fc-button-bg-color: #a0522d;
+    --fc-button-border-color: #a0522d;
+    --fc-button-active-bg-color: #8B4513;
+}
+
+/* Style du Calendrier  */
+#calendar-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    /* Un léger relief */
+}
+
+/* Style de la Pop-up (appelée également "modal") */
+.custom-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Fond un peu plus sombre */
+    overflow-y: auto;
+    /* Permet de défiler si le contenu est long */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 25px;
+    width: 90%;
+    /* On passe de 60% à 90% pour le mobile par défaut */
+    max-width: 850px;
+    /* Mais on limite à 850px sur grand écran */
+    border-radius: 12px;
+    position: relative;
+}
+
+/* La Grille Interne de la pop-up (modal) */
+.modal-grid {
+    display: flex;
+    flex-direction: row;
+    /* Côte à côte par défaut */
+    gap: 25px;
+    margin-top: 15px;
+}
+
+/* Gestion de l'Image (Le point critique) */
+.modal-image-container {
+    flex: 1;
+    /* Prend la moitié de la place */
+    min-width: 250px;
+    max-height: 450px;
+    border-radius: 8px;
+    overflow: hidden;
+    /* Coupe ce qui dépasse */
+    border: 1px solid #eee;
+}
+
+#modalImage {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    /* Évite que l'image disparaisse si petite */
+    object-fit: cover;
+    /* Remplit le cadre sans déformer */
+    display: block;
+}
+
+/* Les Informations */
+.modal-info {
+    flex: 1.2;
+    /* Prend un peu plus de place que l'image */
+    line-height: 1.6;
+}
+
+.modal-info hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 15px 0;
+}
+
+/* Bouton fermeture de la pop-up */
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #8B4513;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-modal:hover {
+    color: #ff0000;
+    /* Devient rouge au survol */
+}
+
+/* RESPONSIVE (Mobile) */
+@media (max-width: 768px) {
+    .modal-grid {
+        flex-direction: column;
+        /* On empile l'image et le texte */
+    }
+
+    .modal-content {
+        margin: 10% auto;
+        padding: 15px;
+    }
+
+    .modal-image-container {
+        max-height: 300px;
+        /* Plus petit sur mobile */
+    }
+}

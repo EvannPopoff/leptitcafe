@@ -1,0 +1,80 @@
+/* Structure globale */
+.page-layout {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.page-header {
+    margin-bottom: 60px;
+}
+
+.page-header h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #2f5d1e;
+    margin-bottom: 20px;
+}
+
+.page-header p {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.card-box {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.card-box article {
+    background-color: #ffffff;
+    padding: 30px 35px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.card-box h2,
+.card-box h3 {
+    color: #2f5d1e;
+    margin-bottom: 15px;
+}
+
+.custom-list {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.custom-list li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.card-box a {
+    color: #2f5d1e;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.card-box a:hover {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+    .page-layout {
+        padding: 60px 16px;
+    }
+
+    .page-header h2 {
+        font-size: 2rem;
+    }
+
+    .card-box article {
+        padding: 24px;
+    }
+}

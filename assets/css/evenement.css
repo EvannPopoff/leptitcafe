@@ -1,0 +1,259 @@
+/* =========================
+   PAGE EVENEMENTS - MOBILE FIRT
+========================= */
+
+/* Section 1 - Hero */
+.hero-evenement {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-evenement::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    /*passe par dessus */
+}
+
+.hero-content {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 1.5rem;
+}
+
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin-bottom: 1rem;
+}
+
+
+.hero-content p {
+    max-width: 600px;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+}
+
+/* Section 2 - Events */
+
+.recent-events {
+    background: #fdf7ec;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.recent-events-subtitle {
+    margin-bottom: 3rem;
+}
+
+.recent-events-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.recent-card {
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.recent-card a {
+    display: block;
+    width: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.recent-card img {
+    margin-bottom: 3rem;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    height: 460px;
+    object-fit: fill;
+    display: block;
+    border-radius: 15px;
+}
+
+
+/* Section 3 - Activités */
+.activities-info {
+    background: #2f4f1e;
+    color: #ffffff;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.activities-info h2 {
+    color: #B9DAA3;
+    margin-bottom: 3rem;
+}
+
+.activities-info-subtitle {
+    margin-bottom: 3rem;
+}
+
+.activities-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    margin: 2rem auto;
+}
+
+.activities-thumb {
+    border: 0;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
+.activities-thumb img {
+    width: 100%;
+    display: block;
+    border-radius: 15px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease;
+    margin-bottom: 3rem;
+}
+
+.activities-info-text {
+    margin: 0 auto 1rem;
+    line-height: 1.6;
+    opacity: 0.95;
+}
+
+
+/* DESKTOP */
+@media (min-width: 992px) {
+    .recent-events-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .activities-gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.6rem;
+    }
+}
+
+
+
+/* ===== POPUPS ===== */
+
+.event-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    z-index: 9999;
+    padding: 1rem;
+}
+
+.event-modal.is-open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Conteneur principal */
+.event-modal-content {
+    background: #fdf7ec;
+    width: 100%;
+    max-width: 920px;
+    border-radius: 18px;
+    padding: 1.2rem;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* Bouton fermer */
+.event-modal-close {
+    position: absolute;
+    top: 0.8rem;
+    right: 0.8rem;
+    border: none;
+    background: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+
+.event-modal-media img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+
+    max-height: 55vh;
+    object-fit: contain;
+}
+
+.event-modal-body h2 {
+    margin: 0.2rem 0 0.6rem;
+}
+
+.event-modal-text {
+    line-height: 1.6;
+}
+
+/* ===== DESKTOP : format paysage ===== */
+@media (min-width: 992px) {
+    .event-modal-content {
+        flex-direction: row;
+        /* image gauche / texte droite */
+        align-items: flex-start;
+        gap: 2.2rem;
+        padding: 2rem;
+    }
+
+    .event-modal-media {
+        flex: 0 0 320px;
+        /* largeur fixe de l'affiche */
+    }
+
+    .event-modal-media img {
+        max-height: 70vh;
+        /* évite que ça dépasse */
+    }
+
+    .event-modal-body {
+        flex: 1;
+        /* texte prend le reste */
+        text-align: left;
+        /* comme sur ton mockup */
+    }
+}
