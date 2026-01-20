@@ -1,18 +1,23 @@
 .hero-adhesion {
- background-image: url('../images/membership/hero-adhesion.jpeg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/membership/hero-adhesion.jpeg');
     background-size: cover;
     background-position: center;
     color: white;
-    padding: 80px 40px;
-    min-height: 300px;
+    padding: 120px 40px;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .hero-adhesion h1 {
-    font-size: 45px;
+    font-size: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
+
 .hero-adhesion p {
     font-size: 20px;
     margin-top: 15px;
