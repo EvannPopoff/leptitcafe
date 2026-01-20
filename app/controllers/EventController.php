@@ -42,15 +42,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'lien_programme_pdf' => null 
     ]);
 
-    // 3. Appel du Manager pour insérer l'événement
+    // Appel du Manager pour insérer l'événement
     try {
-        if ($manager->create($event)) {
+        if ($manager->create($event, $_SESSION['admin_id'])) {
             header('Location: index.php?page=dashboard&success=1');
             exit();
         } else {
-            echo "Le manager a retourné une erreur.";
+            echo "Erreur lors de l'insertion.";
         }
     } catch (Exception $e) {
+        // Pour le débogage
         die("Erreur fatale lors de l'insertion : " . $e->getMessage());
     }
 }

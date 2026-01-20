@@ -32,14 +32,12 @@ class EventManager {
         return $data ? new Event($data) : null;
     }
 
-    public function create(Event $event): bool {
-    // Requête basée sur ta capture d'écran SQL (10 colonnes à insérer)
-    $sql = "INSERT INTO EVENEMENT (titre, description, date_evenement, heure, lieu, type, image_url, mis_en_avant, statut, lien_programme_pdf) 
-            VALUES (:titre, :description, :date_evenement, :heure, :lieu, :type, :image_url, :mis_en_avant, :statut, :lien_programme_pdf)";
+    public function create(Event $event, int $id_admin): bool {
+    $sql = "INSERT INTO EVENEMENT (titre, description, date_evenement, heure, lieu, type, image_url, mis_en_avant, statut, lien_programme_pdf, id_admin) 
+            VALUES (:titre, :description, :date_evenement, :heure, :lieu, :type, :image_url, :mis_en_avant, :statut, :lien_programme_pdf, :id_admin)";
     
     $stmt = $this->db->prepare($sql);
     
-    // On lie chaque paramètre aux getters de ton Entité
     return $stmt->execute([
         'titre'              => $event->getTitle(),
         'description'        => $event->getDescription(),
@@ -50,7 +48,8 @@ class EventManager {
         'image_url'          => $event->getImageUrl(),
         'mis_en_avant'       => $event->isTopEvent() ? 1 : 0,
         'statut'             => $event->isStatut() ? 1 : 0,
-        'lien_programme_pdf' => $event->getProgUrl()
+        'lien_programme_pdf' => $event->getProgUrl(),
+        'id_admin'           => $id_admin // On envoie l'ID récupéré depuis la session
     ]);
     }
 }
