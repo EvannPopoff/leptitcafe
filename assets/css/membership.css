@@ -1,5 +1,5 @@
 .hero-adhesion {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/membership/hero-adhesion.jpeg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/page_membership/hero-adhesion.jpeg');
     background-size: cover;
     background-position: center;
     color: white;
@@ -320,5 +320,53 @@
     margin-bottom: 20px;
 }
 
-
-
+/* ================================
+   STYLES RESPONSIVE - MOBILE
+   Adaptation pour les écrans < 768px
+   ================================ */
+@media (max-width: 768px) {
+    .hero-adhesion {
+        padding: 80px 20px;
+        min-height: 300px;
+    }
+    
+    .hero-adhesion h1 {
+        font-size: 28px;
+    }
+    
+    .hero-adhesion p {
+        font-size: 16px;
+    }
+    
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .card-adhesion {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .etapes-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .temoignages-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .temoignage-card {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .benevole-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+}
