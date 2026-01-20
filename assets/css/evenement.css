@@ -167,33 +167,44 @@
 
 
 /* ===== POPUPS ===== */
-.event-modal {
+/* ===== POPUP EVENEMENT ===== */
+
+.event-modal{
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0,0,0,0.6);
     display: none;
     z-index: 9999;
     padding: 1rem;
-}
-
-.event-modal.is-open {
+  }
+  
+  .event-modal.is-open{
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.event-modal-content {
-    background: #fff;
+  }
+  
+  /* Conteneur principal */
+  .event-modal-content{
+    background: #fdf7ec;        /* comme ton fond */
     width: 100%;
-    max-width: 720px;
-    max-height: 90vh;
+    max-width: 920px;           /* paysage desktop */
     border-radius: 18px;
     padding: 1.2rem;
-    overflow-y: auto;
     position: relative;
-}
-
-.event-modal-close {
+  
+    /* mobile : colonne */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  
+    /* scroll si contenu long */
+    max-height: 90vh;
+    overflow: auto;
+  }
+  
+  /* Bouton fermer */
+  .event-modal-close{
     position: absolute;
     top: 0.8rem;
     right: 0.8rem;
@@ -201,12 +212,49 @@
     background: none;
     font-size: 1.6rem;
     cursor: pointer;
-}
-
-.event-modal-media img {
+  }
+  
+  /* Zone image */
+  .event-modal-media img{
     width: 100%;
     height: auto;
     display: block;
     border-radius: 12px;
-    margin-bottom: 1rem;
-}
+  
+    /* limite la taille en mobile (évite l'affiche gigantesque) */
+    max-height: 55vh;
+    object-fit: contain;
+  }
+  
+  /* Zone texte */
+  .event-modal-body h2{
+    margin: 0.2rem 0 0.6rem;
+  }
+  
+  .event-modal-text{
+    line-height: 1.6;
+  }
+  
+  /* ===== DESKTOP : format paysage ===== */
+  @media (min-width: 992px){
+    .event-modal-content{
+      flex-direction: row;       /* image gauche / texte droite */
+      align-items: flex-start;
+      gap: 2.2rem;
+      padding: 2rem;
+    }
+  
+    .event-modal-media{
+      flex: 0 0 320px;           /* largeur fixe de l'affiche */
+    }
+  
+    .event-modal-media img{
+      max-height: 70vh;          /* évite que ça dépasse */
+    }
+  
+    .event-modal-body{
+      flex: 1;                   /* texte prend le reste */
+      text-align: left;          /* comme sur ton mockup */
+    }
+  }
+  

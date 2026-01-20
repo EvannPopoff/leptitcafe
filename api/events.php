@@ -7,13 +7,53 @@ $limit  = isset($_GET['limit']) ? (int)$_GET['limit'] : 2; // combien d’évén
 
 // Données sans BDD
 $events = [
-  
-  ["title" => "Événement 1", "image" => "assets/images/page_home_evenements/event1.avif"],
-  ["title" => "Événement 2", "image" => "assets/images/page_home_evenements/event2.avif"],
-  ["title" => "Événement 3", "image" => "assets/images/page_home_evenements/event3.webp"],
-  ["title" => "Événement 4", "image" => "assets/images/page_home_evenements/event4.webp", "url" => "index.php?page=apropos"],
-  ["title" => "Événement 5", "image" => "assets/images/page_home_evenements/event5.webp", "url" => "index.php?page=apropos"],
+  [
+    "id" => 1,
+    "title" => "Calendrier de L'Après",
+    "image" => "assets/images/page_home_evenements/event1.avif",
+    "text" => "Une programmation culturelle et artistique offerte pendant les 24 jours avant Noël."
+  ],
+  [
+    "id" => 2,
+    "title" => "Festin Nomade",
+    "image" => "assets/images/page_home_evenements/event2.avif",
+    "text" => "Une journée festive et familiale autour de la cuisine et de la rencontre."
+  ],
+  [
+    "id" => 3,
+    "title" => "Quinzaine des Droits de l'Enfant",
+    "image" => "assets/images/page_home_evenements/event3.webp",
+    "text" => "Ateliers, échanges et temps forts pour sensibiliser aux droits de l’enfant."
+  ],
+  [
+    "id" => 4,
+    "title" => "Pas de Plaisir sans Consentement !",
+    "image" => "assets/images/page_home_evenements/event4.webp",
+    "text" => "Films, débats et ateliers pour ouvrir la discussion autour du consentement."
+  ],
+  [
+    "id" => 5,
+    "title" => "Le Printemps Indien de l'Education",
+    "image" => "assets/images/page_home_evenements/event5.webp",
+    "text" => "Un événement pour mettre en lumière des initiatives éducatives locales."
+  ],
 ];
+
+$id = isset($_GET['id']) ? (int)$_GET['id'] : null;
+
+if ($id !== null) {
+  foreach ($events as $event) {
+    if ((int)$event["id"] === $id) {
+      echo json_encode($event, JSON_UNESCAPED_SLASHES);
+      exit;
+    }
+  }
+
+  // si on ne trouve pas l'event
+  http_response_code(404);
+  echo json_encode(["error" => "Event not found"]);
+  exit;
+}
 
 $items = array_slice($events, $offset, $limit); //array_slide coupe le tableau et renvoie une portion du tableau de données (offset et limlt cf ligne 5/6)
 $hasMore = ($offset + $limit) < count($events); //reste des éléments après ceux qui ont été envoyé - 

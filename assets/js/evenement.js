@@ -29,7 +29,9 @@ function getApiUrl(offsetValue, limitValue) {
 function appendCard(item) {
     const card = document.createElement("article");
     card.className = "recent-card";
-    card.innerHTML = `<img src="${item.image}" alt="${item.title}" loading="lazy">`;
+    card.dataset.id = item.id;
+  
+    card.innerHTML = '<img src="' + item.image + '" alt="' + item.title + '" loading="lazy">';
     grid.appendChild(card);
 }
 
@@ -99,24 +101,55 @@ document.addEventListener("DOMContentLoaded", function () {
     let modalTitle = document.getElementById("modalTitle");
     let closeBtn = document.getElementById("closeModal");
 
+
     /* click card */
     grid.addEventListener("click", function (e) {
 
         let card = e.target.closest(".recent-card");
         if (!card) return;
 
-        let img = card.querySelector("img");
-        if (!img) return;
+        let id = card.dataset.id;
+        if (!id) return;
 
-        /* remplissage de la popup */
-        modalTitle.textContent = img.alt || "Événement";
-        modalMedia.innerHTML =
-            '<img src="' + img.src + '" alt="' + img.alt + '">';
+        /* appel API pour récupérer les infos */
+        fetch("api/events.php?id=" + id)
+            .then(function (response) {
+                return response.json();
+            })
+        fetch("api/events.php?id=" + id)
+            .then(function (response) {
+                if (!response.ok) {
+                    throw new Error("API erreur : " + response.status);
+                }
+                return response.json();
+            })
 
-        /* open popup */
-        modal.classList.add("is-open");
-        document.body.style.overflow = "hidden";
+            //debug
+            .then(function (data) {
+                modalTitle.textContent = data.title || "Événement";
+                if (data.image) {
+                    modalMedia.innerHTML = '<img src="' + data.image + '" alt="' + (data.title || "") + '">';
+                } else {
+                    modalMedia.innerHTML = "<p>Image indisponible</p>";
+                }
+
+                if (data.text) {
+                    document.getElementById("modalText").textContent = data.text;
+                } else {
+                    document.getElementById("modalText").textContent = "";
+                }
+
+                modal.classList.add("is-open");
+                document.body.style.overflow = "hidden";
+            })
+
+            .catch(function (err) {
+                console.error(err);
+                alert("Impossible de charger l'événement (API).");
+            });
+
     });
+
 
     /* fermet la popup */
     closeBtn.addEventListener("click", function () {

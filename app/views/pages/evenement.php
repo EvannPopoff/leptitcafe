@@ -26,15 +26,15 @@
 
         <div class="recent-events-grid" id="recentGrid">
           <article class="recent-card" data-id="1">
-            <img src="assets/images/page_home_evenements/event1.avif" alt="Événement 1">
+            <img src="assets/images/page_home_evenements/event1.avif" alt="Calendrier de L'Après">
           </article>
 
           <article class="recent-card" data-id="2">
-            <img src="assets/images/page_home_evenements/event2.avif" alt="Événement 2">
+            <img src="assets/images/page_home_evenements/event2.avif" alt="Festin Nomade">
           </article>
 
           <article class="recent-card" data-id="3">
-            <img src="assets/images/page_home_evenements/event3.webp" alt="Événement 3">
+            <img src="assets/images/page_home_evenements/event3.webp" alt="Quinzaine des Droits de l'Enfant">
           </article>
 
         <button class="btn-events" id="btnLoadMore" type="button">
@@ -101,13 +101,16 @@
 
     <!-- Popups -->
 
-    <div class="event-modal" id="eventModal" aria-hidden="true">
+    <div class="event-modal" id="eventModal">
       <div class="event-modal-content">
-        <button class="event-modal-close" id="closeModal" type="button" aria-label="Fermer">✕</button>
-          <div class="event-modal-media" id="modalMedia"></div>
-            <h2 id="modalTitle"></h2>
-          <div class="event-modal-text" id="modalText">
-          </div>
+        <button class="event-modal-close" id="closeModal" type="button">✕</button>
+
+        <div class="event-modal-media" id="modalMedia"></div>
+
+        <div class="event-modal-body">
+          <h2 id="modalTitle"></h2>
+          <div class="event-modal-text" id="modalText"></div>
+        </div>
       </div>
     </div>
 
