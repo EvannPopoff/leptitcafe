@@ -11,7 +11,7 @@ if (!isset($_SESSION['admin_id'])) {
 }
 
 // On vérifie qu'on arrive bien d'un formulaire
-if ($_SERVER['REQUEST_METHODE'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // On récupère la connexion à la BDD et le manager
     $db = Database::getInstance();
     $manager = new EventManager($db);
