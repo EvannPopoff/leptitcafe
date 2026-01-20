@@ -43,14 +43,8 @@
     /* On passe de 60% à 90% pour le mobile par défaut */
     max-width: 850px;
     /* Mais on limite à 850px sur grand écran */
-    height: 500px;
-    /* Hauteur fixe */
     border-radius: 12px;
     position: relative;
-    display: flex;
-    /* Utilisation de Flexbox */
-    flex-direction: column;
-    /* Empilement vertical */
 }
 
 /* La Grille Interne de la pop-up (modal) */
@@ -59,21 +53,19 @@
     flex-direction: row;
     /* Côte à côte par défaut */
     gap: 25px;
-    height: 100%;
-    /* Prend toute la hauteur de la modal */
-    overflow: hidden;
-    /* Évite les débordements */
+    margin-top: 15px;
 }
 
 /* Gestion de l'Image (Le point critique) */
 .modal-image-container {
     flex: 1;
     /* Prend la moitié de la place */
-    height: 100%;
-    /* Prend toute la hauteur de la modal */
+    min-width: 250px;
+    max-height: 450px;
     border-radius: 8px;
     overflow: hidden;
-    /* Coupe les débordements */
+    /* Coupe ce qui dépasse */
+    border: 1px solid #eee;
 }
 
 #modalImage {
@@ -89,12 +81,8 @@
 /* Les Informations */
 .modal-info {
     flex: 1.2;
-    height: 100%;
-    /* Prend toute la hauteur de la modal */
-    overflow-y: auto;
-    /* Permet de défiler si le texte est long */
-    padding-right: 10px;
-    /* Pour éviter que le texte touche le bord */
+    /* Prend un peu plus de place que l'image */
+    line-height: 1.6;
 }
 
 .modal-info hr {
@@ -128,10 +116,8 @@
     }
 
     .modal-content {
-        height: auto;
-        /* Hauteur automatique */
-        max-height: 90vh;
-        /* Hauteur automatique mais limitée */
+        margin: 10% auto;
+        padding: 15px;
     }
 
     .modal-image-container {
