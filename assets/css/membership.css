@@ -1,22 +1,45 @@
-.hero-adhesion {
-    background-image: url('../images/hero-adhesion.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 80px 40px;
-    min-height: 300px;
+.hero-membership {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+.hero-membership img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.hero-content {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 1.5rem;
 }
 
-.hero-adhesion h1 {
-    font-size: 45px;
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin-bottom: 1rem;
 }
-.hero-adhesion p {
-    font-size: 20px;
-    margin-top: 15px;
+
+
+.hero-content p {
+    max-width: 600px;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
 }
+
 .card-adhesion {
     background-color: #ffffff;
     border: 1px solid #ddd;
@@ -309,3 +332,19 @@
     text-decoration: none;
     border-radius: 25px;
 }
+
+
+.temoignage-auteur {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+.temoignage-auteur .avatar {
+    width: 50px;  
+    height: 50px;      
+    aspect-ratio: 1/1; 
+    border-radius: 50%;
+    object-fit: cover;
+}
+

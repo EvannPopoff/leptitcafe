@@ -4,10 +4,16 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <!-- Hero Section -->
-<section class="hero-adhesion">
-    <h1>ADHÉRER & SOUTENIR</h1>
-    <p>Devenez acteur de votre café associatif</p>
-</section>
+    <div class="hero-membership">
+        <img src="assets/images/hero-adherer.webp" alt="hero">
+
+        <div class="hero-content">
+            <h1>ADHÉRER & SOUTENIR</h1>
+            <p>
+               Devenez acteur de votre café associatif<br>
+            </p>
+        </div>
+    </div>
 
 <!-- Section Pourquoi adhérer -->
 <section class="pourquoi-adherer">
@@ -114,7 +120,7 @@
                 <div class="stars">★★★★★</div>
                 <p>"L'ambiance est incroyable ! C'est mon endroit préféré pour travailler ou boire un café tranquille."</p>
                 <div class="temoignage-auteur">
-                    <div class="avatar"></div>
+                    <img class="avatar" src="assets/images/avatar_julie.webp" alt="Julie M.">
                     <span>Julie M.</span>
                 </div>
             </div>
@@ -122,7 +128,7 @@
                 <div class="stars">★★★★★</div>
                 <p>"Les prix sont très accessibles et l'équipe est toujours souriante. Je recommande vivement !"</p>
                 <div class="temoignage-auteur">
-                    <div class="avatar"></div>
+                    <img class="avatar" src="assets/images/avatar_paul.webp" alt="Paul R..">
                     <span>Paul R.</span>
                 </div>
             </div>
@@ -130,7 +136,7 @@
                 <div class="stars">★★★★★</div>
                 <p>"J'ai participé à l'atelier jardinage, c'était génial. On se sent vraiment utile et entouré."</p>
                 <div class="temoignage-auteur">
-                    <div class="avatar"></div>
+                    <img class="avatar" src="assets/images/avatar_sarah.webp" alt="Sarah L..">
                     <span>Sarah L.</span>
                 </div>
             </div>
@@ -145,7 +151,7 @@
             <h2>ENVIE D'ALLER PLUS LOIN ?</h2>
         </div>
        <div class="benevole-image">
-    <img src="assets/images/benevole.jpg" alt="Bénévole">
+    <img src="assets/images/hero-adherer.webp" alt="Bénévole">
 </div>
         <div class="benevole-right">
             <p>Le P'tit Café fonctionne grâce à ses bénévoles ! Que ce soit pour tenir une permanence, aider lors des événements ou bricoler, votre aide est la bienvenue.</p>
