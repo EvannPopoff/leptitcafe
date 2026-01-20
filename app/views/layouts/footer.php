@@ -33,7 +33,9 @@
     <hr>
 
     <div class="footer-bottom">
-      <p>© 2026 - Tous droits réservés</p>
+      <p>
+    <a href="index.php?page=login" class="admin-link"> © </a>2026 - Tous droits réservés</p><!-- Intégration d’un lien discret vers la page de connexion administrateur -->
+
       <div class="footer-links">
         <a href="index.php?page=confidentialite">Politique de confidentialité</a>
         <a href="index.php?page=mentions">Mentions légales</a>
