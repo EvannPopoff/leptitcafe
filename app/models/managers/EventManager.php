@@ -33,24 +33,24 @@ class EventManager {
     }
 
     public function create(Event $event): bool {
-        $sql = "INSERT INTO EVENEMENT (titre, description, date_evenement, heure, lieu, type, image_url, mis_en_avant, statut, lien_programme_pdf) 
+    // Requête basée sur ta capture d'écran SQL (10 colonnes à insérer)
+    $sql = "INSERT INTO EVENEMENT (titre, description, date_evenement, heure, lieu, type, image_url, mis_en_avant, statut, lien_programme_pdf) 
             VALUES (:titre, :description, :date_evenement, :heure, :lieu, :type, :image_url, :mis_en_avant, :statut, :lien_programme_pdf)";
     
-        $stmt = $this->db->prepare($sql);
-
-        // On lie chaque attribut SQL à une valeur de l'objet Event choisie.
-        return $stmt->execute([
-                'titre' => $event->getTitle(),
-                'description' => $event->getDescription(),
-                'date_evenement' => $event->getDateEvent(),
-                'heure' => $event->getHour(),
-                'lieu' => $event->getPlace(),
-                'type' => $event->getType(),
-                'image_url' => $event->getImageUrl(),
-                'mis_en_avant' => $event->isTopEvent() ? 1 : 0,
-                'statut' => $event->isStatut() ? 1 : 0,
-                'lien_programme_pdf' => $event->getProgUrl()
-            ]);
+    $stmt = $this->db->prepare($sql);
+    
+    // On lie chaque paramètre aux getters de ton Entité
+    return $stmt->execute([
+        'titre'              => $event->getTitle(),
+        'description'        => $event->getDescription(),
+        'date_evenement'     => $event->getDateEvent(),
+        'heure'              => $event->getHour(),
+        'lieu'               => $event->getPlace(),
+        'type'               => $event->getType(),
+        'image_url'          => $event->getImageUrl(),
+        'mis_en_avant'       => $event->isTopEvent() ? 1 : 0,
+        'statut'             => $event->isStatut() ? 1 : 0,
+        'lien_programme_pdf' => $event->getProgUrl()
+    ]);
     }
-            
 }
