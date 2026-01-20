@@ -76,3 +76,30 @@
 .forgot-password:hover {
     text-decoration: underline;
 }
+/* ================================
+   STYLES RESPONSIVE - MOBILE
+   ================================ */
+@media (max-width: 768px) {
+    .login-section {
+        padding: 40px 20px;
+        min-height: 50vh;
+    }
+    
+    .login-container {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .login-container h1 {
+        font-size: 28px;
+    }
+    
+    .form-group input {
+        height: 45px;
+        padding: 10px;
+    }
+    
+    .btn-login {
+        height: 45px;
+    }
+}
