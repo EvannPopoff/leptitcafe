@@ -25,7 +25,6 @@
             <div class="card-adhesion">
                 <h3>Individuelle</h3>
                 <p class="price">7€ / an</p>
-                <a href="#" class="btn-choisir">Choisir</a>
                 <ul>
                     <li>1 personne</li>
                     <li>Accès aux activités</li>
@@ -35,7 +34,6 @@
             <div class="card-adhesion">
                 <h3>Famille</h3>
                 <p class="price">20€ / an</p>
-                <a href="#" class="btn-choisir">Choisir</a>
                 <ul>
                     <li>Toute la famille</li>
                     <li>Jusqu'à 10 personnes</li>
@@ -45,7 +43,6 @@
             <div class="card-adhesion">
                 <h3>Donateur</h3>
                 <p class="price">Don Libre</p>
-                <a href="#" class="btn-don">Faire un don</a>
                 <ul>
                     <li>Soutien au projet</li>
                     <li>Déduction fiscale</li>
@@ -99,7 +96,7 @@
             <span class="timeline-dot"></span>
         </div>
 
-        <a href="#" class="btn-adherer">Adhérer maintenant sur Pep's Up →</a>
+        <a href="https://cafejeunespousses.pepsup.com/" class="btn-adherer">Adhérer maintenant sur Pep's Up →</a>
         <p class="paiement-info">Paiement sécurisé en ligne (CB) ou sur place</p>
     </div>
 </section>
@@ -142,14 +139,14 @@
 <section class="cta-benevole">
     <div class="benevole-content">
         <div class="benevole-left">
-            <h2>ENVIE D'ALLER PLUS LOIN ?</h2>
+            <h2>Envie d'aller plus loin ?</h2>
         </div>
        <div class="benevole-image">
 <img src="assets/images/page_membership/benevole.jpg" alt="Bénévole">
 </div>
         <div class="benevole-right">
             <p>Le P'tit Café fonctionne grâce à ses bénévoles ! Que ce soit pour tenir une permanence, aider lors des événements ou bricoler, votre aide est la bienvenue.</p>
-            <a href="#" class="btn-benevole">Devenir bénévole</a>
+            <a href="https://cafejeunespousses.pepsup.com/" class="btn-benevole">Devenir bénévole</a>
         </div>
     </div>
 </section>
