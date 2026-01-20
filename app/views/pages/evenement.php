@@ -6,7 +6,7 @@
 
     <div class="hero-evenement">
       <img
-        src="assets/images/evenement_hero.avif"
+        src="assets/images/page_home_evenements/evenement_hero.avif"
         alt="hero"
         class="hero-bg">
     </div>
@@ -21,15 +21,15 @@
 
         <div class="recent-events-grid" id="recentGrid">
           <article class="recent-card" data-id="1">
-            <img src="assets/images/event1.avif" alt="Événement 1">
+            <img src="assets/images/page_home_evenements/event1.avif" alt="Événement 1">
           </article>
 
           <article class="recent-card" data-id="2">
-            <img src="assets/images/event2.avif" alt="Événement 2">
+            <img src="assets/images/page_home_evenements/event2.avif" alt="Événement 2">
           </article>
 
           <article class="recent-card" data-id="3">
-            <img src="assets/images/event3.webp" alt="Événement 3">
+            <img src="assets/images/page_home_evenements/event3.webp" alt="Événement 3">
           </article>
         </div>
 
@@ -51,9 +51,9 @@
           <button
             class="activities-thumb"
             type="button"
-            data-full="assets/images/affiche_activite.webp">
+            data-full="assets/images/page_home_evenements/affiche_activite.webp">
             <img
-              src="assets/images/affiche_activite.webp"
+              src="assets/images/page_home_evenements/affiche_activite.webp"
               alt="Programme1"
               loading="lazy">
           </button>
@@ -61,9 +61,9 @@
           <button
             class="activities-thumb"
             type="button"
-            data-full="assets/images/affiche_activite.webp">
+            data-full="assets/images/page_home_evenements/affiche_activite.webp">
             <img
-              src="assets/images/affiche_activite.webp"
+              src="assets/images/page_home_evenements/affiche_activite.webp"
               alt="Programme2"
               loading="lazy">
           </button>
@@ -71,9 +71,9 @@
           <button
             class="activities-thumb"
             type="button"
-            data-full="assets/images/affiche_activite.webp">
+            data-full="assets/images/page_home_evenements/affiche_activite.webp">
             <img
-              src="assets/images/affiche_activite.webp"
+              src="assets/images/page_home_evenements/affiche_activite.webp"
               alt="Programme3"
               loading="lazy">
           </button>
