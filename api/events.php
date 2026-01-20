@@ -7,11 +7,12 @@ $limit  = isset($_GET['limit']) ? (int)$_GET['limit'] : 2; // combien d’évén
 
 // Données sans BDD
 $events = [
-  ["id"=>1, "title"=>"Événement 1", "image"=>"assets/images/event1.avif"],
-  ["id"=>2, "title"=>"Événement 2", "image"=>"assets/images/event2.avif"],
-  ["id"=>3, "title"=>"Événement 3", "image"=>"assets/images/event3.webp"],
-  ["id"=>4, "title"=>"Événement 4", "image"=>"assets/images/event4.webp"],
-  ["id"=>5, "title"=>"Événement 5", "image"=>"assets/images/event5.webp"],
+  
+  ["title" => "Événement 1", "image" => "assets/images/page_home_evenements/event1.avif"],
+  ["title" => "Événement 2", "image" => "assets/images/page_home_evenements/event2.avif"],
+  ["title" => "Événement 3", "image" => "assets/images/page_home_evenements/event3.webp"],
+  ["title" => "Événement 4", "image" => "assets/images/page_home_evenements/event4.webp", "url" => "index.php?page=apropos"],
+  ["title" => "Événement 5", "image" => "assets/images/page_home_evenements/event5.webp", "url" => "index.php?page=apropos"],
 ];
 
 $items = array_slice($events, $offset, $limit); //array_slide coupe le tableau et renvoie une portion du tableau de données (offset et limlt cf ligne 5/6)

@@ -10,7 +10,7 @@
         <img src="assets/images/evenement_hero.avif" alt="hero" class="hero-bg">
 
         <div class="hero-evenement">
-        <img src="assets/images/evenement_hero.avif" alt="hero">
+        <img src="assets/images/page_home_evenements/evenement_hero.avif" alt="hero">
 
         <div class="hero-content">
             <h1>Vivre des moments ensemble</h1>
@@ -30,17 +30,19 @@
             <p class="recent-events-subtitle">Retrouvez nos évènements les plus marquants</p>
 
             <div class="recent-events-grid" id="recentGrid">
-                <article class="recent-card" data-id="1">
-                    <img src="assets/images/event1.avif" alt="Événement 1">
-                </article>
 
-                <article class="recent-card" data-id="2">
-                    <img src="assets/images/event2.avif" alt="Événement 2">
-                </article>
+            <article class="recent-card">
+                <a href="index.php?page=apropos"><img src="assets/images/page_home_evenements/event1.avif" alt="Événement 1"></a>
+            </article>
 
-                <article class="recent-card" data-id="3">
-                    <img src="assets/images/event3.webp" alt="Événement 3">
-                </article>
+            <article class="recent-card">
+                <a href="index.php?page=apropos"><img src="assets/images/page_home_evenements/event2.avif" alt="Événement 2"></a>
+            </article>
+
+            <article class="recent-card">
+                <a href="index.php?page=apropos"><img src="assets/images/page_home_evenements/event3.webp" alt="Événement 3"></a>
+            </article>
+
             </div>
 
             <button class="btn-events" id="btnLoadMore" type="button">
@@ -61,6 +63,7 @@
             </p>
 
             <div class="activities-gallery" id="activitiesGallery">
+<<<<<<< HEAD
                 <button class="activities-thumb" type="button"
                     data-full="assets/images/affiche_activite.webp">
                     <img src="assets/images/affiche_activite.webp" alt="Programme1" loading="lazy">
@@ -75,6 +78,22 @@
                     data-full="assets/images/affiche_activite.webp">
                     <img src="assets/images/affiche_activite.webp" alt="Programme3" loading="lazy">
                 </button>
+=======
+            <button class="activities-thumb" type="button"
+                data-full="assets/images/page_home_evenements/affiche_activite.webp">
+                <img src="assets/images/page_home_evenements/affiche_activite.webp" alt="Programme1" loading="lazy">
+            </button>
+
+            <button class="activities-thumb" type="button"
+                data-full="assets/images/page_home_evenements/affiche_activite.webp">
+                <img src="assets/images/page_home_evenements/affiche_activite.webp" alt="Programme2" loading="lazy">
+            </button>
+
+            <button class="activities-thumb" type="button"
+                data-full="assets/images/page_home_evenements/affiche_activite.webp">
+                <img src="assets/images/page_home_evenements/affiche_activite.webp" alt="Programme3" loading="lazy">
+            </button>
+>>>>>>> 0c5b2cac6ee5733f5472e31af6e90a91a2250caf
             </div>
 
             <p class="activities-info-text">

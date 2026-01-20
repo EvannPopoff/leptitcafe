@@ -24,3 +24,39 @@ if (!isset($_SESSION['admin_id'])) {
         <a href="index.php?page=logout" class="logout-btn">Se déconnecter</a>
     </nav>
 </section>
+
+<div class="stats-container">
+        <div class="stat-card">
+            <div class="stat-info">
+                <h3>Événements</h3>
+                <span class="stat-number">5</span>
+                <p>À venir ce mois-ci</p>
+            </div>
+            <i class="fa-solid fa-calendar"></i>
+        </div>
+        </div>
+
+    <div class="reser-vations-section"> 
+        <h2>Dernières Réservations</h2>
+        <table class="reservations-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Client</th>
+                    <th>Type</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>25 Jan 2026</td>
+                    <td>Sophie Martin</td>
+                    <td>Anniversaire</td>
+                    <td class="actions">
+                        <i class="fa-solid fa-check"></i>
+                        <i class="fa-solid fa-xmark"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
