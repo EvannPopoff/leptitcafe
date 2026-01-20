@@ -76,7 +76,7 @@
                     Ou faire des demandes de chose que vous aimeriez trouver.
                 </p>
 
-                <a href="index.php?page=evenement" class="btn-events">Consulter l’Agenda</a>
+                <a href="app/views/layouts/calendar.php" class="btn-events">Consulter l’Agenda</a>
             </div>
 
         </div>
@@ -102,7 +102,7 @@
             ou directement au P’tit Café.
             </p>
 
-            <a href="index.php?page=reservation" class="btn-events">Réserver le P'tit Café</a>
+            <a href="index.php?page=contact" class="btn-events">Réserver le P'tit Café</a>
 
         </div>
     </section>

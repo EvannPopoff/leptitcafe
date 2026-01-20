@@ -93,7 +93,7 @@
           un atelier, une conférence…
         </p>
 
-        <a href="index.php?page=contact" class="btn-events">
+        <a href="app/views/layouts/calendar.php" class="btn-events">
           Consulter l’agenda
         </a>
       </div>

@@ -141,7 +141,7 @@
 Chaque visite devient un souvenir, chaque rencontre une nouvelle histoire. Devenez membre dès aujourd’hui et faites partie de notre famille du P’tit Café !
     </p>
 
-    <a href="index.php?page=contact" class="btn-reserve">Adhérer maintenant</a>
+    <a href="index.php?page=membership" class="btn-reserve">Adhérer maintenant</a>
 </section>
 
 <script src="assets/js/apropos.js"></script>
