@@ -120,7 +120,7 @@
                 <div class="stars">★★★★★</div>
                 <p>"L'ambiance est incroyable ! C'est mon endroit préféré pour travailler ou boire un café tranquille."</p>
                 <div class="temoignage-auteur">
-                    <div class="avatar"></div>
+                    <img class="avatar" src="assets/images/avatar_julie.webp" alt="Julie M.">
                     <span>Julie M.</span>
                 </div>
             </div>
@@ -128,7 +128,7 @@
                 <div class="stars">★★★★★</div>
                 <p>"Les prix sont très accessibles et l'équipe est toujours souriante. Je recommande vivement !"</p>
                 <div class="temoignage-auteur">
-                    <div class="avatar"></div>
+                    <img class="avatar" src="assets/images/avatar_paul.webp" alt="Paul R..">
                     <span>Paul R.</span>
                 </div>
             </div>
@@ -136,7 +136,7 @@
                 <div class="stars">★★★★★</div>
                 <p>"J'ai participé à l'atelier jardinage, c'était génial. On se sent vraiment utile et entouré."</p>
                 <div class="temoignage-auteur">
-                    <div class="avatar"></div>
+                    <img class="avatar" src="assets/images/avatar_sarah.webp" alt="Sarah L..">
                     <span>Sarah L.</span>
                 </div>
             </div>
