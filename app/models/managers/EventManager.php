@@ -10,9 +10,6 @@ class EventManager {
         $this->db = $db;
     }
 
-    /** Praticité pour le dev ensuite (DocBlock) : 
-    *@return Event[] */
-
     public function findAll(): array {
         $sql = "SELECT * FROM EVENEMENT ORDER BY date_evenement ASC, heure ASC";
         $stmt = $this->db->query($sql);
@@ -35,22 +32,25 @@ class EventManager {
         return $data ? new Event($data) : null;
     }
 
-    public function create(Event $event, int $id_admin): bool {
-        $sql = "INSERT INTO EVENEMENT (titre, description, date_evenement, heure, lieu, type, image_url, mis_en_avant, statut, lien_programme_pdf, id_admin) 
-                VALUES (:titre, :description, :date_evenement, :heure, :lieu, :type, :image_url, :mis_en_avant, :statut, :lien_programme_pdf, :id_admin)";
+    public function create(Event $event): bool {
+        $sql = "INSERT INTO EVENEMENT (titre, description, date_evenement, heure, lieu, type, image_url, mis_en_avant, statut, lien_programme_pdf) 
+            VALUES (:titre, :description, :date_evenement, :heure, :lieu, :type, :image_url, :mis_en_avant, :statut, :lien_programme_pdf)";
+    
         $stmt = $this->db->prepare($sql);
+
+        // On lie chaque attribut SQL à une valeur de l'objet Event choisie.
         return $stmt->execute([
-            'titre' => $event->getTitle(),
-            'description' => $event->getDescription(),
-            'date_evenement' => $event->getDateEvent(),
-            'heure' => $event->getHour(),
-            'lieu' => $event->getPlace(),
-            'type' => $event->getType(),
-            'image_url' => $event->getImageUrl(),
-            'mis_en_avant' => $event->isTopEvent() ? 1 : 0,
-            'statut' => $event->isStatut() ? 1 : 0,
-            'lien_programme_pdf' => $event->getProgUrl(),
-            'created_by' => $id_admin
-        ]);
+                'titre' => $event->getTitle(),
+                'description' => $event->getDescription(),
+                'date_evenement' => $event->getDateEvent(),
+                'heure' => $event->getHour(),
+                'lieu' => $event->getPlace(),
+                'type' => $event->getType(),
+                'image_url' => $event->getImageUrl(),
+                'mis_en_avant' => $event->isTopEvent() ? 1 : 0,
+                'statut' => $event->isStatut() ? 1 : 0,
+                'lien_programme_pdf' => $event->getProgUrl()
+            ]);
     }
+            
 }
