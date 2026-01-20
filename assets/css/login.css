@@ -55,11 +55,14 @@
 .btn-google {
     width: 100%;
     padding: 12px;
-    background-color: #444;
+    background-color: #555;
     color: white;
     border: none;
     margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
 }
+
 .forgot-password {
     color: white;
     display: block;
