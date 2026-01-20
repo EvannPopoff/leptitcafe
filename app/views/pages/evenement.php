@@ -1,11 +1,10 @@
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="assets/css/evenement.css">
+<script src="assets/js/evenement.js" defer></script>
 
-    <script src="assets/js/evenement.js" defer></script>
+<link rel="stylesheet" href="assets/css/evenement.css">
 
 
     <div class="hero-evenement">
-      <img
+        <img
         src="assets/images/page_home_evenements/evenement_hero.avif"
         alt="hero"
         class="hero-bg">
@@ -14,8 +13,8 @@
             <p>
                 Revivez en images la magie de vos soirées et nos plus beaux partages
             </p>
+        </div>
     </div>
-      </div>
 
     <!-- Section 2 - Evenements / Lazy loading -->
     <section class="recent-events">
@@ -37,11 +36,6 @@
           <article class="recent-card" data-id="3">
             <img src="assets/images/page_home_evenements/event3.webp" alt="Événement 3">
           </article>
-          
-        <button class="btn-events" id="btnLoadMore" type="button">
-          Charger plus
-        </button>
-      </div>
 
         <button class="btn-events" id="btnLoadMore" type="button">
           Charger plus
@@ -104,4 +98,17 @@
         </a>
       </div>
     </section>
-  </body>
+
+    <!-- Popups -->
+
+    <div class="event-modal" id="eventModal" aria-hidden="true">
+      <div class="event-modal-content">
+        <button class="event-modal-close" id="closeModal" type="button" aria-label="Fermer">✕</button>
+          <div class="event-modal-media" id="modalMedia"></div>
+            <h2 id="modalTitle"></h2>
+          <div class="event-modal-text" id="modalText">
+          </div>
+      </div>
+    </div>
+
+
