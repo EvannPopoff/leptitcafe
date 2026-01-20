@@ -98,6 +98,7 @@
     height: auto;
     border-radius: 15px;
     margin-bottom: 1, 5rem;
+    background-position: cover;
     box-shadow: 0 8px 8px rgba(0, 0, 0, 0.25);
 }
 
@@ -109,7 +110,7 @@
 .activities {
     background: #2f4f1e;
     padding: 4rem 0;
-    color: #fff;
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -133,6 +134,8 @@
     margin: 0 auto;
     border-radius: 15px;
     box-shadow: 0 8px 8px rgba(0, 0, 0, 0.25);
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }
 
 .activities-content {
@@ -149,7 +152,7 @@
 /* SECTION 4 RESERVER */
 .reserver {
     background: #ffffff;
-    padding: 5rem 0;
+    padding: 4rem 0;
     text-align: center;
 }
 
@@ -172,7 +175,6 @@
 }
 
 .reserver-info {
-    max-width: 720px;
     line-height: 1.6;
 }
 
@@ -196,6 +198,7 @@
 
     .event-card img {
         width: 285px;
+        background-position: cover;
     }
 
 

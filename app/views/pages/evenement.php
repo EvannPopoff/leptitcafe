@@ -13,20 +13,20 @@
     <section class="recent-events">
         <div class="container recent-events-container">
 
-            <h2>Événements Récents</h2>
-            <p class="recent-events-subtitle">Retrouvez nos événements les plus marquants</p>
+            <h2>Évènements Récents</h2>
+            <p class="recent-events-subtitle">Retrouvez nos évènements les plus marquants</p>
 
             <div class="recent-events-grid" id="recentGrid">
             <article class="recent-card">
-                <img src="assets/images/event1.avif" alt="Événement 1">
+                <a href="index.php?page=apropos"><img src="assets/images/event1.avif" alt="Événement 1"></a>
             </article>
 
             <article class="recent-card">
-                <img src="assets/images/event2.avif" alt="Événement 2">
+                <a href="index.php?page=apropos"><img src="assets/images/event2.avif" alt="Événement 2"></a>
             </article>
 
             <article class="recent-card">
-                <img src="assets/images/event3.avif" alt="Événement 3">
+                <a href="index.php?page=apropos"><img src="assets/images/event3.webp" alt="Événement 3"></a>
             </article>
             </div>
 
