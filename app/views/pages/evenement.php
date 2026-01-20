@@ -1,10 +1,11 @@
-<script src="assets/js/evenement.js"></script>
+<script src="assets/js/evenement.js" defer></script>
 
 <link rel="stylesheet" href="assets/css/evenement.css">
 <link rel="stylesheet" href="assets/css/style.css">
 
 
 <body>
+
     <div class="hero-evenement">
         <img src="assets/images/evenement_hero.avif" alt="hero" class="hero-bg">
     </div>
@@ -17,17 +18,17 @@
             <p class="recent-events-subtitle">Retrouvez nos évènements les plus marquants</p>
 
             <div class="recent-events-grid" id="recentGrid">
-            <article class="recent-card">
-                <a href="index.php?page=apropos"><img src="assets/images/event1.avif" alt="Événement 1"></a>
-            </article>
+                <article class="recent-card" data-id="1">
+                    <img src="assets/images/event1.avif" alt="Événement 1">
+                </article>
 
-            <article class="recent-card">
-                <a href="index.php?page=apropos"><img src="assets/images/event2.avif" alt="Événement 2"></a>
-            </article>
+                <article class="recent-card" data-id="2">
+                    <img src="assets/images/event2.avif" alt="Événement 2">
+                </article>
 
-            <article class="recent-card">
-                <a href="index.php?page=apropos"><img src="assets/images/event3.webp" alt="Événement 3"></a>
-            </article>
+                <article class="recent-card" data-id="3">
+                    <img src="assets/images/event3.webp" alt="Événement 3">
+                </article>
             </div>
 
             <button class="btn-events" id="btnLoadMore" type="button">
@@ -48,20 +49,20 @@
             </p>
 
             <div class="activities-gallery" id="activitiesGallery">
-            <button class="activities-thumb" type="button"
-                data-full="assets/images/affiche_activite.webp">
-                <img src="assets/images/affiche_activite.webp" alt="Programme1" loading="lazy">
-            </button>
+                <button class="activities-thumb" type="button"
+                    data-full="assets/images/affiche_activite.webp">
+                    <img src="assets/images/affiche_activite.webp" alt="Programme1" loading="lazy">
+                </button>
 
-            <button class="activities-thumb" type="button"
-                data-full="assets/images/affiche_activite.webp">
-                <img src="assets/images/affiche_activite.webp" alt="Programme2" loading="lazy">
-            </button>
+                <button class="activities-thumb" type="button"
+                    data-full="assets/images/affiche_activite.webp">
+                    <img src="assets/images/affiche_activite.webp" alt="Programme2" loading="lazy">
+                </button>
 
-            <button class="activities-thumb" type="button"
-                data-full="assets/images/affiche_activite.webp">
-                <img src="assets/images/affiche_activite.webp" alt="Programme3" loading="lazy">
-            </button>
+                <button class="activities-thumb" type="button"
+                    data-full="assets/images/affiche_activite.webp">
+                    <img src="assets/images/affiche_activite.webp" alt="Programme3" loading="lazy">
+                </button>
             </div>
 
             <p class="activities-info-text">
@@ -76,4 +77,17 @@
 
         </div>
     </section>
+
+    <!-- POPUP (obligatoire) -->
+    <div class="event-modal" id="eventModal" aria-hidden="true">
+        <div class="event-modal-content">
+            <button class="event-modal-close" id="closeModal" type="button" aria-label="Fermer">✕</button>
+            <div class="event-modal-media" id="modalMedia">
+            </div>
+            <h2 id="modalTitle"></h2>
+        </div>
+    </div>
+
+    
+
 </body>
