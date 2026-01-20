@@ -28,8 +28,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="password" id="password" name="password" required>
             </div>
             <button type="submit" class="btn-login">Se connecter</button>
-            <button type="button" class="btn-google">Continuer avec Google</button>
-        </form>
         
         <a href="#" class="forgot-password">Mot de passe oublié ?</a>
     </div>
