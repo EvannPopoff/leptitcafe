@@ -5,8 +5,16 @@
 
 
 <body>
-    <div class="hero-evenement">
-        <img src="assets/images/evenement_hero.avif" alt="hero" class="hero-bg">
+        <div class="hero-evenement">
+        <img src="assets/images/evenement_hero.avif" alt="hero">
+
+        <div class="hero-content">
+            <h1>Vivre des moments ensemble</h1>
+            <p>
+                Revivez en images la magie de vos soirées et nos plus beaux partages<br>
+                
+            </p>
+        </div>
     </div>
 
     <!-- Section 2 Evenements / Lazy loading-->
