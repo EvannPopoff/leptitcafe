@@ -144,9 +144,9 @@
         <div class="benevole-left">
             <h2>ENVIE D'ALLER PLUS LOIN ?</h2>
         </div>
-        <div class="benevole-image">
-            <!-- Image placeholder -->
-        </div>
+       <div class="benevole-image">
+    <img src="assets/images/benevole.jpg" alt="Bénévole">
+</div>
         <div class="benevole-right">
             <p>Le P'tit Café fonctionne grâce à ses bénévoles ! Que ce soit pour tenir une permanence, aider lors des événements ou bricoler, votre aide est la bienvenue.</p>
             <a href="#" class="btn-benevole">Devenir bénévole</a>
