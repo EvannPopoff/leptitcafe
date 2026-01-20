@@ -4,7 +4,7 @@
     <div class="footer-top">
 
       <div class="footer-column logo">
-        <img src="assets/images/logo.webp" alt="Le P'tit Café">
+        <img src="assets/images/footer_header/logo.webp" alt="Le P'tit Café">
       </div>
 
       <div class="footer-column">
@@ -45,7 +45,7 @@
   </div>
 
   <div class="footer-image">
-    <img src="assets/images/plantes_footer.png" alt="Plantes">
+    <img src="assets/images/footer_header/plantes_footer.png" alt="Plantes">
   </div>
 </footer>
 

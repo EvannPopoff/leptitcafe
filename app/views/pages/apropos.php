@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="assets/css/apropos.css">
 
 <div class="hero">
-    <img src="assets/images/image_header.webp" alt="hero" class="hero-bg">
+    <img src="assets/images/page_apropos/image_header.webp" alt="hero" class="hero-bg">
     <div class="hero-overlay"></div>
     <div class="hero-content">
         <h1>Là où tout commence</h1>
@@ -77,7 +77,7 @@
             <div class="values-grid" id="valuesGrid">
                 <div class="value-card">
                     <div class="value-image-container">
-                        <img src="assets/images/flower.webp" alt="Valeur">
+                        <img src="assets/images/page_apropos/flower.webp" alt="Valeur">
                     </div>
                     <div class="value-info">
                         <h3 class="value-title">Bienveillance</h3>
@@ -90,7 +90,7 @@
 
                 <div class="value-card">
                     <div class="value-image-container">
-                        <img src="assets/images/family.webp" alt="Valeur">
+                        <img src="assets/images/page_apropos/family.webp" alt="Valeur">
                     </div>
                     <div class="value-info">
                         <h3 class="value-title">Soutien à la relation parent-enfant</h3>
@@ -103,7 +103,7 @@
 
                 <div class="value-card">
                     <div class="value-image-container">
-                        <img src="assets/images/friends.webp" alt="Valeur">
+                        <img src="assets/images/page_apropos/friends.webp" alt="Valeur">
                     </div>
                     <div class="value-info">
                         <h3 class="value-title">Convivialité et partage</h3>
@@ -117,7 +117,7 @@
 
                 <div class="value-card">
                     <div class="value-image-container">
-                        <img src="assets/images/ecologie.webp" alt="Valeur">
+                        <img src="assets/images/page_apropos/ecologie.webp" alt="Valeur">
                     </div>
                     <div class="value-info">
                         <h3 class="value-title">Conscience écologique</h3>
