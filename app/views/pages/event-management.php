@@ -1,3 +1,12 @@
+<?php
+// On vérifie si l'admin est connecté
+if (!isset($_SESSION['admin_id'])) {
+    // Si non, on le renvoie vers la page de login
+    header('Location: index.php?page=login');
+    exit();
+}
+?>
+
 <h2>Ajouter un nouvel événement</h2>
 
 <form action="index.php?page=save-event" method="POST" enctype="multipart/form-data" class="admin-form"> <!-- enctype pour l'upload d'images -->
