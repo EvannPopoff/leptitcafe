@@ -213,6 +213,7 @@
 .temoignage-card {
     background: white;
     border: 1px solid #ddd;
+    border-radius: 8px;
     padding: 25px;
     width: 300px;
     text-align: left;
@@ -249,7 +250,7 @@
     font-size: 14px;
 }
 
-/* Bénévole */
+
 .cta-benevole {
     background-color: #294F0C;
     padding: 60px 20px;
@@ -267,12 +268,14 @@
 .benevole-left h2 {
     color: #FFFCF4;
     font-size: 36px;
+    line-height: 1.3;
 }
 
 .benevole-image {
     width: 200px;
     height: 200px;
     background-color: #ffffff33;
+    border-radius: 12px;
 }
 
 .benevole-right {
