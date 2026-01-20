@@ -296,7 +296,15 @@ header {
 .footer-links a:hover {
     text-decoration: underline;
 }
+.admin-link {
+    color: inherit; 
+    text-decoration: none; 
+}
 
+
+.admin-link:visited {
+    color: inherit;
+}
 /* ---------- IMAGE ---------- */
 
 .footer-image img {
