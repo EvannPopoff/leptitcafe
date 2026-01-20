@@ -1,9 +1,5 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 use app\models\entities\Event;
 use app\models\managers\EventManager;
 use app\config\Database;
@@ -44,13 +40,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ]);
 
     // On utilise le manager pour sauvegarder l'événement
-    if ($manager->create($event, $_SESSION['admin_id'])) {
-        // Succès
-        header('Location: index.php?page=event-management&success=1');
-    } else {
-        // Échec
-        header('Location: index.php?page=event-management&error=1');
+// Dans EventController.php, remplace le bloc "if ($manager->create...)" par :
+try {
+    $result = $manager->create($event, $_SESSION['admin_id']);
+    if ($result) {
+        header('Location: index.php?page=dashboard&success=1');
+        exit();
     }
-    exit();
-   
+} catch (Exception $e) {
+    die("Erreur SQL : " . $e->getMessage());
+    }
+
 }
