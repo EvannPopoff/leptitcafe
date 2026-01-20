@@ -148,5 +148,5 @@
             <p>Le P'tit Café fonctionne grâce à ses bénévoles ! Que ce soit pour tenir une permanence, aider lors des événements ou bricoler, votre aide est la bienvenue.</p>
             <a href="https://cafejeunespousses.pepsup.com/" class="btn-benevole">Devenir bénévole</a>
         </div>
-    </div>
+
 </section>
