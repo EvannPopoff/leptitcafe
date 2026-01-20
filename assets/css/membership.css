@@ -46,7 +46,7 @@
 }
 
 .pourquoi-adherer {
-    background-color: #FFFCF4;
+    background-color: #ffffff;
     padding: 60px 20px;
     text-align: center;
 }
@@ -200,7 +200,7 @@
 }
 
 .temoignages {
-    background-color: #FFFCF4;
+    background-color: #ffffff;
     padding: 60px 20px;
     text-align: center;
 }
@@ -224,7 +224,7 @@
 
 .temoignage-card {
     background: white;
-    border: 1px solid #ddd;
+    border: 2px solid #294F0C;
     border-radius: 8px;
     padding: 25px;
     width: 300px;
@@ -322,7 +322,6 @@
 
 /* ================================
    STYLES RESPONSIVE - MOBILE
-   Adaptation pour les écrans < 768px
    ================================ */
 @media (max-width: 768px) {
     .hero-adhesion {
