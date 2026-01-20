@@ -71,15 +71,28 @@
     text-align: center;
 }
 .btn-choisir,
-.btn-don {
+.btn-don,
+.btn-adherer,
+.btn-benevole {
     display: inline-block;
-    background-color: #e67e22;
-    color: white;
-    padding: 12px 40px;
-    border-radius: 8px;
+    padding: 0.8rem 1.6rem;
+    border: 3px solid #DD5D13;
+    color: #DD5D13;
     text-decoration: none;
-    font-weight: bold;
+    border-radius: 15px;
+    font-weight: 600;
+    background-color: transparent;
 }
+
+.btn-choisir:hover,
+.btn-don:hover,
+.btn-adherer:hover,
+.btn-benevole:hover {
+    background-color: #DD5D13;
+    color: #ffffff;
+    cursor: pointer;
+}
+
 .etapes-adhesion {
     background-color: #B9DAA3;
     text-align: center;
@@ -173,21 +186,6 @@
         transparent 5px,
         transparent 10px
     );
-}
-
-.btn-adherer {
-    display: inline-block;
-    background-color: #DD5D13;
-    color: white;
-    padding: 15px 40px;
-    border-radius: 50px;
-    font-size: 18px;
-    text-decoration: none;
-    margin-top: 20px;
-}
-
-.btn-adherer:hover {
-    background-color: #c44f0f;
 }
 
 .paiement-info {
@@ -316,15 +314,15 @@
     line-height: 1.6;
     margin-bottom: 20px;
 }
-
-.btn-benevole {
-    background-color: #DD5D13;
-    color: white;
-    padding: 12px 30px;
-    text-decoration: none;
-    border-radius: 25px;
+.cta-benevole .btn-benevole {
+    border-color: #FFFCF4;
+    color: #FFFCF4;
 }
 
+.cta-benevole .btn-benevole:hover {
+    background-color: #FFFCF4;
+    color: #294F0C;
+}
 
 
 
