@@ -2,7 +2,7 @@
     <div class="in-header container">
 
         <a class="logo" href="index.php">
-            <img src="assets/images/logo.webp" alt="logo">
+            <img src="assets/images/footer_header/logo.webp" alt="logo">
         </a>    
 
         <nav class="main-nav">
@@ -17,13 +17,13 @@
         <a class="bouton-reservation cta-mobile" href="">Réservation</a>
 
         <button class="burger-bouton" type="button">
-            <img src="assets/images/Burger.png" alt="menu-burger">
+            <img src="assets/images/footer_header/Burger.png" alt="menu-burger">
         </button>
     </div>
 
     <div class="mobile-menu">
         <button class="close-bouton" type="button" aria-label="Fermer le menu">
-            <img src="assets/images/Close-Burger.png" alt="close-burger">
+            <img src="assets/images/footer_header/Close-Burger.png" alt="close-burger">
         </button>
     </div>
 </header>

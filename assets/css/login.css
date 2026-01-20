@@ -1,0 +1,78 @@
+.login-section {
+    background-image: url('../images/login/hero-login.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 40px;
+}
+
+.login-container {
+    width: 400px;
+    text-align: center;
+}
+.login-container h1 {
+    color: white;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.login-intro {
+    color: white;
+    margin-bottom: 30px;
+}
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    color: white;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 15px; 
+    box-sizing: border-box; 
+    height: 50px; 
+}
+
+ .btn-login {
+    display: flex;            
+    justify-content: center;   
+    align-items: center;       
+    width: 100%;              
+    height: 50px;              
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.6rem;
+    border: 3px solid #DD5D13; 
+    color: #DD5D13;
+    background: transparent;
+    text-decoration: none;
+    border-radius: 15px;       
+    font-weight: 600;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: all 0.3s ease; 
+}
+
+.btn-login:hover {
+    background-color: #DD5D13;
+    color: #ffffff;
+}
+
+.forgot-password {
+    color: white;
+    display: block;
+    margin-top: 30px;
+    text-decoration: none;
+}
+.forgot-password:hover {
+    text-decoration: underline;
+}
