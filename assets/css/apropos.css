@@ -279,69 +279,66 @@ h2 {
     background-color: #ccc;
 }
 
-/* --- Styles spécifiques à la section Réservation --- */
 
-/* On cible le main pour le fond beige et l'alignement */
-main.container {
+
+section.reservation {
     background-color: #FFFCF4;
-    max-width: 100%; /* Permet au fond de s'étendre si besoin */
-    padding: 80px 20px;
-    text-align: center;
+    width: 100%;
+    padding: 50px 15px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 
-/* Titre H2 centré et vert */
-main.container h2 {
+section.reservation h2 {
     color: #4A5D23;
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     font-weight: 900;
-    margin-bottom: 25px;
-    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center; 
 }
 
-/* Description centrée avec largeur max pour la lisibilité */
-main.container .description {
-    font-size: 1.15rem;
+section.reservation .description {
+    font-size: 1rem;
     line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto 30px auto;
+    max-width: 100%;
+    margin-bottom: 25px;
     color: #333;
+    align-items: center; 
+    text-align: center; 
 }
 
-/* Texte de contact */
-main.container .contact-text {
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-    color: #333;
-}
-
-/* Bouton : Fond orange, Texte blanc */
-main.container .btn-reserve {
-    display: inline-block;
-    background-color: #E67E22; /* Fond orange */
-    color: #FFFFFF !important; /* Texte blanc (force le style si un lien global existe) */
-    padding: 15px 45px;
-    text-decoration: none;
+section.reservation .btn-reserve {
+    background-color: #E67E22;
+    color: #fff;
+    padding: 14px 35px;
     font-weight: bold;
     border-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    border: none;
+    text-decoration: none;
+    align-self: center; 
 }
 
-/* Effet au survol du bouton */
-main.container .btn-reserve:hover {
-    background-color: #D35400; /* Orange plus foncé */
+section.reservation .btn-reserve:hover {
+    background-color: #D35400;
     transform: translateY(-2px);
 }
 
-/* Correction responsive pour mobile */
-@media (max-width: 768px) {
-    main.container h2 {
-        font-size: 1.8rem;
+@media (min-width: 768px) {
+    section.reservation {
+        padding: 80px 20px;
     }
-    main.container {
-        padding: 50px 15px;
+
+    section.reservation h2 {
+        font-size: 2.5rem;
+    }
+
+    section.reservation .description {
+        font-size: 1.15rem;
+    }
+
+    section.reservation .contact-text {
+        font-size: 1.1rem;
     }
 }
+
