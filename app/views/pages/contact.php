@@ -44,6 +44,17 @@
                         <p>cafejeunespousses[at]gmail.com</p>
                     </div>
                 </div>
+                <div class="detail-item">
+    <div class="detail-icon">🕒</div>
+    <div class="detail-text">
+        <strong>Horaires</strong>
+        <p>
+            Mercredi : 10:00 – 18:00<br>
+            Vendredi : 10:00 – 12:00<br>
+            Samedi : 10:00 – 14:00<br>
+        </p>
+    </div>
+</div>
 
                 <div class="detail-item">
                     <div class="detail-icon">📞</div>

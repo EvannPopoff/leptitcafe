@@ -9,8 +9,6 @@ if (!isset($_SESSION['admin_id'])) {
 }
 ?>
 
-// 
-
 <div class="dashboard-container">
     <header class="dashboard-header">
         <h1>Tableau de bord</h1>
