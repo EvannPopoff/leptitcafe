@@ -29,11 +29,13 @@
 <script>
 // Icones utiles pour le calendrier : 📅📍🏷️📄
 // Tout trouvable dans la doc officielle : https://fullcalendar.io/docs
+
+var calendar;
 // Initialisation du calendrier
 document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
+    var calendarElement = document.getElementById('calendar');
     
-    var calendar = new FullCalendar.Calendar(calendarEl, {
+    calendar = new FullCalendar.Calendar(calendarElement, {
         initialView: 'dayGridMonth',
         locale: 'fr',
         headerToolbar: {
