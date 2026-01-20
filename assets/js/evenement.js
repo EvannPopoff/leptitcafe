@@ -26,18 +26,11 @@ function getApiUrl(offsetValue, limitValue) {
 function appendCard(item) {
     const card = document.createElement("article");
     card.className = "recent-card";
-
-    card.innerHTML = `
-        <a href="${item.url}">
-            <img src="${item.image}" alt="${item.title}" loading="lazy">
-        </a>
-    `;
-
+    card.innerHTML = `<img src="${item.image}" alt="${item.title}" loading="lazy">`;
     grid.appendChild(card);
 }
 
-
-/* appel Ajax et ajout des cards au clic sur le bouton */
+/* appel Ajax et ajout des cards au clic sur le bouton - Chat GPT*/
 async function handleLoadMoreClick() {
     btn.classList.add("is-loading");
     btn.textContent = "Chargement...";
