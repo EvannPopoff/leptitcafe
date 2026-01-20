@@ -19,23 +19,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Traitement de l'image uploadée
     $imageUrl = null;
     if (!empty($_FILES['image_event']['name'])) {
-        $imageName = time() . '_' . ($_FILES['image_event']['name']);
+        $imageName = time() . '_' . $_FILES['image_event']['name'];
         move_uploaded_file($_FILES['image_event']['tmp_name'], 'assets/images/events/' . $imageName);
 
     }
 
     // Création de l'objet Event
     $event = new Event([
-    'title' => $_POST['titre'],
+    'id_evenement' => null, // ID auto-incrémenté
+    'titre' => $_POST['titre'],
     'description' => $_POST['description'],
-    'date_event' => $_POST['date_evenement'],
-    'hour' => $_POST['heure'],
-    'place' => $_POST['lieu'],
-    'type' => $_POST['type'],
-    'image_url' => $_POST['image_url'],
-    'top_event' => isset($_POST['mis_en_avant']) ? true : false,
-    'statut'=> true, // Par défaut, l'événement est actif
-    'prog_url' => $_POST['lien_programme_pdf'],
+    'date_evenement' => $_POST['date_evenement'],
+    'heure' => $_POST['heure'],
+    'lieu' => $_POST['lieu'],
+    'type' => null, // A modifier quand crée
+    'image_url' => $imageName,
+    'mis_en_avant' => isset($_POST['mis_en_avant']) ? 1 : 0,
+    'statut'=> 1, // Par défaut, l'événement est actif
+    'lien_programme_pdf' => null, // Pareil, pas encore implémenté
     ]);
 
     // On utilise le manager pour sauvegarder l'événement
