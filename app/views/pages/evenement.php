@@ -6,7 +6,7 @@
 
 <body>
         <div class="hero-evenement">
-        <img src="assets/images/evenement_hero.avif" alt="hero">
+        <img src="assets/images/page_home_evenements/evenement_hero.avif" alt="hero">
 
         <div class="hero-content">
             <h1>Vivre des moments ensemble</h1>
@@ -26,15 +26,15 @@
 
             <div class="recent-events-grid" id="recentGrid">
             <article class="recent-card">
-                <a href="index.php?page=apropos"><img src="assets/images/event1.avif" alt="Événement 1"></a>
+                <a href="index.php?page=apropos"><img src="assets/images/page_home_evenements/event1.avif" alt="Événement 1"></a>
             </article>
 
             <article class="recent-card">
-                <a href="index.php?page=apropos"><img src="assets/images/event2.avif" alt="Événement 2"></a>
+                <a href="index.php?page=apropos"><img src="assets/images/page_home_evenements/event2.avif" alt="Événement 2"></a>
             </article>
 
             <article class="recent-card">
-                <a href="index.php?page=apropos"><img src="assets/images/event3.webp" alt="Événement 3"></a>
+                <a href="index.php?page=apropos"><img src="assets/images/page_home_evenements/event3.webp" alt="Événement 3"></a>
             </article>
             </div>
 
@@ -57,18 +57,18 @@
 
             <div class="activities-gallery" id="activitiesGallery">
             <button class="activities-thumb" type="button"
-                data-full="assets/images/affiche_activite.webp">
-                <img src="assets/images/affiche_activite.webp" alt="Programme1" loading="lazy">
+                data-full="assets/images/page_home_evenements/affiche_activite.webp">
+                <img src="assets/images/page_home_evenements/affiche_activite.webp" alt="Programme1" loading="lazy">
             </button>
 
             <button class="activities-thumb" type="button"
-                data-full="assets/images/affiche_activite.webp">
-                <img src="assets/images/affiche_activite.webp" alt="Programme2" loading="lazy">
+                data-full="assets/images/page_home_evenements/affiche_activite.webp">
+                <img src="assets/images/page_home_evenements/affiche_activite.webp" alt="Programme2" loading="lazy">
             </button>
 
             <button class="activities-thumb" type="button"
-                data-full="assets/images/affiche_activite.webp">
-                <img src="assets/images/affiche_activite.webp" alt="Programme3" loading="lazy">
+                data-full="assets/images/page_home_evenements/affiche_activite.webp">
+                <img src="assets/images/page_home_evenements/affiche_activite.webp" alt="Programme3" loading="lazy">
             </button>
             </div>
 
