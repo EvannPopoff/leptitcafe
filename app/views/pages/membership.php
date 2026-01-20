@@ -4,16 +4,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <!-- Hero Section -->
-    <div class="hero-membership">
-        <img src="assets/images/hero-adherer.webp" alt="hero">
-
-        <div class="hero-content">
-            <h1>ADHÉRER & SOUTENIR</h1>
-            <p>
-               Devenez acteur de votre café associatif<br>
-            </p>
-        </div>
-    </div>
+<section class="hero-adhesion">
+    <h1>ADHÉRER & SOUTENIR</h1>
+    <p>Devenez acteur de votre café associatif</p>
+</section>
 
 <!-- Section Pourquoi adhérer -->
 <section class="pourquoi-adherer">
@@ -91,7 +85,7 @@
                 <div class="etape-icon">
                     <i class="fa-solid fa-credit-card"></i>
                 </div>
-                <div class="etape-numero">3</div>
+               <span class="numero">3</span>
                 <h3>Validez et Réglez</h3>
                 <p>Une fois le dossier validé, effectuez votre paiement en ligne par carte bancaire ou sur place au café.</p>
             </div>
@@ -151,7 +145,7 @@
             <h2>ENVIE D'ALLER PLUS LOIN ?</h2>
         </div>
        <div class="benevole-image">
-    <img src="assets/images/hero-adherer.webp" alt="Bénévole">
+<img src="assets/images/membership/benevole.jpg" alt="Bénévole">
 </div>
         <div class="benevole-right">
             <p>Le P'tit Café fonctionne grâce à ses bénévoles ! Que ce soit pour tenir une permanence, aider lors des événements ou bricoler, votre aide est la bienvenue.</p>
