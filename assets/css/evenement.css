@@ -30,6 +30,32 @@
     background: rgba(0, 0, 0, 0.5);
     z-index: 2; /*passe par dessus */
 }
+.hero-content {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 1.5rem;
+}
+
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin-bottom: 1rem;
+}
+
+
+.hero-content p {
+    max-width: 600px;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+}
 
 /* Section 2 - Events */
 

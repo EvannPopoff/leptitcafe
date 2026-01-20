@@ -7,12 +7,20 @@ if (!isset($_SESSION['admin_id'])) {
 }
 ?>
 
-<h1>Bienvenue sur votre tableau de bord</h1>
-<p>Vous êtes connecté en tant que : <?= $_SESSION['admin_email'] ?></p>
+<link rel="stylesheet" href="assets/css/dashboard.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-<nav>
-    <ul>
-        <li><a href="index.php?page=gestion_evenements">Gérer les événements</a></li>
-        <li><a href="index.php?page=logout">Se déconnecter</a></li>
-    </ul>
-</nav>
+<section class="dashboard">
+    <div class="dashboard-header">
+        <div>
+            <h1>Tableau de Bord</h1>
+            <p class="dashboard-intro">Bienvenue dans l'espace administrateur du P'tit Café</p>
+        </div>
+        <img src="assets/images/dashboard/plant.png" alt="Plante" class="header-plant">
+    </div>
+
+    <nav class="dashboard-nav">
+        <a href="index.php?page=gestion_evenements">Gérer les événements</a>
+        <a href="index.php?page=logout" class="logout-btn">Se déconnecter</a>
+    </nav>
+</section>

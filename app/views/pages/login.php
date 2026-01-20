@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <p class="error-message"><?= $errorMessage ?></p>
         <?php endif; ?>
         
-        <form action="" method="POST">
+  <form action="" method="POST">
             <div class="form-group">
                 <label for="email">Adresse email :</label>
                 <input type="email" id="email" name="email" required>
@@ -26,11 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="form-group">
                 <label for="password">Mot de passe :</label>
                 <input type="password" id="password" name="password" required>
-            </div>
+          </div>
             <button type="submit" class="btn-login">Se connecter</button>
-            <button type="button" class="btn-google">Continuer avec Google</button>
-        </form>
-        
-        <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+        </form> <a href="#" class="forgot-password">Mot de passe oublié ?</a>
     </div>
 </section>
