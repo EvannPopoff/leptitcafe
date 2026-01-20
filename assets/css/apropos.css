@@ -301,10 +301,10 @@ section.reservation .btn-reserve {
     padding: 0.8rem 1.6rem;
     border: 3px solid #DD5D13;
     color: #DD5D13;
+    background: transparent;
     text-decoration: none;
     border-radius: 15px;
-    font-weight: 600;
-    transition: all 0.3s ease; 
+    font-weight: 600; 
 }
 
 section.reservation .btn-reserve:hover {
