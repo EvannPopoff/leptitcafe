@@ -96,9 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Image
             const imgTag = document.getElementById('modalImage');
-            imgTag.src = props.image_url
-            ? "assets/images/events/" + props.image_url"
-            : "assets/images/default/tagada.jpg";
+            imgTag.src = props.image_url ? "assets/images/uploads/" + props.image_url : "assets/images/default-event.jpg";
 
             // PDF
             const pdfBtn = document.getElementById('modalPdf');
