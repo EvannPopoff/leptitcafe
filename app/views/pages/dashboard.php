@@ -11,27 +11,26 @@ if (!isset($_SESSION['admin_id'])) {
 <link rel="stylesheet" href="assets/css/dashboard.css">
 
 <div class="dashboard-container">
-    <header class="dashboard-header">
-        <h1>Tableau de bord</h1>
-        <div class="header-info">
-            <span>Connecté : <strong><?= htmlspecialchars($_SESSION['admin_email'] ?? 'Admin') ?></strong></span>
-            <a href="index.php?page=logout" class="btn btn-danger" style="margin-left: 15px;">Déconnexion</a>
-        </div>
-    </header>
-
     <div class="admin-grid">
+        
         <aside class="admin-sidebar">
+            <div class="user-info-box">
+                <p>Connecté : <strong><?= htmlspecialchars($_SESSION['admin_email'] ?? 'Admin') ?></strong></p>
+                <a href="index.php?page=logout" class="logout-link">Déconnexion</a>
+            </div>
+
             <div class="form-card">
                 <h3>Ajouter un événement</h3>
                 <div id="formFeedback" class="alert"></div>
-                
                 <?php include 'app/views/layouts/event-management.php'; ?>
             </div>
         </aside>
 
         <main class="admin-main">
+            <h1 class="main-title">Tableau de bord</h1>
             <?php include 'app/views/layouts/calendar.php'; ?>
         </main>
+        
     </div>
 </div>
 
