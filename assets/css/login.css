@@ -57,3 +57,9 @@
     border: none;
     margin-top: 10px;
 }
+.forgot-password {
+    color: white;
+    display: block;
+    margin-top: 30px;
+    text-decoration: none;
+}
