@@ -1,55 +1,60 @@
-<?php
-namespace app\models\managers;
-use app\models\entities\Event;
-use PDO;
+<link rel="stylesheet" href="assets/css/dashboard.css">
+<div class="dashboard-container">
+    <div class="admin-grid">
+        <aside class="admin-sidebar">
+            <div class="user-info-box">
+                <p>Admin : <strong><?= $_SESSION['admin_email'] ?></strong></p>
+                <a href="index.php?page=logout" class="logout-link">Déconnexion</a>
+            </div>
+            <div class="form-card">
+                <h3 id="formTitle">Ajouter un événement</h3>
+                <div id="formFeedback" class="alert"></div>
+                <?php include 'app/views/layouts/event-management.php'; ?>
+            </div>
+        </aside>
+        <main class="admin-main">
+            <h1 class="main-title">Tableau de bord</h1>
+            <?php include 'app/views/layouts/calendar.php'; ?>
+        </main>
+    </div>
+</div>
 
-class EventManager {
-    private PDO $db;
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('addEventForm');
+    const deleteBtn = document.getElementById('deleteBtn');
+    const cancelBtn = document.getElementById('cancelBtn');
 
-    public function __construct(PDO $db) {
-        $this->db = $db;
-    }
+    // 1. Sauvegarde (Create / Update)
+    form.onsubmit = function(e) {
+        e.preventDefault();
+        fetch('index.php?page=save-event', { method: 'POST', body: new FormData(this) })
+        .then(r => r.json()).then(data => {
+            alert(data.message);
+            if(data.status === 'success') { resetForm(); calendar.refetchEvents(); }
+        });
+    };
 
-    public function findAll(): array {
-        $sql = "SELECT * FROM EVENEMENT ORDER BY date_evenement ASC, heure ASC";
-        $stmt = $this->db->query($sql);
-        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        $events = [];
-        foreach ($results as $data) {
-            // Tableau $data qui contient les clés id_evenement, titre, etc, que le constructeur gère.
-            $events[] = new Event($data);
+    // 2. Suppression
+    deleteBtn.onclick = function() {
+        const id = document.getElementById('event_id').value;
+        if(confirm("Supprimer ?")) {
+            fetch('index.php?page=delete-event', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({id: id})
+            }).then(() => { resetForm(); calendar.refetchEvents(); });
         }
-        return $events;
-    }
+    };
 
-    public function findById(int $id): ?Event {
-        $sql = "SELECT * FROM EVENEMENT WHERE id_evenement = :id";
-        $stmt = $this->db->prepare($sql);
-        $stmt->execute(['id' => $id]);
-        $data = $stmt->fetch(PDO::FETCH_ASSOC);
+    cancelBtn.onclick = resetForm;
 
-        return $data ? new Event($data) : null;
+    function resetForm() {
+        form.reset();
+        document.getElementById('event_id').value = "";
+        document.getElementById('deleteBtn').style.display = "none";
+        document.getElementById('cancelBtn').style.display = "none";
+        document.getElementById('submitBtn').innerText = "Enregistrer l'événement";
     }
-
-    public function create(Event $event, int $id_admin): bool {
-    $sql = "INSERT INTO EVENEMENT (titre, description, date_evenement, heure, lieu, type, image_url, mis_en_avant, statut, lien_programme_pdf, id_admin) 
-            VALUES (:titre, :description, :date_evenement, :heure, :lieu, :type, :image_url, :mis_en_avant, :statut, :lien_programme_pdf, :id_admin)";
-    
-    $stmt = $this->db->prepare($sql);
-    
-    return $stmt->execute([
-        'titre'              => $event->getTitle(),
-        'description'        => $event->getDescription(),
-        'date_evenement'     => $event->getDateEvent(),
-        'heure'              => $event->getHour(),
-        'lieu'               => $event->getPlace(),
-        'type'               => $event->getType(),
-        'image_url'          => $event->getImageUrl(),
-        'mis_en_avant'       => $event->isTopEvent() ? 1 : 0,
-        'statut'             => $event->isStatut() ? 1 : 0,
-        'lien_programme_pdf' => $event->getProgUrl(),
-        'id_admin'           => $id_admin // On envoie l'ID récupéré depuis la session
-    ]);
-    }
-}
+});
+</script>

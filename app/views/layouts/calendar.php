@@ -1,108 +1,73 @@
-<div id="calendar-container">
-    <div id="calendar"></div>
-</div>
-
-<div id="eventModal" class="custom-modal">
-    <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <div class="modal-body">
-            <h2 id="modalTitle"></h2>
-            <div class="modal-grid">
-                <div class="modal-image-container">
-                    <img id="modalImage" src="" alt="Affiche événement">
-                </div>
-                <div class="modal-info">
-                    <p><strong>📅 Date :</strong> <span id="modalDate"></span> à <span id="modalHour"></span></p>
-                    <p><strong>📍 Lieu :</strong> <span id="modalPlace"></span></p>
-                    <p><strong>🏷️ Type :</strong> <span id="modalType"></span></p>
-                    <hr>
-                    <p id="modalDescription"></p>
-                    <a id="modalPdf" href="#" class="btn-pdf" target="_blank">📄 Voir le programme (PDF)</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+<div id="calendar"></div>
 
 <script>
-// Icones utiles pour le calendrier : 📅📍🏷️📄
-// Tout trouvable dans la doc officielle : https://fullcalendar.io/docs
+var calendar; // Variable globale pour être accessible par les autres scripts
 
-var calendar;
-// Initialisation du calendrier
 document.addEventListener('DOMContentLoaded', function() {
-    var calendarElement = document.getElementById('calendar');
-    
-    calendar = new FullCalendar.Calendar(calendarElement, {
+    var calendarEl = document.getElementById('calendar');
+
+    calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
         locale: 'fr',
+        firstDay: 1, // Semaine commence le lundi
         headerToolbar: {
             left: 'prev,next today',
             center: 'title',
-            right: 'dayGridMonth,timeGridWeek'
+            right: 'dayGridMonth,timeGridWeek,listWeek'
         },
         buttonText: {
             today: "Aujourd'hui",
             month: "Mois",
-            week: "Semaine"
+            week: "Semaine",
+            list: "Liste"
         },
         
-        // -Connexion au JSON
-        events: 'index.php?page=events-json', 
-        
-        // Lorsqu'on clique
+        // Source des données JSON
+        events: 'index.php?page=events-json',
+
+        // --- ACTION AU CLIC SUR UN ÉVÉNEMENT ---
         eventClick: function(info) {
-            const event = info.event;
-            const props = event.extendedProps;
+            var event = info.event;
 
-            // Remplissage de la pop-up
-            document.getElementById('modalTitle').innerText = event.title;
-            document.getElementById('modalDescription').innerText = props.description || "Aucune description.";
-            document.getElementById('modalPlace').innerText = props.place || "Non précisé";
-            document.getElementById('modalType').innerText = props.type || "Non précisé";
-            
-            // Formatage de la date
-            document.getElementById('modalDate').innerText = event.start.toLocaleDateString('fr-FR');
-            document.getElementById('modalHour').innerText = event.start.toLocaleTimeString('fr-FR', {hour: '2-digit', minute:'2-digit'});
+            // 1. On remplit les champs du formulaire (Vérifie bien que ces IDs existent dans event-management.php)
+            var idField = document.getElementById('event_id');
+            var titreField = document.getElementById('f_titre');
+            var dateField = document.getElementById('date_evenement');
+            var heureField = document.getElementById('heure');
+            var lieuField = document.getElementById('lieu');
+            var descField = document.getElementById('description');
+            var avantField = document.getElementById('mis_en_avant');
 
-            // Image
-            const imgTag = document.getElementById('modalImage');
-            const imgContainer = document.querySelector('.modal-image-container');
+            if (idField) idField.value = event.id;
+            if (titreField) titreField.value = event.title;
             
-            // On vérifie si l'URL existe et n'est pas "null" (en texte ou objet)
-            if (props.image_url && props.image_url !== "null" && props.image_url.trim() !== "") {
-                imgTag.src = "assets/images/events/" + props.image_url;
-                imgContainer.style.display = 'block'; // On affiche le bloc image
-            } else {
-                imgContainer.style.display = 'none';  // On cache le bloc image si vide
+            // Formatage de la date (YYYY-MM-DD)
+            if (dateField) dateField.value = event.startStr.split('T')[0];
+
+            // Récupération des données étendues (provenant de ton JSON)
+            if (event.extendedProps) {
+                if (heureField) heureField.value = event.extendedProps.heure || "";
+                if (lieuField) lieuField.value = event.extendedProps.lieu || "";
+                if (descField) descField.value = event.extendedProps.description || "";
+                if (avantField) avantField.checked = (event.extendedProps.mis_en_avant == 1);
             }
 
-            // PDF
-            const pdfBtn = document.getElementById('modalPdf');
-            if (props.prog_url) {
-                pdfBtn.style.display = 'inline-block';
-                pdfBtn.href = "assets/pdf/" + props.prog_url;
-            } else {
-                pdfBtn.style.display = 'none';
-            }
+            // 2. Mise à jour visuelle des boutons du dashboard
+            var submitBtn = document.getElementById('submitBtn');
+            var deleteBtn = document.getElementById('deleteBtn');
+            var cancelBtn = document.getElementById('cancelBtn');
+            var formTitle = document.getElementById('formTitle');
 
-            // Affichage
-            document.getElementById('eventModal').style.display = 'block';
+            if (submitBtn) submitBtn.innerText = "Modifier l'événement";
+            if (deleteBtn) deleteBtn.style.display = "block";
+            if (cancelBtn) cancelBtn.style.display = "block";
+            if (formTitle) formTitle.innerText = "Modifier l'événement";
+
+            // 3. Scroll automatique vers le formulaire sur mobile
+            document.querySelector('.admin-sidebar').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     });
 
     calendar.render();
-
-    // Fermeture de la pop-up
-    document.querySelector('.close-modal').onclick = function() {
-        document.getElementById('eventModal').style.display = 'none';
-    };
-    window.onclick = function(event) {
-        if (event.target == document.getElementById('eventModal')) {
-            document.getElementById('eventModal').style.display = 'none';
-        }
-    };
 });
 </script>

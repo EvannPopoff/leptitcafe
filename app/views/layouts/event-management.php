@@ -1,5 +1,3 @@
-DÉBUT DU FORMULAIRE TEST
-
 <form id="addEventForm" enctype="multipart/form-data">
     <input type="hidden" name="id" id="event_id">
 
@@ -42,13 +40,7 @@ DÉBUT DU FORMULAIRE TEST
 
     <div class="form-actions" style="margin-top: 20px;">
         <button type="submit" id="submitBtn" class="btn-submit">Enregistrer l'événement</button>
-        
-        <button type="button" id="deleteBtn" class="btn-danger" style="display:none; width:100%; margin-top:10px; background-color: #d9534f; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer;">
-            Supprimer l'événement
-        </button>
-        
-        <button type="button" id="cancelBtn" class="btn-secondary" style="display:none; width:100%; margin-top:5px; padding: 8px; border-radius: 5px; cursor: pointer;">
-            Annuler la sélection
-        </button>
+        <button type="button" id="deleteBtn" class="btn-danger" style="display:none; width:100%; margin-top:10px;">Supprimer</button>
+        <button type="button" id="cancelBtn" class="btn-secondary" style="display:none; width:100%; margin-top:5px;">Annuler</button>
     </div>
 </form>

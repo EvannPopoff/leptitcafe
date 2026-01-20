@@ -14,10 +14,10 @@ class Event {
     private bool $statut;
     private ?string $prog_url;
 
-
     public function __construct(array $data = []) {
         if (!empty($data)) {
-            $this->id_event = $data['id_evenement'] ?? null;
+            // On gère les deux noms possibles (BDD ou Formulaire)
+            $this->id_event = $data['id_evenement'] ?? $data['id'] ?? null;
             $this->title = $data['titre'] ?? '';
             $this->description = $data['description'] ?? null;
             $this->date_event = $data['date_evenement'] ?? '';
@@ -31,48 +31,19 @@ class Event {
         }
     }
 
-    public function getIdEvent(): ?int {
-        return $this->id_event;
-    }
+    // GETTERS
+    public function getIdEvent(): ?int { return $this->id_event; }
+    public function getTitle(): string { return $this->title; }
+    public function getDescription(): ?string { return $this->description; }
+    public function getDateEvent(): string { return $this->date_event; }
+    public function getHour(): string { return $this->hour; }
+    public function getPlace(): string { return $this->place; }
+    public function getType(): ?string { return $this->type; }
+    public function getImageUrl(): ?string { return $this->image_url; }
+    public function isTopEvent(): bool { return $this->top_event; }
+    public function isStatut(): bool { return $this->statut; }
+    public function getProgUrl(): ?string { return $this->prog_url; }
 
-    public function getTitle(): string {
-        return $this->title;
-    }
-
-    public function getDescription(): ?string {
-        return $this->description;
-    }
-
-    public function getDateEvent(): string {
-        return $this->date_event;
-    }
-
-    public function getHour(): string {
-        return $this->hour;
-    }
-
-    public function getPlace(): string {
-        return $this->place;
-    }
-
-    public function getType(): ?string {
-        return $this->type;
-    }
-
-    public function getImageUrl(): ?string {
-        return $this->image_url;
-    }
-
-    public function isTopEvent(): bool {
-        return $this->top_event;
-    }
-
-    public function isStatut(): bool {
-        return $this->statut;
-    }
-
-    public function getProgUrl(): ?string {
-        return $this->prog_url;
-    }
-
+    // SETTER (Indispensable pour l'Update)
+    public function setIdEvent(int $id): void { $this->id_event = $id; }
 }
