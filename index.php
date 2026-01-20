@@ -66,25 +66,30 @@ if ($page === 'mentions') { $title = "Mentions Légales - Le P'tit Café"; }
         <body>
 
    <?php 
-    // On inclut le header commun
-    if (file_exists($layoutPath . 'header.php')) {
+   // Ici c'est le système de layout général (footer + header pour la majorité des pages.
+   // Cela évite de devoir le marquer 10 000 fois à chaque nouvelle page
+   //  On exclut le header et le footer du dashboard admin
+   if ($page !== 'dashboard' && file_exists($layoutPath . 'header.php')) {
         include $layoutPath . 'header.php';
     }
 
+    // On ouvre la balise main car c'est la partie principale du système
     echo '<main>';
+
     if (file_exists($filePath)) {
         include $filePath;
     } else {
-        // Si le fichier n'existe pas, on affiche la 404 sans casser le site
+        // Si le fichier n'existe pas, on affiche le home
         include $viewPath . 'home.php';
     }
+
     echo '</main>';
 
-    // On inclut le footer commun
-    if (file_exists($layoutPath . 'footer.php')) {
+    // On n'inclut le footer QUE si ce n'est pas le dashboard
+    if ($page !== 'dashboard' && file_exists($layoutPath . 'footer.php')) {
         include $layoutPath . 'footer.php';
     }
-    ?>
+   ?>
 
 </body>
 </html>
