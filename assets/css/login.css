@@ -1,0 +1,14 @@
+.login-section {
+    background-color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.login-container {
+    width: 400px;
+    text-align: center;
+}
+
