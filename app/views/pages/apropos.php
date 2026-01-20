@@ -14,10 +14,7 @@
         <div class="timeline-intro">
             <h3 class="section-title">Une grande histoire</h2>
                 <p class="section-text">
-                    Petit Café est né d’un désir simple : créer au Puy-en-Velay un lieu chaleureux,
-                    ouvert à toutes et tous, où l’on peut se rencontrer, échanger et partager.
-                    Cette frise retrace les grandes étapes d'un projet collectif, construit pas à pas,
-                    au fil des rencontres et des engagements.
+                    Le P'tit Café, café associatif familial & écologique, est un lieu d’accueil et de rencontre convivial intergénérationnel dans lequel prend place une programmation d’activités parents-enfants, d’actions de soutien à la parentalité, mais aussi de concerts, de débats, de projections...proposées et organisées par les bénévoles de l'association Jeunes pousses.
                 </p>
         </div>
 
