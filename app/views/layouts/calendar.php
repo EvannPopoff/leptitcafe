@@ -1,6 +1,5 @@
 <div id="calendar-container">
-        <div id="calendar"></div>
-    </div>
+    <div id="calendar"></div>
 </div>
 
 <div id="eventModal" class="custom-modal">
@@ -24,8 +23,6 @@
         </div>
     </div>
 </div>
-
-<!-- FullCalendar JS et initialisation -->
 
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
 
@@ -70,9 +67,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Image
             const imgTag = document.getElementById('modalImage');
-            imgTag.src = props.image_url
-                ? "assets/images/events/" + props.image_url
-                : "assets/images/tagada.jpg";
+            const imgContainer = document.querySelector('.modal-image-container');
+            
+            // On vérifie si l'URL existe et n'est pas "null" (en texte ou objet)
+            if (props.image_url && props.image_url !== "null" && props.image_url.trim() !== "") {
+                imgTag.src = "assets/images/events/" + props.image_url;
+                imgContainer.style.display = 'block'; // On affiche le bloc image
+            } else {
+                imgContainer.style.display = 'none';  // On cache le bloc image si vide
+            }
 
             // PDF
             const pdfBtn = document.getElementById('modalPdf');
