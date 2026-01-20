@@ -24,6 +24,11 @@ $layoutPath = 'app/views/layouts/';
 // On construit le chemin complet du fichier à inclure.
 $filePath = $viewPath . $page . '.php';
 
+// Pour intercepter le contrôleur de sauvegarde d'événement avant le système de template mis en place.
+if ($page === 'save-event') {
+    require_once 'app/controllers/EventController.php';
+    exit; // Pas de HTML, pas de Header, juste le traitement
+}
 // Pour intercepter la requête JSON avant le système de template mis en place.
 if ($page === 'events-json') {
     if (file_exists($filePath)) {
