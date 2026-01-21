@@ -37,7 +37,7 @@ if ($page === 'delete-event') {
 
 if ($page === 'send-message') {
     require_once 'app/controllers/ContactController.php';
-    exit;
+    exit; 
 }
 
 // Pour intercepter la requête JSON avant le système de template mis en place.
