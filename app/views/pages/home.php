@@ -77,6 +77,9 @@
                 </p>
 
                 <a href="app/views/layouts/calendar.php" class="btn-events">Consulter l’Agenda</a>
+
+                <?php include 'app/views/layouts/calendar.php'; ?>
+                
             </div>
 
         </div>
