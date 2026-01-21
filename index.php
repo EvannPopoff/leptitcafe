@@ -25,38 +25,57 @@ $layoutPath = 'app/views/layouts/';
 // On construit le chemin complet du fichier à inclure.
 $filePath = $viewPath . $page . '.php';
 
-// Pour intercepter le contrôleur de sauvegarde d'événement avant le système de template mis en place.
+//  Intercepteurs (Traitement sans HTML) ---
+
+// Pour intercepter le contrôleur de sauvegarde d'événement
 if ($page === 'save-event') {
     require_once 'app/controllers/EventController.php';
-    exit; // Pas de HTML, pas de Header, juste le traitement
+    exit; 
 }
-// Pour intercepter le contrôleur de suppresion d'événement avant le système de template mis en place.
+
+// Pour intercepter le contrôleur de suppression d'événement
 if ($page === 'delete-event') {
     require_once 'app/controllers/DeleteEventController.php';
     exit; 
 }
 
+// Pour intercepter l'envoi du formulaire de contact
 if ($page === 'send-message') {
     require_once 'app/controllers/ContactController.php';
     exit;
 }
 
-// Pour intercepter la requête JSON avant le système de template mis en place.
+// Marquer le message comme traité pour le message dashboard
+if ($page === 'mark-message-treated') {
+    if (isset($_POST['id_message'])) {
+        // On récupère l'ID de l'admin en session (ou 1 par défaut pour le test)
+        $id_admin = $_SESSION['user_id'] ?? 1; 
+        
+        $manager = new app\models\managers\MessageManager($db);
+        $manager->markAsTreated((int)$_POST['id_message'], $id_admin);
+    }
+    
+    header('Content-Type: application/json');
+    echo json_encode(['status' => 'success']);
+    exit;
+}
+
+// Pour intercepter la requête JSON des événements
 if ($page === 'events-json') {
     if (file_exists($filePath)) {
         include $filePath;
-        exit; // Pas de HTML, pas de Header, juste le JSON
+        exit; 
     }
 }
 
-//Nom des pages
+// Gestion des titres
 $title = "Le P'tit Café";
 if ($page === 'home') { $title = "Accueil - Le P'tit Café"; }
 if ($page === 'membership') { $title = "Adhérer - Le P'tit Café"; }
 if ($page === 'apropos') { $title = "À propos - Le P'tit Café"; }
 if ($page === 'contact') { $title = "Contact - Le P'tit Café"; }
 if ($page === 'evenement') { $title = "Activités et Évènements - Le P'tit Café"; }
-
+if ($page === 'dashboard') { $title = "Dashboard Admin - Le P'tit Café"; } // Optionnel
 if ($page === 'confidentialite') { $title = "Politique de Confidentialité - Le P'tit Café"; }
 if ($page === 'mentions') { $title = "Mentions Légales - Le P'tit Café"; }
 
@@ -71,37 +90,35 @@ if ($page === 'mentions') { $title = "Mentions Légales - Le P'tit Café"; }
 
         <link rel="stylesheet" href="assets/css/style.css?v=1.1">
         <link rel="stylesheet" href="assets/css/calendar.css">
+        <?php if ($page === 'dashboard'): ?>
+            <link rel="stylesheet" href="assets/css/admin-dashboard.css">
+        <?php endif; ?>
 
         <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+    </head>
+    <body>
 
-        </head>
-        <body>
-
-   <?php 
-   // Ici c'est le système de layout général (footer + header pour la majorité des pages.
-   // Cela évite de devoir le marquer 10 000 fois à chaque nouvelle page
-   //  On exclut le header et le footer du dashboard admin
-   if ($page !== 'dashboard' && file_exists($layoutPath . 'header.php')) {
+    <?php 
+    // Système de layout : Header
+    if ($page !== 'dashboard' && file_exists($layoutPath . 'header.php')) {
         include $layoutPath . 'header.php';
     }
 
-    // On ouvre la balise main car c'est la partie principale du système
     echo '<main>';
 
     if (file_exists($filePath)) {
         include $filePath;
     } else {
-        // Si le fichier n'existe pas, on affiche le home
         include $viewPath . 'home.php';
     }
 
     echo '</main>';
 
-    // On n'inclut le footer QUE si ce n'est pas le dashboard
+    // Système de layout : Footer
     if ($page !== 'dashboard' && file_exists($layoutPath . 'footer.php')) {
         include $layoutPath . 'footer.php';
     }
-   ?>
+    ?>
 
 </body>
 </html>

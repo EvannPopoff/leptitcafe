@@ -1,0 +1,89 @@
+/* Container de la section messages */
+.admin-messages-section {
+    margin: 20px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Style de la carte/table */
+.messages-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+}
+
+.messages-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.messages-table th {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 2px solid #f0f2f5;
+    color: #4a5568;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.messages-table td {
+    padding: 15px;
+    border-bottom: 1px solid #edf2f7;
+    vertical-align: middle;
+}
+
+/* Lignes avec code couleur */
+.row-new {
+    background-color: #fff5f5;
+    /* Rouge très léger pour les nouveaux */
+}
+
+.row-treated {
+    background-color: transparent;
+}
+
+/* Badges de statut */
+.badge {
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+}
+
+.badge-red {
+    background-color: #e53e3e;
+    /* Rouge */
+}
+
+.badge-green {
+    background-color: #38a169;
+    /* Vert */
+}
+
+/* Boutons d'action */
+.btn-reply {
+    display: inline-block;
+    background-color: #3182ce;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: background 0.2s;
+}
+
+.btn-reply:hover {
+    background-color: #2b6cb0;
+}
+
+.msg-preview {
+    max-width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #718096;
+    font-size: 0.9rem;
+}

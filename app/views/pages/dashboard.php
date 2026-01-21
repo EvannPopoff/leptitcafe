@@ -7,6 +7,7 @@ if (!isset($_SESSION['admin_id'])) {
 ?>
 
 <link rel="stylesheet" href="assets/css/dashboard.css">
+<link rel="stylesheet" href="assets/css/admin-dashboard.css">
 
 <div class="dashboard-container">
     <div class="admin-grid">
@@ -117,5 +118,10 @@ document.addEventListener('DOMContentLoaded', function() {
             feedback.style.display = 'none';
         });
     }
+
+    <section class="admin-messages-section">
+        <h2>Gestion des Contacts</h2>
+        <?php include 'app/views/layouts/admin-messages.php'; ?>
+    </section>
 });
 </script>
