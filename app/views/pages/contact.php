@@ -102,6 +102,16 @@
     </div>
 </section>
 
+</section>
+
+    <section class="agenda-accueil">
+        <div class="container agenda-accueil">
+
+        <?php include 'app/views/layouts/calendar.php'; ?>
+
+        </div>
+    </section>
+
 <section class="map-section">
     <div class="container">
         <div class="map-wrapper">
