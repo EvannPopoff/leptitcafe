@@ -10,7 +10,7 @@ $db = \app\config\Database::getInstance();
 ?>
 
 <link rel="stylesheet" href="assets/css/dashboard.css">
-<link rel="stylesheet" href="assets/css/message-management.css">
+<link rel="stylesheet" href="assets/css/admin-management.css">
 
 <div class="dashboard-container">
     <div class="admin-grid">
@@ -40,7 +40,7 @@ $db = \app\config\Database::getInstance();
             <section class="admin-messages-section">
                 <h2 style="margin-bottom: 20px;">📬 Messages reçus</h2>
                 <?php 
-                    $messagesLayout = 'app/views/layouts/admin-messages.php';
+                    $messagesLayout = 'app/views/layouts/message-management.php';
                     if (file_exists($messagesLayout)) {
                         include $messagesLayout;
                     } else {
