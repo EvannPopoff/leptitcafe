@@ -7,6 +7,8 @@ if (!isset($_SESSION['admin_id'])) {
 ?>
 
 <link rel="stylesheet" href="assets/css/dashboard.css">
+<link rel="stylesheet" href="assets/css/admin-dashboard.css">
+
 
 <div class="dashboard-container">
     <div class="admin-grid">
@@ -51,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if(deleteBtn) deleteBtn.style.display = "none"; // On cache le bouton supprimer
     }
 
-    // 2. Logique créer et supprimer
+    // Logique créer et supprimer
     if (eventForm) {
         eventForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -117,5 +119,6 @@ document.addEventListener('DOMContentLoaded', function() {
             feedback.style.display = 'none';
         });
     }
+
 });
 </script>
