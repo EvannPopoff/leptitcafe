@@ -35,7 +35,7 @@ $allMessages = $msgManager->findAll();
                         <div class="msg-preview">
                             <?= htmlspecialchars(mb_strimwidth($m->getContenu(), 0, 50, "...")) ?>
                         </div>
-                        <span class="read-hint">Cliquer pour lire</span>
+                        <span class="read-hint">Lire...</span>
                     </td>
 
                     <td>
@@ -53,7 +53,7 @@ $allMessages = $msgManager->findAll();
 <div id="messageModal" class="admin-modal">
     <div class="modal-content">
         <span class="close-btn" onclick="closeModal()">&times;</span>
-        <h3 id="modalTitle">Message de ...</h3>
+        <h3 id="modalTitle">Message</h3>
         <hr>
         <div id="modalBody" class="modal-body"></div>
     </div>
