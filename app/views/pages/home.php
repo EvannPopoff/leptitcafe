@@ -104,6 +104,8 @@
 
             <a href="index.php?page=contact" class="btn-events">Réserver le P'tit Café</a>
 
+            <?php include 'app/views/layouts/calendar.php'; ?>
+
         </div>
     </section>
 

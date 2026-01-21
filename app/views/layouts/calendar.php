@@ -63,12 +63,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.querySelector('.admin-sidebar').scrollIntoView({ behavior: 'smooth' });
             }
 
-            
+            /* test
                
                document.getElementById('modalTitle').innerText = event.title;
                document.getElementById('modalDescription').innerText = props.description || "Aucune description.";
                document.getElementById('eventModal').style.display = 'block';
-            
+            */
         }
     });
 
