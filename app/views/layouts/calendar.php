@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var calendarElement = document.getElementById('calendar');
     
     calendar = new FullCalendar.Calendar(calendarElement, {
+        initialView: window.innerWidth < 768 ? 'listWeek' : 'dayGridMonth',
         initialView: 'dayGridMonth',
         locale: 'fr',
         headerToolbar: {
