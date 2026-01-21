@@ -1,8 +1,10 @@
 <?php
-// On initialise le manager (le $db vient de la page qui inclut ce layout)
+// On s'assure que le manager utilise le bon nom de table
 $msgManager = new app\models\managers\MessageManager($db);
 $allMessages = $msgManager->findAll();
 ?>
+
+<link rel="stylesheet" href="assets/css/admin-management.css">
 
 <div class="messages-card">
     <table class="messages-table">
@@ -18,26 +20,40 @@ $allMessages = $msgManager->findAll();
         </thead>
         <tbody>
             <?php foreach ($allMessages as $m): ?>
-                <?php $isNew = ($m->getStatut() === 0); ?>
-                <tr class="<?= $isNew ? 'row-new' : 'row-treated' ?>">
+                <?php 
+                    // Détection automatique : Objet ou Tableau ?
+                    $isObj = is_object($m);
+                    
+                    // On récupère les données avec une valeur par défaut si vide
+                    $id      = $isObj ? $m->getIdMessage() : ($m['id_message'] ?? null);
+                    $statut  = $isObj ? $m->getStatut()    : ($m['statut'] ?? 0);
+                    $nom     = $isObj ? $m->getNom()       : ($m['nom'] ?? 'Inconnu');
+                    $email   = $isObj ? $m->getEmail()     : ($m['email'] ?? '');
+                    $cat     = $isObj ? $m->getCategorie() : ($m['categorie'] ?? 'Général');
+                    $contenu = $isObj ? $m->getContenu()   : ($m['contenu'] ?? '');
+                    $date    = $isObj ? $m->getDateEnvoi() : ($m['date_envoi'] ?? 'now');
+                ?>
+                <tr class="<?= $statut === 0 ? 'row-new' : 'row-treated' ?>">
                     <td>
-                        <span class="badge <?= $isNew ? 'badge-red' : 'badge-green' ?>">
-                            <?= $isNew ? 'Nouveau' : 'Traité' ?>
+                        <span class="badge <?= $statut === 0 ? 'badge-red' : 'badge-green' ?>">
+                            <?= $statut === 0 ? 'Nouveau' : 'Traité' ?>
                         </span>
                     </td>
-                    <td><?= date('d/m H:i', strtotime($m->getDateEnvoi())) ?></td>
+                    <td style="white-space: nowrap;"><?= date('d/m H:i', strtotime($date)) ?></td>
                     <td>
-                        <strong><?= htmlspecialchars($m->getNom()) ?></strong><br>
-                        <small><?= htmlspecialchars($m->getEmail()) ?></small>
+                        <strong><?= htmlspecialchars($nom) ?></strong><br>
+                        <small style="color: #666;"><?= htmlspecialchars($email) ?></small>
                     </td>
-                    <td><?= htmlspecialchars($m->getCategorie()) ?></td>
-                    <td><div class="msg-preview" title="<?= htmlspecialchars($m->getContenu()) ?>">
-                        <?= htmlspecialchars($m->getContenu()) ?>
-                    </div></td>
+                    <td><strong><?= htmlspecialchars($cat) ?></strong></td>
                     <td>
-                        <a href="mailto:<?= $m->getEmail() ?>?subject=Réponse : <?= $m->getCategorie() ?>" 
+                        <div class="msg-preview" title="<?= htmlspecialchars($contenu) ?>">
+                            <?= htmlspecialchars($contenu) ?>
+                        </div>
+                    </td>
+                    <td>
+                        <a href="mailto:<?= $email ?>?subject=Réponse : <?= $cat ?>" 
                            class="btn-reply" 
-                           onclick="markAsRead(<?= $m->getIdMessage() ?>)">
+                           onclick="markAsRead(<?= $id ?>)">
                            Répondre
                         </a>
                     </td>
@@ -49,6 +65,7 @@ $allMessages = $msgManager->findAll();
 
 <script>
 function markAsRead(id) {
+    if(!id) return;
     const formData = new FormData();
     formData.append('id_message', id);
 
@@ -56,7 +73,6 @@ function markAsRead(id) {
         method: 'POST',
         body: formData
     }).then(() => {
-        // On recharge la vue après 1s pour voir le changement de couleur
         setTimeout(() => { location.reload(); }, 1000);
     });
 }
