@@ -125,7 +125,7 @@
 
 @media (max-width: 768px) {
 
-    /* 1. Calendrier : on réduit les textes et les espaces */
+    /* Calendrier : on réduit les textes et les espaces */
     #calendar-container {
         padding: 10px;
         margin: 5px;
@@ -156,9 +156,10 @@
         padding: 1px 3px !important;
     }
 
-    /* 2. Pop-up : on empile l'image et le texte */
+    /* Pop-up -> on empile l'image et le texte */
     .modal-grid {
         flex-direction: column;
+        /* On empile l'image et le texte */
         gap: 15px;
     }
 
@@ -182,8 +183,16 @@
         font-size: 0.95rem;
     }
 
+    .btn-pdf {
+        width: 100%;
+        /* Le bouton prend toute la largeur pour le tactile */
+        text-align: center;
+        box-sizing: border-box;
+    }
+
     .close-modal {
         top: 5px;
         right: 15px;
     }
+
 }
