@@ -9,6 +9,8 @@ require_once 'app/config/database.php';
 // On charge les models (managers et entities)
 require_once 'app/models/entities/Administrateur.php';
 require_once 'app/models/managers/AdministrateurManager.php';
+require_once 'app/models/entities/Event.php';
+require_once 'app/models/managers/EventManager.php';
 
 // On charge les controllers.
 require_once 'app/controllers/AuthController.php';
@@ -22,7 +24,21 @@ $layoutPath = 'app/views/layouts/';
 // On construit le chemin complet du fichier à inclure.
 $filePath = $viewPath . $page . '.php';
 
+// Pour intercepter le contrôleur de sauvegarde d'événement avant le système de template mis en place.
+if ($page === 'save-event') {
+    require_once 'app/controllers/EventController.php';
+    exit; // Pas de HTML, pas de Header, juste le traitement
+}
+// Pour intercepter la requête JSON avant le système de template mis en place.
+if ($page === 'events-json') {
+    if (file_exists($filePath)) {
+        include $filePath;
+        exit; // Pas de HTML, pas de Header, juste le JSON
+    }
+}
+
 //Nom des pages
+$title = "Le P'tit Café";
 if ($page === 'home') { $title = "Accueil - Le P'tit Café"; }
 if ($page === 'membership') { $title = "Adhérer - Le P'tit Café"; }
 if ($page === 'apropos') { $title = "À propos - Le P'tit Café"; }
@@ -31,7 +47,6 @@ if ($page === 'evenement') { $title = "Activités et Évènements - Le P'tit Caf
 
 if ($page === 'confidentialite') { $title = "Politique de Confidentialité - Le P'tit Café"; }
 if ($page === 'mentions') { $title = "Mentions Légales - Le P'tit Café"; }
-
 
 ?>
 
@@ -43,6 +58,7 @@ if ($page === 'mentions') { $title = "Mentions Légales - Le P'tit Café"; }
         <title><?php echo $title; ?></title>
 
         <link rel="stylesheet" href="assets/css/style.css?v=1.1">
+        <link rel="stylesheet" href="assets/css/calendar.css">
 
         <link rel="icon" type="image/png" href="/assets/images/favicon.png">
 
@@ -50,25 +66,30 @@ if ($page === 'mentions') { $title = "Mentions Légales - Le P'tit Café"; }
         <body>
 
    <?php 
-    // On inclut le header commun
-    if (file_exists($layoutPath . 'header.php')) {
+   // Ici c'est le système de layout général (footer + header pour la majorité des pages.
+   // Cela évite de devoir le marquer 10 000 fois à chaque nouvelle page
+   //  On exclut le header et le footer du dashboard admin
+   if ($page !== 'dashboard' && file_exists($layoutPath . 'header.php')) {
         include $layoutPath . 'header.php';
     }
 
+    // On ouvre la balise main car c'est la partie principale du système
     echo '<main>';
+
     if (file_exists($filePath)) {
         include $filePath;
     } else {
-        // Si le fichier n'existe pas, on affiche la 404 sans casser le site
+        // Si le fichier n'existe pas, on affiche le home
         include $viewPath . 'home.php';
     }
+
     echo '</main>';
 
-    // On inclut le footer commun
-    if (file_exists($layoutPath . 'footer.php')) {
+    // On n'inclut le footer QUE si ce n'est pas le dashboard
+    if ($page !== 'dashboard' && file_exists($layoutPath . 'footer.php')) {
         include $layoutPath . 'footer.php';
     }
-    ?>
+   ?>
 
 </body>
 </html>

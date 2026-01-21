@@ -4,7 +4,7 @@
     <div class="footer-top">
 
       <div class="footer-column logo">
-        <img src="assets/images/logo.webp" alt="Le P'tit Café">
+        <img src="assets/images/footer_header/logo.webp" alt="Le P'tit Café">
       </div>
 
       <div class="footer-column">
@@ -33,7 +33,9 @@
     <hr>
 
     <div class="footer-bottom">
-      <p>© 2026 - Tous droits réservés</p>
+      <p>
+    <a href="index.php?page=login" class="admin-link"> © </a>2026 - Tous droits réservés</p><!-- Intégration d’un lien discret vers la page de connexion administrateur -->
+
       <div class="footer-links">
         <a href="index.php?page=confidentialite">Politique de confidentialité</a>
         <a href="index.php?page=mentions">Mentions légales</a>
@@ -43,7 +45,7 @@
   </div>
 
   <div class="footer-image">
-    <img src="assets/images/plantes_footer.png" alt="Plantes">
+    <img src="assets/images/footer_header/plantes_footer.png" alt="Plantes">
   </div>
 </footer>
 

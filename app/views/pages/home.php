@@ -2,7 +2,7 @@
 
 <body>
     <div class="hero-accueil">
-        <img src="assets/images/img-hero.webp" alt="hero">
+        <img src="assets/images/page_home_evenements/img-hero.webp" alt="hero">
 
         <div class="hero-content">
             <h1>Le P’tit Café</h1>
@@ -28,19 +28,19 @@
             <div class="events-list">
 
                 <article class="event-card">
-                    <a href="index.php?page=apropos"><img src="assets/images/event1.avif" alt="Calendrier de l’Après"> </a>
+                    <img src="assets/images/page_home_evenements/event1.avif" alt="Calendrier de l’Après"> </a>
                     <h3>Calendrier de l’Après</h3>
                     <p>Une programmation culturelle et artistique, offerte pendant les 24 jours avant Noël.</p>
                 </article>
 
                 <article class="event-card">
-                    <a href="index.php?page=apropos"><img src="assets/images/event2.avif" alt="Festin Nomade"> </a>
+                    <img src="assets/images/page_home_evenements/event2.avif" alt="Festin Nomade"> </a>
                     <h3>Festin Nomade</h3>
                     <p>Le Festin Nomade s’installe le samedi 15 octobre pour une journée festive, succulente et familiale.</p>
                 </article>
 
                 <article class="event-card">
-                    <a href="index.php?page=apropos"><img src="assets/images/event5.webp" alt="Printemps de l'Education"> </a>
+                    <img src="assets/images/page_home_evenements/event5.webp" alt="Printemps de l'Education"> </a>
                     <h3>Printemps de l'Education</h3>
                     <p>Un véritable phénomène d'éclosion d'initiatives est en train de se mettre en place dans l'éducation.</p>
                 </article>
@@ -59,7 +59,7 @@
 
             <div class="activities-affiche">
                 <a href="https://drive.google.com/file/d/1ebVDKNcNawgnvQSmhQkfKweU5myhno5q/view" target="_blank" rel="noopener" class="programme">
-                <img src="assets/images/affiche_activite.webp" alt="Programme"> </a>
+                <img src="assets/images/page_home_evenements/affiche_activite.webp" alt="Programme"> </a>
             </div>
 
             <div class="activities-content">
@@ -76,7 +76,8 @@
                     Ou faire des demandes de chose que vous aimeriez trouver.
                 </p>
 
-                <a href="index.php?page=evenement" class="btn-events">Consulter l’Agenda</a>
+                <a href="app/views/layouts/calendar.php" class="btn-events">Consulter l’Agenda</a>
+
             </div>
 
         </div>
@@ -94,7 +95,7 @@
             </p>
 
             <div class="reserver-visuel">
-            <img src="assets/images/plante2.png" alt="plante">
+            <img src="assets/images/page_home_evenements/plante2.png" alt="plante">
             </div>
 
             <p class="reserver-info">
@@ -102,7 +103,16 @@
             ou directement au P’tit Café.
             </p>
 
-            <a href="index.php?page=reservation" class="btn-events">Réserver le P'tit Café</a>
+            <a href="index.php?page=contact" class="btn-events">Réserver le P'tit Café</a>
+
+
+        </div>
+    </section>
+
+    <section class="agenda-accueil">
+        <div class="container agenda-accueil">
+
+        <?php include 'app/views/layouts/calendar.php'; ?>
 
         </div>
     </section>

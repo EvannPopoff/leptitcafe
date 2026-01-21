@@ -31,6 +31,7 @@ body {
     padding: 0.8rem 1.6rem;
     border: 3px solid #DD5D13;
     color: #DD5D13;
+    background: transparent;
     text-decoration: none;
     border-radius: 15px;
     font-weight: 600;
@@ -295,7 +296,15 @@ header {
 .footer-links a:hover {
     text-decoration: underline;
 }
+.admin-link {
+    color: inherit; 
+    text-decoration: none; 
+}
 
+
+.admin-link:visited {
+    color: inherit;
+}
 /* ---------- IMAGE ---------- */
 
 .footer-image img {

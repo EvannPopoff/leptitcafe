@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="assets/css/apropos.css">
 
 <div class="hero">
-    <img src="assets/images/image_header.webp" alt="hero" class="hero-bg">
+    <img src="assets/images/page_apropos/image_header.webp" alt="hero" class="hero-bg">
     <div class="hero-overlay"></div>
     <div class="hero-content">
         <h1>Là où tout commence</h1>
@@ -77,7 +77,7 @@
             <div class="values-grid" id="valuesGrid">
                 <div class="value-card">
                     <div class="value-image-container">
-                        <img src="assets/images/flower.webp" alt="Valeur">
+                        <img src="assets/images/page_apropos/flower.webp" alt="Valeur">
                     </div>
                     <div class="value-info">
                         <h3 class="value-title">Bienveillance</h3>
@@ -90,7 +90,7 @@
 
                 <div class="value-card">
                     <div class="value-image-container">
-                        <img src="assets/images/family.webp" alt="Valeur">
+                        <img src="assets/images/page_apropos/family.webp" alt="Valeur">
                     </div>
                     <div class="value-info">
                         <h3 class="value-title">Soutien à la relation parent-enfant</h3>
@@ -103,7 +103,7 @@
 
                 <div class="value-card">
                     <div class="value-image-container">
-                        <img src="assets/images/friends.webp" alt="Valeur">
+                        <img src="assets/images/page_apropos/friends.webp" alt="Valeur">
                     </div>
                     <div class="value-info">
                         <h3 class="value-title">Convivialité et partage</h3>
@@ -117,7 +117,7 @@
 
                 <div class="value-card">
                     <div class="value-image-container">
-                        <img src="assets/images/ecologie.webp" alt="Valeur">
+                        <img src="assets/images/page_apropos/ecologie.webp" alt="Valeur">
                     </div>
                     <div class="value-info">
                         <h3 class="value-title">Conscience écologique</h3>
@@ -134,15 +134,14 @@
 </section>
 
 <section class="container reservation">
-    <h2>Créez vos plus beaux souvenirs au P'tit Café</h2>
+    <h2>Vivez l’expérience unique du P’tit Café</h2>
 
     <p class="description">
-        Que ce soit pour souffler vos bougies, réunir votre tribu ou simplement partager un moment hors du temps entre
-        amis, notre espace devient le vôtre. Nous privatisons le P'tit Café pour transformer vos événements personnels
-        en instants inoubliables. Le bonheur de se retrouver, tout simplement.
+        Rejoindre notre communauté, c’est bien plus qu’un simple moment autour d’un café.
+Chaque visite devient un souvenir, chaque rencontre une nouvelle histoire. Devenez membre dès aujourd’hui et faites partie de notre famille du P’tit Café !
     </p>
 
-    <a href="index.php?page=contact" class="btn-reserve">Réserver</a>
+    <a href="index.php?page=membership" class="btn-reserve">Adhérer maintenant</a>
 </section>
 
 <script src="assets/js/apropos.js"></script>

@@ -1,0 +1,2 @@
+php_flag engine off
+# Prévient de l'exécution de scripts PHP malveillants dans ce répertoire

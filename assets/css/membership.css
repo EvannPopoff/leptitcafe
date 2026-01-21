@@ -1,33 +1,58 @@
+/* ================================
+   PAGE ADHÉSION - STYLES
+   ================================ */
+
+/* --- Hero Section --- */
 .hero-adhesion {
- background-image: url('../images/membership/hero-adhesion.jpeg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/page_membership/hero-adhesion.jpeg');
     background-size: cover;
     background-position: center;
     color: white;
-    padding: 80px 40px;
-    min-height: 300px;
+    padding: 120px 40px;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .hero-adhesion h1 {
-    font-size: 45px;
+    font-size: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
+
 .hero-adhesion p {
     font-size: 20px;
     margin-top: 15px;
 }
 
-.card-adhesion {
+/* --- Section Pourquoi Adhérer --- */
+.pourquoi-adherer {
     background-color: #ffffff;
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 8px;
+    padding: 60px 20px;
+    text-align: center;
 }
+
+/* --- Cards Adhésion (formules) --- */
+.formules-adhesion {
+    padding: 60px 20px;
+    text-align: center;
+}
+
 .cards-container {
     display: flex;
     gap: 15px;
     justify-content: center;
+}
+
+.card-adhesion {
+    background-color: #FFFCF4;
+    border: 2px solid #294F0C;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .card-adhesion h3 {
@@ -38,12 +63,6 @@
 .card-adhesion .price {
     font-size: 24px;
     color: #294F0C;
-}
-
-.pourquoi-adherer {
-    background-color: #FFFCF4;
-    padding: 60px 20px;
-    text-align: center;
 }
 
 .card-adhesion ul {
@@ -60,16 +79,15 @@
     margin-bottom: 8px;
 }
 
+/* checkmark icon */
 .card-adhesion li::before {
     content: "✓";
     color: #4a7c59;
     position: absolute;
     left: 0;
 }
-.formules-adhesion {
-    padding: 60px 20px;
-    text-align: center;
-}
+
+/* --- Boutons (style orange) --- */
 .btn-choisir,
 .btn-don,
 .btn-adherer,
@@ -84,6 +102,7 @@
     background-color: transparent;
 }
 
+/* hover effect */
 .btn-choisir:hover,
 .btn-don:hover,
 .btn-adherer:hover,
@@ -93,6 +112,7 @@
     cursor: pointer;
 }
 
+/* --- Section Etapes (3 étapes) --- */
 .etapes-adhesion {
     background-color: #B9DAA3;
     text-align: center;
@@ -124,6 +144,7 @@
     text-align: center;
 }
 
+/* icon box */
 .etape-icon {
     width: 120px;
     height: 100px;
@@ -161,6 +182,7 @@
     line-height: 1.5;
 }
 
+/* timeline dots */
 .etapes-timeline {
     display: flex;
     align-items: center;
@@ -176,6 +198,7 @@
     border-radius: 50%;
 }
 
+/* dashed line */
 .timeline-line {
     width: 150px;
     height: 2px;
@@ -194,8 +217,9 @@
     margin-top: 20px;
 }
 
+/* --- Section Témoignages --- */
 .temoignages {
-    background-color: #FFFCF4;
+    background-color: #ffffff;
     padding: 60px 20px;
     text-align: center;
 }
@@ -217,15 +241,18 @@
     gap: 20px;
 }
 
+/* testimonial cards */
 .temoignage-card {
-    background: white;
-    border: 1px solid #ddd;
+    background: #FFFCF4;
+    border: 2px solid #294F0C;
     border-radius: 8px;
     padding: 25px;
     width: 300px;
     text-align: left;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
+/* stars */
 .stars {
     color: #294F0C;
     font-size: 18px;
@@ -239,37 +266,27 @@
     margin-bottom: 20px;
 }
 
+/* author info */
 .temoignage-auteur {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.avatar {
-    width: 35px;
-    height: 35px;
-    background-color: #ddd;
-    border-radius: 50%;
-}
-.temoignage-auteur {
-    display: flex;
-    align-items: center;
-    gap: 10px; 
-}
-
 .temoignage-auteur .avatar {
-    width: 50px;  
-    height: 50px;      
-    aspect-ratio: 1/1; 
+    width: 50px;
+    height: 50px;
+    aspect-ratio: 1/1;
     border-radius: 50%;
     object-fit: cover;
 }
+
 .temoignage-auteur span {
     color: #333;
     font-size: 14px;
 }
 
-
+/* --- Section Bénévole (CTA) --- */
 .cta-benevole {
     background-color: #294F0C;
     padding: 60px 20px;
@@ -314,15 +331,58 @@
     line-height: 1.6;
     margin-bottom: 20px;
 }
-.cta-benevole .btn-benevole {
-    border-color: #FFFCF4;
-    color: #FFFCF4;
+
+/* ================================
+   RESPONSIVE - MOBILE
+   ================================ */
+@media (max-width: 768px) {
+    
+    .hero-adhesion {
+        padding: 80px 20px;
+        min-height: 300px;
+    }
+
+    .hero-adhesion h1 {
+        font-size: 28px;
+    }
+
+    .hero-adhesion p {
+        font-size: 16px;
+    }
+
+    /* cards en colonne */
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-adhesion {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    /* etapes en colonne */
+    .etapes-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    /* temoignages en colonne */
+    .temoignages-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .temoignage-card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    /* benevole en colonne */
+    .benevole-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
 }
-
-.cta-benevole .btn-benevole:hover {
-    background-color: #FFFCF4;
-    color: #294F0C;
-}
-
-
-
