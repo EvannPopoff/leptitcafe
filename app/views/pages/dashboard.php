@@ -1,7 +1,9 @@
 <?php
-
+// On vérifie si l'admin est bien connecté.
 if (!isset($_SESSION['admin_id'])) {
+    // Redirection vers la page de login si non connecté
     header('Location: index.php?page=login');
+    // On arrête le script pour éviter tout affichage non désiré
     exit();
 }
 ?>
@@ -9,45 +11,7 @@ if (!isset($_SESSION['admin_id'])) {
 <link rel="stylesheet" href="assets/css/dashboard.css">
 
 <div class="dashboard-container">
-    
-    <div class="dashboard-header">
-        <div class="header-left">
-            <h1>Tableau de Bord</h1>
-            <p>Bienvenue dans l'espace administrateur du P'tit Café</p>
-        </div>
-        <div class="header-right">
-            <img src="assets/images/plant.png" alt="Plante" class="header-plant">
-        </div>
-    </div>
-
-    <div class="stats-cards">
-        <div class="stat-card">
-            <div class="stat-info">
-                <span class="stat-number">5</span>
-                <span class="stat-label">Événements</span>
-                <span class="stat-sub">À venir ce mois-ci</span>
-            </div>
-            <i class="fa-solid fa-calendar stat-icon"></i>
-        </div>
-        <div class="stat-card">
-            <div class="stat-info">
-                <span class="stat-number">3</span>
-                <span class="stat-label">Réservations</span>
-                <span class="stat-sub">En attente de validation</span>
-            </div>
-            <i class="fa-solid fa-clock stat-icon"></i>
-        </div>
-        <div class="stat-card">
-            <div class="stat-info">
-                <span class="stat-number">12</span>
-                <span class="stat-label">Messagerie</span>
-                <span class="stat-sub">Nouveaux messages</span>
-            </div>
-            <i class="fa-solid fa-envelope stat-icon"></i>
-        </div>
-    </div>
-
-    <div class="admin-grid" style="margin-top: 30px;">
+    <div class="admin-grid">
         
         <aside class="admin-sidebar">
             <div class="user-info-box">
@@ -63,17 +27,15 @@ if (!isset($_SESSION['admin_id'])) {
         </aside>
 
         <main class="admin-main">
-            <h2 class="main-title" style="color: var(--primary-dark);">Calendrier des Événements</h2>
-            <div class="calendar-container" style="background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                <?php include 'app/views/layouts/calendar.php'; ?>
-            </div>
+            <h1 class="main-title">Tableau de bord</h1>
+            <?php include 'app/views/layouts/calendar.php'; ?>
         </main>
         
     </div>
 </div>
 
 <script>
-
+// Logique AJAX (Comme vu précédemment)
 document.addEventListener('DOMContentLoaded', function() {
     const eventForm = document.getElementById('addEventForm');
     
@@ -99,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 if (data.status === 'success') {
                     eventForm.reset();
-                 
+                    // On rafraîchit FullCalendar sans recharger la page
                     if (typeof calendar !== 'undefined') {
                         calendar.refetchEvents();
                     }
@@ -109,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error('Erreur:', error);
                 alert("Erreur technique.");
             })
-            .finally(()=> {
+            .finally(() => {
                 submitBtn.disabled = false;
                 submitBtn.innerText = "Enregistrer l'événement";
             });
