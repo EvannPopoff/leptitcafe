@@ -49,7 +49,7 @@ $title = "Le P'tit Café";
 if ($page === 'home') { $title = "Accueil - Le P'tit Café"; }
 if ($page === 'membership') { $title = "Adhérer - Le P'tit Café"; }
 if ($page === 'apropos') { $title = "À propos - Le P'tit Café"; }
-if ($page === 'contact') { $title = "Contact - Le P'tit Café"; }
+if ($page === 'contact_v2') { $title = "Contact - Le P'tit Café"; }
 if ($page === 'evenement') { $title = "Activités et Évènements - Le P'tit Café"; }
 
 if ($page === 'confidentialite') { $title = "Politique de Confidentialité - Le P'tit Café"; }
