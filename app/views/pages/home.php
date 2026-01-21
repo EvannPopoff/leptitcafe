@@ -78,8 +78,6 @@
 
                 <a href="app/views/layouts/calendar.php" class="btn-events">Consulter l’Agenda</a>
 
-                <?php include 'app/views/layouts/calendar.php'; ?>
-                
             </div>
 
         </div>
@@ -107,6 +105,14 @@
 
             <a href="index.php?page=contact" class="btn-events">Réserver le P'tit Café</a>
 
+
+        </div>
+    </section>
+
+    <section class="agenda-accueil">
+        <div class="container agenda-accueil">
+
+        <?php include 'app/views/layouts/calendar.php'; ?>
 
         </div>
     </section>
