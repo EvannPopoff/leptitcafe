@@ -35,6 +35,11 @@ if ($page === 'delete-event') {
     exit; 
 }
 
+if ($page === 'block-slot') {
+    require_once 'app/controllers/SlotController.php';
+    exit;
+}
+
 // Pour intercepter la requête JSON avant le système de template mis en place.
 if ($page === 'events-json') {
     if (file_exists($filePath)) {

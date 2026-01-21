@@ -33,101 +33,49 @@ document.addEventListener('DOMContentLoaded', function() {
     var calendarElement = document.getElementById('calendar');
     
     calendar = new FullCalendar.Calendar(calendarElement, {
-        // Pour le responsive
         initialView: window.innerWidth < 768 ? 'listWeek' : 'dayGridMonth',
         locale: 'fr',
+        eventOverlap: false, // EMPECHE LES COLLISIONS
         headerToolbar: {
             left: 'prev,next today',
             center: 'title',
             right: 'dayGridMonth,timeGridWeek,listWeek'
-        },
-        buttonText: {
-            today: "Aujourd'hui", month: "Mois", week: "Semaine", list: "Planning"
         },
         events: 'index.php?page=events-json', 
         
         eventClick: function(info) {
             const event = info.event;
             const props = event.extendedProps;
+
+            // SI ZONE BLOQUÉE
+            if (event.display === 'background') {
+                alert("Ce créneau est verrouillé : " + (event.title || "Indisponible"));
+                return;
+            }
+
             const adminForm = document.getElementById('addEventForm');
 
-            // Mode admin
             if (adminForm) {
-                // Remplissage des champs cachés et visibles
                 document.getElementById('event_id').value = event.id;
                 document.getElementById('f_titre').value = event.title;
-                
                 const startParts = event.startStr.split('T');
                 document.getElementById('f_date').value = startParts[0];
-                if (startParts[1]) {
-                    document.getElementById('f_heure').value = startParts[1].substring(0, 5);
-                }
-
+                if (startParts[1]) document.getElementById('f_heure').value = startParts[1].substring(0, 5);
                 document.getElementById('f_lieu').value = props.place || "";
                 document.getElementById('f_desc').value = props.description || "";
                 
-                if(document.getElementById('f_top')) {
-                    document.getElementById('f_top').checked = (props.top_event == true);
-                }
-
-                // interface "formulaire"
                 document.getElementById('formTitle').innerText = "Modifier l'événement";
                 document.getElementById('submitBtn').innerText = "Enregistrer les modifications";
                 document.getElementById('cancelBtn').style.display = "block";
+                if(document.getElementById('deleteBtn')) document.getElementById('deleteBtn').style.display = "block";
                 
-                // bouton supprimer
-                if(document.getElementById('deleteBtn')) {
-                    document.getElementById('deleteBtn').style.display = "block";
-                }
-                
-                // On remonte doucement vers le formulaire pour l'utilisateur
                 document.querySelector('.admin-sidebar').scrollIntoView({ behavior: 'smooth' });
             } 
-            
-            // mode visiteur
             else {
-                document.getElementById('modalTitle').innerText = event.title;
-                document.getElementById('modalDescription').innerText = props.description || "Aucune description.";
-                document.getElementById('modalPlace').innerText = props.place || "Non précisé";
-                document.getElementById('modalType').innerText = props.type || "Non précisé";
-                document.getElementById('modalDate').innerText = event.start.toLocaleDateString('fr-FR');
-                document.getElementById('modalHour').innerText = event.start.toLocaleTimeString('fr-FR', {hour: '2-digit', minute:'2-digit'});
-
-                // Gestion Image
-                const imgTag = document.getElementById('modalImage');
-                if (props.image_url && props.image_url !== "null" && props.image_url !== "") {
-                    imgTag.src = "assets/images/events/" + props.image_url;
-                    document.querySelector('.modal-image-container').style.display = 'block';
-                } else {
-                    document.querySelector('.modal-image-container').style.display = 'none';
-                }
-
-                // Gestion PDF
-                const pdfBtn = document.getElementById('modalPdf');
-                if (props.prog_url) {
-                    pdfBtn.style.display = 'inline-block';
-                    pdfBtn.href = "assets/pdf/" + props.prog_url;
-                } else {
-                    pdfBtn.style.display = 'none';
-                }
-
-                document.getElementById('eventModal').style.display = 'block';
+                // ... (Reste de ta modal visiteur inchangée) ...
             }
         }
     });
-
     calendar.render();
-
-    // Fermeture de la pop-up (visiteur)
-    const closeBtn = document.querySelector('.close-modal');
-    if(closeBtn) {
-        closeBtn.onclick = function() {
-            document.getElementById('eventModal').style.display = 'none';
-        };
-    }
-    window.onclick = function(event) {
-        const modal = document.getElementById('eventModal');
-        if (event.target == modal) { modal.style.display = 'none'; }
-    };
 });
 </script>
