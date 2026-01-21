@@ -3,36 +3,56 @@
     <div class="container">
         <div class="contact-grid">
             
-            <div class="contact-form-wrapper">
-                <h2 class="contact-main-title">Contact us</h2>
+                        <div class="contact-form-wrapper">
+                <h2 class="contact-main-title">Contactez-nous</h2>
                 <p class="contact-description">Prenez contact avec nous par téléphone, en ligne ou directement au P’tit Café.</p>
 
-                <form class="actual-form">
-                    <div class="form-group">
-                        <label for="name">Prénom</label>
-                        <input type="text" id="name" name="name" required>
+                <div id="contactFeedback" style="display:none; padding: 15px; margin-bottom: 20px; border-radius: 5px;"></div>
+
+                <form class="actual-form" id="contactForm">
+                    <div class="form-row" style="display: flex; gap: 15px;">
+                        <div class="form-group" style="flex: 1;">
+                            <label for="name">Prénom</label>
+                            <input type="text" id="name" name="firstname" required>
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label for="surname">Nom</label>
+                            <input type="text" id="surname" name="lastname" required>
+                        </div>
                     </div>
-                     <div class="form-group">
-                        <label for="surname">Nom</label>
-                        <input type="text" id="surname" name="surname" required>
+
+                    <div class="form-row" style="display: flex; gap: 15px;">
+                        <div class="form-group" style="flex: 1;">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label for="telephone">Téléphone (Optionnel)</label>
+                            <input type="tel" id="telephone" name="telephone">
+                        </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
+                        <label for="categorie">Sujet de votre message</label>
+                        <select id="categorie" name="categorie" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ddd;">
+                            <option value="Information">Demande d'information</option>
+                            <option value="Adhésion">Question sur l'adhésion</option>
+                            <option value="Événement">À propos d'un événement</option>
+                            <option value="Autre">Autre</option>
+                        </select>
                     </div>
 
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Type your message..." required></textarea>
+                        <textarea id="message" name="contenu" placeholder="Comment pouvons-nous vous aider ?" required></textarea>
                     </div>
 
                     <div class="form-checkbox">
                         <input type="checkbox" id="terms" required>
-                        <label for="terms">I accept the <u>Terms</u></label>
+                        <label for="terms">J'accepte les conditions d'utilisation</label>
                     </div>
 
-                    <button type="submit" class="contact-submit-btn">Submit</button>
+                    <button type="submit" class="contact-submit-btn" id="contactSubmit">Envoyer le message</button>
                 </form>
             </div>
 
@@ -95,3 +115,50 @@
         </div>
     </div>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    const feedback = document.getElementById('contactFeedback');
+    const submitBtn = document.getElementById('contactSubmit');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // UI : On montre qu'on traite l'envoi
+            submitBtn.disabled = true;
+            submitBtn.innerText = "Envoi en cours...";
+
+            const formData = new FormData(this);
+
+            fetch('index.php?page=send-message', { // Assure-toi d'ajouter ce cas dans ton index.php
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                feedback.style.display = 'block';
+                feedback.innerText = data.message;
+                
+                if (data.status === 'success') {
+                    feedback.style.backgroundColor = '#d4edda';
+                    feedback.style.color = '#155724';
+                    contactForm.reset(); // On vide le formulaire
+                } else {
+                    feedback.style.backgroundColor = '#f8d7da';
+                    feedback.style.color = '#721c24';
+                }
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+                alert("Une erreur technique est survenue.");
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Envoyer le message";
+            });
+        });
+    }
+});
+</script>
