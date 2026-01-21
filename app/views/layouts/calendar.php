@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var calendarElement = document.getElementById('calendar');
     
     calendar = new FullCalendar.Calendar(calendarElement, {
+        // Pour le responsive
         initialView: window.innerWidth < 768 ? 'listWeek' : 'dayGridMonth',
-        initialView: 'dayGridMonth',
         locale: 'fr',
         headerToolbar: {
             left: 'prev,next today',
@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Mode admin
             if (adminForm) {
+                // Remplissage des champs cachés et visibles
                 document.getElementById('event_id').value = event.id;
                 document.getElementById('f_titre').value = event.title;
                 
@@ -64,19 +65,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 document.getElementById('f_lieu').value = props.place || "";
                 document.getElementById('f_desc').value = props.description || "";
+                
                 if(document.getElementById('f_top')) {
                     document.getElementById('f_top').checked = (props.top_event == true);
                 }
 
+                // interface "formulaire"
+                document.getElementById('formTitle').innerText = "Modifier l'événement";
                 document.getElementById('submitBtn').innerText = "Enregistrer les modifications";
                 document.getElementById('cancelBtn').style.display = "block";
-                document.getElementById('formTitle').innerText = "Modifier l'événement";
                 
-                // On remonte pour voir le formulaire
+                // bouton supprimer
+                if(document.getElementById('deleteBtn')) {
+                    document.getElementById('deleteBtn').style.display = "block";
+                }
+                
+                // On remonte doucement vers le formulaire pour l'utilisateur
                 document.querySelector('.admin-sidebar').scrollIntoView({ behavior: 'smooth' });
             } 
             
-            // Mode visiteur
+            // mode visiteur
             else {
                 document.getElementById('modalTitle').innerText = event.title;
                 document.getElementById('modalDescription').innerText = props.description || "Aucune description.";
@@ -110,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     calendar.render();
 
-    // Fermeture de la pop-up
+    // Fermeture de la pop-up (visiteur)
     const closeBtn = document.querySelector('.close-modal');
     if(closeBtn) {
         closeBtn.onclick = function() {

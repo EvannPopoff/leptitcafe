@@ -41,6 +41,10 @@
     <div class="form-actions" style="margin-top: 20px; display: flex; flex-direction: column; gap: 10px;">
         <button type="submit" id="submitBtn" class="btn-submit">Enregistrer l'événement</button>
         
+        <button type="button" id="deleteBtn" class="btn-danger" style="display:none; background: #d9534f; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; font-weight: bold;">
+            Supprimer l'événement
+        </button>
+
         <button type="button" id="cancelBtn" class="btn-secondary" style="display:none; background: #6c757d; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer;">
             Annuler la modification
         </button>
