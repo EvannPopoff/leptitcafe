@@ -41,7 +41,7 @@ $db = \app\config\Database::getInstance();
             <section class="admin-messages-section">
                 <h2 style="margin-bottom: 20px;">📬 Messages reçus</h2>
                 <?php 
-                    $messagesLayout = 'app/views/layouts/admin-messages.php';
+                    $messagesLayout = 'app/views/layouts/message-management.php';
                     if (file_exists($messagesLayout)) {
                         include $messagesLayout;
                     } else {
