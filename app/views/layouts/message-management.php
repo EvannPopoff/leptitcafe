@@ -1,5 +1,4 @@
 <?php
-// On initialise le manager (le $db vient de la page qui inclut ce layout)
 $msgManager = new app\models\managers\MessageManager($db);
 $allMessages = $msgManager->findAll();
 ?>
@@ -36,8 +35,7 @@ $allMessages = $msgManager->findAll();
                     </div></td>
                     <td>
                         <a href="mailto:<?= $m->getEmail() ?>?subject=Réponse : <?= $m->getCategorie() ?>" 
-                           class="btn-reply" 
-                           onclick="markAsRead(<?= $m->getIdMessage() ?>)">
+                           class="btn-reply" onclick="markAsRead(<?= $m->getIdMessage() ?>)">
                            Répondre
                         </a>
                     </td>
@@ -46,18 +44,3 @@ $allMessages = $msgManager->findAll();
         </tbody>
     </table>
 </div>
-
-<script>
-function markAsRead(id) {
-    const formData = new FormData();
-    formData.append('id_message', id);
-
-    fetch('index.php?page=mark-message-treated', {
-        method: 'POST',
-        body: formData
-    }).then(() => {
-        // On recharge la vue après 1s pour voir le changement de couleur
-        setTimeout(() => { location.reload(); }, 1000);
-    });
-}
-</script>

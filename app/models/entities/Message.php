@@ -22,7 +22,11 @@ class Message {
         $this->date_envoi = $data['date_envoi'] ?? date('Y-m-d H:i:s');
     }
 
-    // Getters nécessaires pour le Manager
+
+    public function getIdMessage(): ?int { return $this->id_message; }
+    public function getDateEnvoi(): string { return $this->date_envoi; }
+
+ 
     public function getNom(): string { return $this->nom; }
     public function getEmail(): string { return $this->email; }
     public function getTelephone(): ?string { return $this->telephone; }

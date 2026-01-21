@@ -31,16 +31,13 @@ class MessageManager {
      * Récupère tous les messages sous forme d'objets Message (Côté Admin)
      */
     public function findAll(): array {
-        // Utilisation du bon nom de table : MESSAGE_CONTACT
-        $stmt = $this->db->query("SELECT * FROM MESSAGE_CONTACT ORDER BY date_envoi DESC");
-        
-        $messages = [];
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            // On transforme chaque ligne SQL en objet "Message"
-            $messages[] = new Message($row);
-        }
-        return $messages;
+    $stmt = $this->db->query("SELECT * FROM MESSAGE_CONTACT ORDER BY date_envoi DESC");
+    $messages = [];
+    while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+        $messages[] = new \app\models\entities\Message($row);
     }
+    return $messages;
+}
 
     /**
      * Marque un message comme traité lorsqu'on y répond
