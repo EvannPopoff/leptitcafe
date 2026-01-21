@@ -18,8 +18,7 @@
                 <?php endif; ?>
 
                 <form class="actual-form" action="index.php?page=send-message" method="POST">
-                    <input type="hidden" name="categorie" value="Contact Site">
-
+                    
                     <div class="form-group">
                         <label for="name">Prénom</label>
                         <input type="text" id="name" name="firstname" required>
@@ -36,13 +35,24 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="categorie">Sujet de votre message</label>
+                        <select id="categorie" name="categorie" required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ddd; background-color: #f9f9f9; font-family: inherit;">
+                            <option value="" disabled selected>Choisissez une catégorie...</option>
+                            <option value="Information">Demande d'information</option>
+                            <option value="Adhésion">Question sur l'adhésion</option>
+                            <option value="Événement">À propos d'un événement</option>
+                            <option value="Autre">Autre demande</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
                         <label for="message">Message</label>
                         <textarea id="message" name="contenu" placeholder="Type your message..." required></textarea>
                     </div>
 
                     <div class="form-checkbox">
                         <input type="checkbox" id="terms" required>
-                        <label for="terms">Accepter les <u>termes d'utilisation</u></label>
+                        <label for="terms">J'accepte les <u>termes d'utilisation</u></label>
                     </div>
 
                     <button type="submit" class="contact-submit-btn">Envoyer</button>
@@ -97,7 +107,7 @@
             
             <div class="map-container">
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2816.516428753232!2d3.8837373!3d45.0448834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f5fa45388c34f3%3A0xc69678170d1e1f98!2s25%20Pl.%20du%20March%C3%A9%20Couvert%2C%2043000%20Le%20Puy-en-Velay!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2816.353386348822!2d3.882414776561122!3d45.04212797107038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f5fa57970868f7%3A0x643666f28148b3c!2s25%20Pl.%20du%20March%C3%A9%20Couvert%2C%2043000%20Le%20Puy-en-Velay!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr" 
                     width="100%" 
                     height="450" 
                     style="border:0;" 
