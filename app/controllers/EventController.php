@@ -5,6 +5,7 @@ use app\config\Database;
 
 header('Content-Type: application/json');
 
+// on vérifie que l'admin est connecté comme d'hab pour éviter les petits mâlins
 if (!isset($_SESSION['admin_id'])) {
     echo json_encode(['status' => 'error', 'message' => 'Session expirée.']);
     exit();

@@ -36,27 +36,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const eventForm = document.getElementById('addEventForm');
     const submitBtn = document.getElementById('submitBtn');
     const cancelBtn = document.getElementById('cancelBtn');
+    const deleteBtn = document.getElementById('deleteBtn'); // Nouveau
     const feedback = document.getElementById('formFeedback');
     const eventIdInput = document.getElementById('event_id');
     const formTitle = document.getElementById('formTitle');
 
-    // Reset le formulaire
+    // Reset UI
     function resetUI() {
         eventForm.reset();
-        if(eventIdInput) eventIdInput.value = ""; // On vide l'ID caché
+        if(eventIdInput) eventIdInput.value = "";
         submitBtn.innerText = "Enregistrer l'événement";
         formTitle.innerText = "Ajouter un événement";
         if(cancelBtn) cancelBtn.style.display = "none";
-        // On ne cache pas forcément le deleteBtn ici, car il est géré par le clic calendrier
-        const deleteBtn = document.getElementById('deleteBtn');
-        if(deleteBtn) deleteBtn.style.display = "none";
+        if(deleteBtn) deleteBtn.style.display = "none"; // On cache le bouton supprimer
     }
 
+    // 2. Logique créer et supprimer
     if (eventForm) {
         eventForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const formData = new FormData(this);
-
             submitBtn.disabled = true;
             submitBtn.innerText = "Enregistrement...";
 
@@ -71,30 +70,47 @@ document.addEventListener('DOMContentLoaded', function() {
                 feedback.className = 'alert ' + (data.status === 'success' ? 'alert-success' : 'alert-error');
 
                 if (data.status === 'success') {
-                    resetUI(); // Réinitialisation complète après succès
+                    resetUI();
                     if (typeof calendar !== 'undefined') {
                         calendar.refetchEvents();
                     }
                 }
             })
-            .catch(error => {
-                console.error('Erreur:', error);
-                alert("Erreur technique.");
-            })
-            .finally(() => {
-                submitBtn.disabled = false;
-                // Si on était en train de modifier, on garde le texte modifier si erreur, 
-                // sinon resetUI a déjà remis le texte par défaut.
-                if (!eventIdInput.value) {
-                    submitBtn.innerText = "Enregistrer l'événement";
-                } else {
-                    submitBtn.innerText = "Enregistrer les modifications";
-                }
-            });
+            .catch(error => { console.error('Erreur:', error); alert("Erreur technique."); })
+            .finally(() => { submitBtn.disabled = false; });
         });
     }
 
-    // bouton annuler changement
+    // Logique supprimer
+    if (deleteBtn) {
+        deleteBtn.addEventListener('click', function() {
+            const id = eventIdInput.value;
+            if (!id) return;
+
+            if (confirm("Voulez-vous vraiment supprimer cet événement ?")) {
+                const formData = new FormData();
+                formData.append('id', id);
+
+                fetch('index.php?page=delete-event', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+                    if (data.status === 'success') {
+                        resetUI();
+                        if (typeof calendar !== 'undefined') {
+                            calendar.refetchEvents();
+                        }
+                    }
+                })
+                .catch(error => console.error('Erreur:', error));
+            }
+        });
+    }
+
+    // Bouton annuler
     if (cancelBtn) {
         cancelBtn.addEventListener('click', function() {
             resetUI();
