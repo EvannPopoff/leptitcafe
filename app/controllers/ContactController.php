@@ -3,33 +3,33 @@ use app\models\entities\Message;
 use app\models\managers\MessageManager;
 use app\config\Database;
 
-header('Content-Type: application/json');
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         $db = Database::getInstance();
         $manager = new MessageManager($db);
 
-        // On prépare les données pour l'entité
+        // Préparation des données pour la table MESSAGES
         $data = [
             'nom'       => $_POST['firstname'] . ' ' . $_POST['lastname'],
             'email'     => $_POST['email'],
             'telephone' => $_POST['telephone'] ?? null,
             'categorie' => $_POST['categorie'],
             'contenu'   => $_POST['contenu'],
-            'statut'    => 0 // 0 = Nouveau message
+            'statut'    => 0
         ];
 
         $message = new Message($data);
 
         if ($manager->create($message)) {
-            echo json_encode(['status' => 'success', 'message' => 'Merci ! Votre message a bien été envoyé.']);
+            // Succès : on redirige vers la page contact avec un paramètre success
+            header('Location: index.php?page=contact&res=success');
         } else {
-            echo json_encode(['status' => 'error', 'message' => 'Erreur lors de l\'enregistrement en base de données.']);
+            // Erreur technique
+            header('Location: index.php?page=contact&res=error&msg=db_error');
         }
     } catch (Exception $e) {
-        echo json_encode(['status' => 'error', 'message' => $e->getMessage()]);
+        // Exception
+        header('Location: index.php?page=contact&res=error&msg=' . urlencode($e->getMessage()));
     }
     exit;
-
 }
