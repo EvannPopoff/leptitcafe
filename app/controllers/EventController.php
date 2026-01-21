@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $db = Database::getInstance();
     $manager = new EventManager($db);
 
-    // 1. ON RÉCUPÈRE L'ID S'IL EXISTE
+    // On récupère l'id qui existe déjà
     $id = !empty($_POST['id']) ? (int)$_POST['id'] : null;
 
     // Gestion de l'image (identique à ton code)
@@ -24,25 +24,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         move_uploaded_file($_FILES['image_event']['tmp_name'], 'assets/images/events/' . $imageName);
     }
 
-    // 2. ON PRÉPARE LES DONNÉES POUR L'ENTITÉ
+    // on prépare les données
     $data = [
-        'id_evenement'       => $id, // On injecte l'ID ici pour l'entité
-        'titre'              => $_POST['titre'],
-        'description'        => $_POST['description'] ?? null,
-        'date_evenement'     => $_POST['date_evenement'],
-        'heure'              => $_POST['heure'],
-        'lieu'               => $_POST['lieu'] ?? '',
-        'type'               => $_POST['type'] ?? null,
-        'image_url'          => $imageName,
-        'mis_en_avant'       => isset($_POST['mis_en_avant']) ? 1 : 0,
-        'statut'             => 1,
+        'id_evenement' => $id, // On injecte l'ID ici pour l'entité
+        'titre' => $_POST['titre'],
+        'description' => $_POST['description'] ?? null,
+        'date_evenement' => $_POST['date_evenement'],
+        'heure' => $_POST['heure'],
+        'lieu' => $_POST['lieu'] ?? '',
+        'type' => $_POST['type'] ?? null,
+        'image_url' => $imageName,
+        'mis_en_avant' => isset($_POST['mis_en_avant']) ? 1 : 0,
+        'statut' => 1,
         'lien_programme_pdf' => null 
     ];
 
     $event = new Event($data);
 
     try {
-        // 3. LA LOGIQUE DE BASCULE
+        // la logique de bascule pour passer de create à update pour la maj
         if ($id) {
             // Si on a un ID, on appelle UPDATE
             if ($manager->update($event)) {
