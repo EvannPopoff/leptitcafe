@@ -11,6 +11,8 @@ require_once 'app/models/entities/Administrateur.php';
 require_once 'app/models/managers/AdministrateurManager.php';
 require_once 'app/models/entities/Event.php';
 require_once 'app/models/managers/EventManager.php';
+require_once 'app/models/entities/Message.php';
+require_once 'app/models/managers/MessageManager.php';
 
 // On charge les controllers.
 require_once 'app/controllers/AuthController.php';
@@ -35,6 +37,11 @@ if ($page === 'events-json') {
         include $filePath;
         exit; // Pas de HTML, pas de Header, juste le JSON
     }
+}
+
+if ($page === 'send-message') {
+    require_once 'app/controllers/ContactController.php';
+    exit;
 }
 
 //Nom des pages
