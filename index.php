@@ -29,17 +29,6 @@ if ($page === 'save-event') {
     require_once 'app/controllers/EventController.php';
     exit; // Pas de HTML, pas de Header, juste le traitement
 }
-// Pour intercepter le contrôleur de suppresion d'événement avant le système de template mis en place.
-if ($page === 'delete-event') {
-    require_once 'app/controllers/DeleteEventController.php';
-    exit; 
-}
-
-if ($page === 'send-message') {
-    require_once 'app/controllers/ContactController.php';
-    exit; 
-}
-
 // Pour intercepter la requête JSON avant le système de template mis en place.
 if ($page === 'events-json') {
     if (file_exists($filePath)) {
