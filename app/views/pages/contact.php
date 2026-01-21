@@ -41,6 +41,8 @@
                             <option value="Information">Demande d'information</option>
                             <option value="Adhésion">Question sur l'adhésion</option>
                             <option value="Événement">À propos d'un événement</option>
+                            <option value="Autre">Réservation</option>
+                            <option value="Autre">Anniversaire</option>
                             <option value="Autre">Autre demande</option>
                         </select>
                     </div>
