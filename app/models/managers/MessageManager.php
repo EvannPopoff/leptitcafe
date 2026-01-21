@@ -22,7 +22,7 @@ class MessageManager {
             'email' => $msg->getEmail(),
             'tel' => $msg->getTelephone(),
             'cat' => $msg->getCategorie(),
-            'cont'=> $msg->getContenu(),
+            'cont' => $msg->getContenu(),
             'statut' => $msg->getStatut(),
         ]);
     }
