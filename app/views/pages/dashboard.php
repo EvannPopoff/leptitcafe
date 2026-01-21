@@ -57,22 +57,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // 2. Logique créer et supprimer
+<<<<<<< HEAD
+>>>>>>> parent of 34d9e8a (test slot grisé)
+=======
 >>>>>>> parent of 34d9e8a (test slot grisé)
     if (eventForm) {
         eventForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const formData = new FormData(this);
 <<<<<<< HEAD
+<<<<<<< HEAD
             
             fetch('index.php?page=save-event', { method: 'POST', body: formData })
             .then(r => r.json())
 =======
+=======
+>>>>>>> parent of 34d9e8a (test slot grisé)
             submitBtn.disabled = true;
             submitBtn.innerText = "Enregistrement...";
 
             fetch('index.php?page=save-event', {
                 method: 'POST',
                 body: formData
+<<<<<<< HEAD
             })
             .then(response => response.json())
 >>>>>>> parent of 34d9e8a (test slot grisé)
@@ -127,6 +134,61 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .catch(error => { console.error('Erreur:', error); alert("Erreur technique."); })
             .finally(() => { submitBtn.disabled = false; });
+=======
+            })
+            .then(response => response.json())
+            .then(data => {
+                feedback.style.display = 'block';
+                feedback.innerText = data.message;
+                feedback.className = 'alert ' + (data.status === 'success' ? 'alert-success' : 'alert-error');
+
+                if (data.status === 'success') {
+                    resetUI();
+                    if (typeof calendar !== 'undefined') {
+                        calendar.refetchEvents();
+                    }
+                }
+            })
+            .catch(error => { console.error('Erreur:', error); alert("Erreur technique."); })
+            .finally(() => { submitBtn.disabled = false; });
+        });
+    }
+
+    // Logique supprimer
+    if (deleteBtn) {
+        deleteBtn.addEventListener('click', function() {
+            const id = eventIdInput.value;
+            if (!id) return;
+
+            if (confirm("Voulez-vous vraiment supprimer cet événement ?")) {
+                const formData = new FormData();
+                formData.append('id', id);
+
+                fetch('index.php?page=delete-event', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+                    if (data.status === 'success') {
+                        resetUI();
+                        if (typeof calendar !== 'undefined') {
+                            calendar.refetchEvents();
+                        }
+                    }
+                })
+                .catch(error => console.error('Erreur:', error));
+            }
+        });
+    }
+
+    // Bouton annuler
+    if (cancelBtn) {
+        cancelBtn.addEventListener('click', function() {
+            resetUI();
+            feedback.style.display = 'none';
+>>>>>>> parent of 34d9e8a (test slot grisé)
         });
     }
 
