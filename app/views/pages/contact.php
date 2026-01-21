@@ -1,51 +1,27 @@
-<link rel="stylesheet" href="assets/css/contact.css">
-
 <section class="contact-section">
     <div class="container">
-        <div class="contact-form-wrapper">
-            <h2 class="contact-main-title">Contactez-nous</h2>
-            
-            <?php if (isset($_GET['res'])): ?>
-                <div style="padding: 15px; margin-bottom: 20px; border-radius: 5px; 
-                     background-color: <?= $_GET['res'] === 'success' ? '#d4edda' : '#f8d7da' ?>; 
-                     color: <?= $_GET['res'] === 'success' ? '#155724' : '#721c24' ?>;">
-                    <?= $_GET['res'] === 'success' ? "Merci ! Votre message a bien été envoyé." : "Erreur : " . htmlspecialchars($_GET['msg']) ?>
-                </div>
-            <?php endif; ?>
+        <h2 style="color:red;">TEST VERSION 2 - SI TU NE VOIS PAS CE TEXTE ROUGE, VIDE TON CACHE</h2>
+        
+        <?php if (isset($_GET['res'])): ?>
+            <div style="padding:15px; background:<?= $_GET['res']=='success'?'#d4edda':'#f8d7da' ?>;">
+                <?= $_GET['res']=='success' ? "Message envoyé !" : "Erreur lors de l'envoi." ?>
+            </div>
+        <?php endif; ?>
 
-            <form class="actual-form" action="index.php?page=send-message" method="POST">
-                <div class="form-row" style="display: flex; gap: 15px;">
-                    <div class="form-group" style="flex: 1;">
-                        <label>Prénom</label>
-                        <input type="text" name="firstname" required>
-                    </div>
-                    <div class="form-group" style="flex: 1;">
-                        <label>Nom</label>
-                        <input type="text" name="lastname" required>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" name="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Sujet</label>
-                    <select name="categorie" required style="width: 100%; padding: 10px;">
-                        <option value="Information">Information</option>
-                        <option value="Adhésion">Adhésion</option>
-                        <option value="Autre">Autre</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>Message</label>
-                    <textarea name="contenu" required></textarea>
-                </div>
-
-                <button type="submit" class="contact-submit-btn">Envoyer le message</button>
-            </form>
-        </div>
-        </div>
+        <form action="index.php?page=send-message&v=2" method="POST" class="actual-form">
+            <div class="form-group">
+                <label>Prénom</label>
+                <input type="text" name="prenom_test" required>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email_test" required>
+            </div>
+            <div class="form-group">
+                <label>Message</label>
+                <textarea name="message_test" required></textarea>
+            </div>
+            <button type="submit">Envoyer (Version Standard)</button>
+        </form>
+    </div>
 </section>
