@@ -6,12 +6,11 @@ if (!isset($_SESSION['admin_id'])) {
 }
 
 // On s'assure que la connexion à la base de données est disponible pour le layout
-// Dans ton index.php, elle est chargée, mais on peut la ré-instancier par sécurité
 $db = \app\config\Database::getInstance();
 ?>
 
 <link rel="stylesheet" href="assets/css/dashboard.css">
-<link rel="stylesheet" href="assets/css/admin-management.css">
+<link rel="stylesheet" href="assets/css/message-management.css">
 
 <div class="dashboard-container">
     <div class="admin-grid">
@@ -41,7 +40,7 @@ $db = \app\config\Database::getInstance();
             <section class="admin-messages-section">
                 <h2 style="margin-bottom: 20px;">📬 Messages reçus</h2>
                 <?php 
-                    $messagesLayout = 'app/views/layouts/message-management.php';
+                    $messagesLayout = 'app/views/layouts/admin-messages.php';
                     if (file_exists($messagesLayout)) {
                         include $messagesLayout;
                     } else {
@@ -55,7 +54,7 @@ $db = \app\config\Database::getInstance();
 </div>
 
 <script>
-// ... (Je garde ton script JS actuel pour les événements, il ne change pas) ...
+    //evenements
 document.addEventListener('DOMContentLoaded', function() {
     const eventForm = document.getElementById('addEventForm');
     const submitBtn = document.getElementById('submitBtn');
