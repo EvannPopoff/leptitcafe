@@ -1,5 +1,4 @@
-/* d'après la doc FullCalendar : https://fullcalendar.io/docs */
-
+/* Variables globales */
 :root {
     --fc-event-bg-color: #8B4513;
     --fc-event-border-color: #5D2E0A;
@@ -7,32 +6,38 @@
     --fc-button-bg-color: #a0522d;
     --fc-button-border-color: #a0522d;
     --fc-button-active-bg-color: #8B4513;
+    --fc-border-color: #eee;
 }
 
-/* Style du Calendrier  */
+/* Conteneur du Calendrier */
 #calendar-container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 20px auto;
     background: white;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    /* Un léger relief */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* Style de la Pop-up (appelée également "modal") */
+/* Personnalisation des boutons FullCalendar */
+.fc .fc-button-primary {
+    text-transform: capitalize;
+}
+
+/* Fenêtre Pop-up (Modal) */
 .custom-modal {
     display: none;
     position: fixed;
-    z-index: 9999;
+    z-index: 10000;
+    /* Priorité maximale */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    /* Fond un peu plus sombre */
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    /* Effet de flou en arrière-plan */
     overflow-y: auto;
-    /* Permet de défiler si le contenu est long */
 }
 
 .modal-content {
@@ -40,88 +45,145 @@
     margin: 5% auto;
     padding: 25px;
     width: 90%;
-    /* On passe de 60% à 90% pour le mobile par défaut */
     max-width: 850px;
-    /* Mais on limite à 850px sur grand écran */
-    border-radius: 12px;
+    border-radius: 15px;
     position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* La Grille Interne de la pop-up (modal) */
+/* Grille interne de la pop-up */
 .modal-grid {
     display: flex;
     flex-direction: row;
-    /* Côte à côte par défaut */
-    gap: 25px;
+    gap: 30px;
     margin-top: 15px;
 }
 
-/* Gestion de l'Image (Le point critique) */
+/* Gestion de l'image */
 .modal-image-container {
     flex: 1;
-    /* Prend la moitié de la place */
-    min-width: 250px;
-    max-height: 450px;
-    border-radius: 8px;
+    min-width: 300px;
+    max-height: 500px;
+    border-radius: 10px;
     overflow: hidden;
-    /* Coupe ce qui dépasse */
-    border: 1px solid #eee;
+    border: 1px solid #f0f0f0;
 }
 
 #modalImage {
     width: 100%;
     height: 100%;
-    min-height: 300px;
-    /* Évite que l'image disparaisse si petite */
     object-fit: cover;
-    /* Remplit le cadre sans déformer */
     display: block;
 }
 
-/* Les Informations */
+/* Informations textuelles */
 .modal-info {
     flex: 1.2;
-    /* Prend un peu plus de place que l'image */
-    line-height: 1.6;
+    line-height: 1.7;
+    color: #333;
+}
+
+.modal-info p {
+    margin-bottom: 12px;
 }
 
 .modal-info hr {
     border: 0;
     border-top: 1px solid #eee;
-    margin: 15px 0;
+    margin: 20px 0;
 }
 
-/* Bouton fermeture de la pop-up */
+/* Bouton PDF */
+.btn-pdf {
+    display: inline-block;
+    background-color: #a0522d;
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.btn-pdf:hover {
+    background-color: #8B4513;
+}
+
+/* Fermeture modal */
 .close-modal {
     position: absolute;
-    top: 10px;
+    top: 15px;
     right: 20px;
-    font-size: 30px;
+    font-size: 35px;
     font-weight: bold;
     color: #8B4513;
     cursor: pointer;
-    transition: color 0.3s;
 }
 
-.close-modal:hover {
-    color: #ff0000;
-    /* Devient rouge au survol */
-}
+/* responsive design mobile */
 
-/* RESPONSIVE (Mobile) */
 @media (max-width: 768px) {
+
+    /* 1. Calendrier : on réduit les textes et les espaces */
+    #calendar-container {
+        padding: 10px;
+        margin: 5px;
+    }
+
+    .fc .fc-toolbar {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .fc .fc-toolbar-title {
+        font-size: 1.1rem !important;
+    }
+
+    .fc .fc-button {
+        font-size: 0.8rem !important;
+        padding: 5px 8px !important;
+    }
+
+    /* Réduction de la taille des jours et événements */
+    .fc .fc-col-header-cell-cushion,
+    .fc .fc-daygrid-day-number {
+        font-size: 0.8rem;
+    }
+
+    .fc .fc-event-title {
+        font-size: 0.75rem !important;
+        padding: 1px 3px !important;
+    }
+
+    /* 2. Pop-up : on empile l'image et le texte */
     .modal-grid {
         flex-direction: column;
-        /* On empile l'image et le texte */
+        gap: 15px;
     }
 
     .modal-content {
         margin: 10% auto;
-        padding: 15px;
+        padding: 20px;
+        width: 95%;
     }
 
     .modal-image-container {
-        max-height: 300px;
-        /* Plus petit sur mobile */
+        min-width: 100%;
+        max-height: 250px;
+        /* On limite pour voir le texte sans trop scroller */
+    }
+
+    #modalImage {
+        min-height: 200px;
+    }
+
+    .modal-info {
+        font-size: 0.95rem;
+    }
+
+    .close-modal {
+        top: 5px;
+        right: 15px;
     }
 }
