@@ -1,124 +1,64 @@
 <?php
-// On vérifie si l'admin est bien connecté.
-if (!isset($_SESSION['admin_id'])) {
-    header('Location: index.php?page=login');
-    exit();
-}
+$msgManager = new app\models\managers\MessageManager($db);
+$allMessages = $msgManager->findAll();
 ?>
 
-<link rel="stylesheet" href="assets/css/dashboard.css">
-<link rel="stylesheet" href="assets/css/admin-dashboard.css">
-
-
-<div class="dashboard-container">
-    <div class="admin-grid">
-        
-        <aside class="admin-sidebar">
-            <div class="user-info-box">
-                <p>Connecté : <strong><?= htmlspecialchars($_SESSION['admin_email'] ?? 'Admin') ?></strong></p>
-                <a href="index.php?page=logout" class="logout-link">Déconnexion</a>
-            </div>
-
-            <div class="form-card">
-                <h3 id="formTitle">Ajouter un événement</h3> <div id="formFeedback" class="alert"></div>
-                <?php include 'app/views/layouts/event-management.php'; ?>
-            </div>
-        </aside>
-
-        <main class="admin-main">
-            <h1 class="main-title">Tableau de bord</h1>
-            <?php include 'app/views/layouts/calendar.php'; ?>
-        </main>
-        
-    </div>
+<div class="messages-card">
+    <table class="messages-table">
+        <thead>
+            <tr>
+                <th>Statut</th>
+                <th>Date</th>
+                <th>Expéditeur</th>
+                <th>Sujet</th>
+                <th>Message</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($allMessages as $m): ?>
+                <?php 
+                    // Sécurité : On vérifie si $m est un objet ou un tableau
+                    $statut = is_object($m) ? $m->getStatut() : $m['statut'];
+                    $nom = is_object($m) ? $m->getNom() : $m['nom'];
+                    $email = is_object($m) ? $m->getEmail() : $m['email'];
+                    $cat = is_object($m) ? $m->getCategorie() : $m['categorie'];
+                    $date = is_object($m) ? $m->getDateEnvoi() : $m['date_envoi'];
+                    $contenu = is_object($m) ? $m->getContenu() : $m['contenu'];
+                    $id = is_object($m) ? $m->getIdMessage() : $m['id_message'];
+                ?>
+                <tr class="<?= $statut == 0 ? 'row-new' : 'row-treated' ?>">
+                    <td>
+                        <span class="badge <?= $statut == 0 ? 'badge-red' : 'badge-green' ?>">
+                            <?= $statut == 0 ? 'Nouveau' : 'Traité' ?>
+                        </span>
+                    </td>
+                    <td><?= date('d/m H:i', strtotime($date)) ?></td>
+                    <td>
+                        <strong><?= htmlspecialchars($nom) ?></strong><br>
+                        <small><?= htmlspecialchars($email) ?></small>
+                    </td>
+                    <td><?= htmlspecialchars($cat) ?></td>
+                    <td>
+                        <div class="msg-preview" title="<?= htmlspecialchars($contenu) ?>">
+                            <?= htmlspecialchars($contenu) ?>
+                        </div>
+                    </td>
+                    <td>
+                        <a href="mailto:<?= $email ?>" class="btn-reply" onclick="markAsRead(<?= $id ?>)">
+                            Répondre
+                        </a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const eventForm = document.getElementById('addEventForm');
-    const submitBtn = document.getElementById('submitBtn');
-    const cancelBtn = document.getElementById('cancelBtn');
-    const deleteBtn = document.getElementById('deleteBtn'); // Nouveau
-    const feedback = document.getElementById('formFeedback');
-    const eventIdInput = document.getElementById('event_id');
-    const formTitle = document.getElementById('formTitle');
-
-    // Reset UI
-    function resetUI() {
-        eventForm.reset();
-        if(eventIdInput) eventIdInput.value = "";
-        submitBtn.innerText = "Enregistrer l'événement";
-        formTitle.innerText = "Ajouter un événement";
-        if(cancelBtn) cancelBtn.style.display = "none";
-        if(deleteBtn) deleteBtn.style.display = "none"; // On cache le bouton supprimer
-    }
-
-    // 2. Logique créer et supprimer
-    if (eventForm) {
-        eventForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(this);
-            submitBtn.disabled = true;
-            submitBtn.innerText = "Enregistrement...";
-
-            fetch('index.php?page=save-event', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                feedback.style.display = 'block';
-                feedback.innerText = data.message;
-                feedback.className = 'alert ' + (data.status === 'success' ? 'alert-success' : 'alert-error');
-
-                if (data.status === 'success') {
-                    resetUI();
-                    if (typeof calendar !== 'undefined') {
-                        calendar.refetchEvents();
-                    }
-                }
-            })
-            .catch(error => { console.error('Erreur:', error); alert("Erreur technique."); })
-            .finally(() => { submitBtn.disabled = false; });
-        });
-    }
-
-    // Logique supprimer
-    if (deleteBtn) {
-        deleteBtn.addEventListener('click', function() {
-            const id = eventIdInput.value;
-            if (!id) return;
-
-            if (confirm("Voulez-vous vraiment supprimer cet événement ?")) {
-                const formData = new FormData();
-                formData.append('id', id);
-
-                fetch('index.php?page=delete-event', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => response.json())
-                .then(data => {
-                    alert(data.message);
-                    if (data.status === 'success') {
-                        resetUI();
-                        if (typeof calendar !== 'undefined') {
-                            calendar.refetchEvents();
-                        }
-                    }
-                })
-                .catch(error => console.error('Erreur:', error));
-            }
-        });
-    }
-
-    // Bouton annuler
-    if (cancelBtn) {
-        cancelBtn.addEventListener('click', function() {
-            resetUI();
-            feedback.style.display = 'none';
-        });
-    }
-
-});
+function markAsRead(id) {
+    const formData = new FormData();
+    formData.append('id_message', id);
+    fetch('index.php?page=mark-message-treated', { method: 'POST', body: formData });
+}
 </script>
