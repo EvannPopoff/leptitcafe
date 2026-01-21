@@ -4,11 +4,14 @@ if (!isset($_SESSION['admin_id'])) {
     header('Location: index.php?page=login');
     exit();
 }
+
+// On s'assure que la connexion à la base de données est disponible pour le layout
+// Dans ton index.php, elle est chargée, mais on peut la ré-instancier par sécurité
+$db = \app\config\Database::getInstance();
 ?>
 
 <link rel="stylesheet" href="assets/css/dashboard.css">
 <link rel="stylesheet" href="assets/css/admin-dashboard.css">
-
 
 <div class="dashboard-container">
     <div class="admin-grid">
@@ -20,40 +23,57 @@ if (!isset($_SESSION['admin_id'])) {
             </div>
 
             <div class="form-card">
-                <h3 id="formTitle">Ajouter un événement</h3> <div id="formFeedback" class="alert"></div>
+                <h3 id="formTitle">Ajouter un événement</h3> 
+                <div id="formFeedback" class="alert"></div>
                 <?php include 'app/views/layouts/event-management.php'; ?>
             </div>
         </aside>
 
         <main class="admin-main">
             <h1 class="main-title">Tableau de bord</h1>
-            <?php include 'app/views/layouts/calendar.php'; ?>
+            
+            <div class="calendar-section" style="margin-bottom: 50px;">
+                <?php include 'app/views/layouts/calendar.php'; ?>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 40px 0;">
+
+            <section class="admin-messages-section">
+                <h2 style="margin-bottom: 20px;">📬 Messages reçus</h2>
+                <?php 
+                    $messagesLayout = 'app/views/layouts/admin-messages.php';
+                    if (file_exists($messagesLayout)) {
+                        include $messagesLayout;
+                    } else {
+                        echo "<p style='color:red;'>Erreur : Fichier $messagesLayout manquant.</p>";
+                    }
+                ?>
+            </section>
         </main>
         
     </div>
 </div>
 
 <script>
+// ... (Je garde ton script JS actuel pour les événements, il ne change pas) ...
 document.addEventListener('DOMContentLoaded', function() {
     const eventForm = document.getElementById('addEventForm');
     const submitBtn = document.getElementById('submitBtn');
     const cancelBtn = document.getElementById('cancelBtn');
-    const deleteBtn = document.getElementById('deleteBtn'); // Nouveau
+    const deleteBtn = document.getElementById('deleteBtn');
     const feedback = document.getElementById('formFeedback');
     const eventIdInput = document.getElementById('event_id');
     const formTitle = document.getElementById('formTitle');
 
-    // Reset UI
     function resetUI() {
         eventForm.reset();
         if(eventIdInput) eventIdInput.value = "";
         submitBtn.innerText = "Enregistrer l'événement";
         formTitle.innerText = "Ajouter un événement";
         if(cancelBtn) cancelBtn.style.display = "none";
-        if(deleteBtn) deleteBtn.style.display = "none"; // On cache le bouton supprimer
+        if(deleteBtn) deleteBtn.style.display = "none";
     }
 
-    // 2. Logique créer et supprimer
     if (eventForm) {
         eventForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -83,7 +103,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Logique supprimer
     if (deleteBtn) {
         deleteBtn.addEventListener('click', function() {
             const id = eventIdInput.value;
@@ -112,13 +131,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Bouton annuler
     if (cancelBtn) {
         cancelBtn.addEventListener('click', function() {
             resetUI();
             feedback.style.display = 'none';
         });
     }
-
 });
 </script>
