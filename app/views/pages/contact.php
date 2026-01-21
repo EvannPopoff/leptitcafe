@@ -5,7 +5,7 @@
         <div class="contact-grid">
             
             <div class="contact-form-wrapper">
-                <h2 class="contact-main-title">Contact us</h2>
+                <h2 class="contact-main-title">Contactez-nous</h2>
                 <p class="contact-description">Prenez contact avec nous par téléphone, en ligne ou directement au P’tit Café.</p>
 
                 <?php if (isset($_GET['res'])): ?>
@@ -42,10 +42,10 @@
 
                     <div class="form-checkbox">
                         <input type="checkbox" id="terms" required>
-                        <label for="terms">I accept the <u>Terms</u></label>
+                        <label for="terms">Accepter les <u>termes d'utilisation</u></label>
                     </div>
 
-                    <button type="submit" class="contact-submit-btn">Submit</button>
+                    <button type="submit" class="contact-submit-btn">Envoyer</button>
                 </form>
             </div>
 
