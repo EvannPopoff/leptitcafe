@@ -24,7 +24,7 @@ $db = \app\config\Database::getInstance();
             <div class="form-card">
                 <h3 id="formTitle">Ajouter un événement</h3> 
                 <div id="formFeedback" class="alert"></div>
-                <?php include 'app/views/layouts/event-anagement.php'; ?>
+                <?php include 'app/views/layouts/event-management.php'; ?>
             </div>
         </aside>
 
@@ -40,7 +40,7 @@ $db = \app\config\Database::getInstance();
             <section class="admin-messages-section">
                 <h2 style="margin-bottom: 20px;">📬 Messages reçus</h2>
                 <?php 
-                    $messagesLayout = 'app/views/layouts/message-management.php';
+                    $messagesLayout = 'app/views/layouts/admin-messages.php';
                     if (file_exists($messagesLayout)) {
                         include $messagesLayout;
                     } else {
