@@ -52,4 +52,27 @@ class EventManager {
         'id_admin'           => $id_admin // On envoie l'ID récupéré depuis la session
     ]);
     }
+
+    public function update(Event $event): bool {
+    $sql = "UPDATE EVENEMENT SET 
+            titre = :titre, 
+            description = :description, 
+            date_evenement = :date_evenement, 
+            heure = :heure, 
+            lieu = :lieu, 
+            mis_en_avant = :mis_en_avant
+            WHERE id_evenement = :id";
+    
+    $stmt = $this->db->prepare($sql);
+
+    return $stmt->execute([
+        'titre'          => $event->getTitle(),
+        'description'    => $event->getDescription(),
+        'date_evenement' => $event->getDateEvent(),
+        'heure'          => $event->getHour(),
+        'lieu'           => $event->getPlace(),
+        'mis_en_avant'   => $event->isTopEvent() ? 1 : 0,
+        'id'             => $event->getIdEvent()
+    ]);
+    }
 }

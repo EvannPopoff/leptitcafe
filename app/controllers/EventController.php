@@ -52,4 +52,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo json_encode(['status' => 'error', 'message' => 'Erreur SQL : ' . $e->getMessage()]);
     }
     exit(); // On arrête tout ici pour ne pas envoyer de HTML par erreur
+
+    $id = $_POST['id'] ?? null;
+
+    $event = new Event($_POST);
+
+    if ($id) {
+        $event->setIdEvent((int)$id);
+        $result = $manager->update($event);
+        $message = "Événement modifié !";
+    }
+        
+        else {
+        $result = $manager->create($event, $_SESSION['admin_id']);
+        $message = "Événement créé !";
+    }
+
+echo json_encode(['status' => ($result ? 'success' : 'error'), 'message' => $message]);
 }

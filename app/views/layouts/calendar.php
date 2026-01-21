@@ -2,36 +2,14 @@
     <div id="calendar"></div>
 </div>
 
-<div id="eventModal" class="custom-modal">
-    <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <div class="modal-body">
-            <h2 id="modalTitle"></h2>
-            <div class="modal-grid">
-                <div class="modal-image-container">
-                    <img id="modalImage" src="" alt="Affiche événement">
-                </div>
-                <div class="modal-info">
-                    <p><strong>📅 Date :</strong> <span id="modalDate"></span> à <span id="modalHour"></span></p>
-                    <p><strong>📍 Lieu :</strong> <span id="modalPlace"></span></p>
-                    <p><strong>🏷️ Type :</strong> <span id="modalType"></span></p>
-                    <hr>
-                    <p id="modalDescription"></p>
-                    <a id="modalPdf" href="#" class="btn-pdf" target="_blank">📄 Voir le programme (PDF)</a>
-                </div>
-            </div>
-        </div>
+<div id="eventModal" class="custom-modal" style="display:none;">
     </div>
-</div>
 
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
 
 <script>
-// Icones utiles pour le calendrier : 📅📍🏷️📄
-// Tout trouvable dans la doc officielle : https://fullcalendar.io/docs
-
 var calendar;
-// Initialisation du calendrier
+
 document.addEventListener('DOMContentLoaded', function() {
     var calendarElement = document.getElementById('calendar');
     
@@ -49,60 +27,59 @@ document.addEventListener('DOMContentLoaded', function() {
             week: "Semaine"
         },
         
-        // -Connexion au JSON
         events: 'index.php?page=events-json', 
         
-        // Lorsqu'on clique
+        // Une seule fonction eventclick
         eventClick: function(info) {
             const event = info.event;
             const props = event.extendedProps;
 
-            // Remplissage de la pop-up
-            document.getElementById('modalTitle').innerText = event.title;
-            document.getElementById('modalDescription').innerText = props.description || "Aucune description.";
-            document.getElementById('modalPlace').innerText = props.place || "Non précisé";
-            document.getElementById('modalType').innerText = props.type || "Non précisé";
-            
-            // Formatage de la date
-            document.getElementById('modalDate').innerText = event.start.toLocaleDateString('fr-FR');
-            document.getElementById('modalHour').innerText = event.start.toLocaleTimeString('fr-FR', {hour: '2-digit', minute:'2-digit'});
+            // Remplissage du formulaire de modification (Admin)
+            // On vérifie que les éléments existent avant de les remplir
+            if (document.getElementById('event_id')) {
+                document.getElementById('event_id').value = event.id;
+                document.getElementById('f_titre').value = event.title;
+                
+                // Gestion de la date et l'heure
+                if (event.startStr.includes('T')) {
+                    const parts = event.startStr.split('T');
+                    document.getElementById('f_date').value = parts[0];
+                    document.getElementById('f_heure').value = parts[1].substring(0, 5);
+                } else {
+                    document.getElementById('f_date').value = event.startStr;
+                }
 
-            // Image
-            const imgTag = document.getElementById('modalImage');
-            const imgContainer = document.querySelector('.modal-image-container');
-            
-            // On vérifie si l'URL existe et n'est pas "null" (en texte ou objet)
-            if (props.image_url && props.image_url !== "null" && props.image_url.trim() !== "") {
-                imgTag.src = "assets/images/events/" + props.image_url;
-                imgContainer.style.display = 'block'; // On affiche le bloc image
-            } else {
-                imgContainer.style.display = 'none';  // On cache le bloc image si vide
+                // extendedProps (Attention : vérifie les noms dans ton JSON)
+                if (document.getElementById('f_lieu')) document.getElementById('f_lieu').value = props.place || "";
+                if (document.getElementById('f_desc')) document.getElementById('f_desc').value = event.extendedProps.description || props.desc || "";
+                if (document.getElementById('f_top')) document.getElementById('f_top').checked = (props.top_event == 1);
+
+                // Mise à jour visuelle des boutons
+                document.getElementById('submitBtn').innerText = "Modifier l'événement";
+                document.getElementById('cancelBtn').style.display = "block";
+                if (document.getElementById('deleteBtn')) document.getElementById('deleteBtn').style.display = "block";
+                
+                // Optionnel : remonter vers le formulaire sur mobile
+                document.querySelector('.admin-sidebar').scrollIntoView({ behavior: 'smooth' });
             }
 
-            // PDF
-            const pdfBtn = document.getElementById('modalPdf');
-            if (props.prog_url) {
-                pdfBtn.style.display = 'inline-block';
-                pdfBtn.href = "assets/pdf/" + props.prog_url;
-            } else {
-                pdfBtn.style.display = 'none';
-            }
-
-            // Affichage
-            document.getElementById('eventModal').style.display = 'block';
+            /* test
+               
+               document.getElementById('modalTitle').innerText = event.title;
+               document.getElementById('modalDescription').innerText = props.description || "Aucune description.";
+               document.getElementById('eventModal').style.display = 'block';
+            */
         }
     });
 
     calendar.render();
 
-    // Fermeture de la pop-up
-    document.querySelector('.close-modal').onclick = function() {
-        document.getElementById('eventModal').style.display = 'none';
-    };
-    window.onclick = function(event) {
-        if (event.target == document.getElementById('eventModal')) {
+    // Fermeture de la pop-up (si utilisée)
+    const closeModal = document.querySelector('.close-modal');
+    if (closeModal) {
+        closeModal.onclick = function() {
             document.getElementById('eventModal').style.display = 'none';
-        }
-    };
+        };
+    }
 });
 </script>

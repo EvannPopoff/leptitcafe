@@ -75,4 +75,8 @@ class Event {
         return $this->prog_url;
     }
 
+    public function setIdEvent(int $id): void {
+        $this->id_event = $id;
+}
+
 }
