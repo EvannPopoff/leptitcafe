@@ -120,10 +120,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    <section class="admin-messages-section">
-        <h2>Gestion des Contacts</h2>
-        <?php include 'app/views/layouts/admin-messages.php'; ?>
-    </section>
-
 });
 </script>
