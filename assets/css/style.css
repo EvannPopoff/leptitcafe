@@ -1,4 +1,9 @@
 html,
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -14,9 +19,10 @@ body {
     font-family: 'Poppins-Regular', sans-serif;
 }
 
-.container { /*me permet d'avoir des marges égales sur toute mes pages
+.container {
+    /*me permet d'avoir des marges égales sur toute mes pages
     A CONDITION D'AJOUTER UNE CLASS .container svp*/
-    
+
     max-width: 1000px;
     margin: 0 auto;
     padding-left: clamp(12px, 3vw, 60px);
@@ -296,15 +302,17 @@ header {
 .footer-links a:hover {
     text-decoration: underline;
 }
+
 .admin-link {
-    color: inherit; 
-    text-decoration: none; 
+    color: inherit;
+    text-decoration: none;
 }
 
 
 .admin-link:visited {
     color: inherit;
 }
+
 /* ---------- IMAGE ---------- */
 
 .footer-image img {
@@ -453,4 +461,3 @@ p {
     object-fit: cover;
     display: block;
 }
-
