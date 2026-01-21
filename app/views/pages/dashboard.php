@@ -24,7 +24,7 @@ $db = \app\config\Database::getInstance();
             <div class="form-card">
                 <h3 id="formTitle">Ajouter un événement</h3> 
                 <div id="formFeedback" class="alert"></div>
-                <?php include 'app/views/layouts/event-management.php'; ?>
+                <?php include 'app/views/layouts/event-anagement.php'; ?>
             </div>
         </aside>
 

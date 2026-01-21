@@ -8,17 +8,6 @@ class MessageManager {
 
     public function __construct(PDO $db) { $this->db = $db; }
 
-    public function findAll(): array {
-        // 1. Utilise bien le nom MESSAGE_CONTACT
-        $stmt = $this->db->query("SELECT * FROM MESSAGE_CONTACT ORDER BY date_envoi DESC");
-        
-        $messages = [];
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            // 2. CRITIQUE : Transformer le tableau en OBJET Message
-            $messages[] = new Message($row); 
-        }
-        return $messages;
-    }
     /**
      * Enregistre un nouveau message (Côté client)
      */
@@ -33,11 +22,25 @@ class MessageManager {
             'email' => $msg->getEmail(),
             'tel' => $msg->getTelephone(),
             'cat' => $msg->getCategorie(),
-            'cont' => $msg->getContenu(),
+            'cont'=> $msg->getContenu(),
             'statut' => $msg->getStatut(),
         ]);
     }
 
+    /**
+     * Récupère tous les messages sous forme d'objets Message (Côté Admin)
+     */
+    public function findAll(): array {
+        // Utilisation du bon nom de table : MESSAGE_CONTACT
+        $stmt = $this->db->query("SELECT * FROM MESSAGE_CONTACT ORDER BY date_envoi DESC");
+        
+        $messages = [];
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            // On transforme chaque ligne SQL en objet "Message"
+            $messages[] = new Message($row);
+        }
+        return $messages;
+    }
 
     /**
      * Marque un message comme traité lorsqu'on y répond
