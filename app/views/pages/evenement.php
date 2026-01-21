@@ -55,31 +55,31 @@
           <button
             class="activities-thumb"
             type="button"
-            data-full="assets/images/page_home_evenements/affiche_activite.webp">
-            <img
-              src="assets/images/page_home_evenements/affiche_activite.webp"
+            data-full="assets/images/page_home_evenements/programme2.png">
+            <a href="https://drive.google.com/file/d/1ebVDKNcNawgnvQSmhQkfKweU5myhno5q/view"><img
+              src="assets/images/page_home_evenements/programme2.png"
               alt="Programme1"
-              loading="lazy">
+              loading="lazy"> </a>
           </button>
 
           <button
             class="activities-thumb"
             type="button"
             data-full="assets/images/page_home_evenements/affiche_activite.webp">
-            <img
+            <a href="https://drive.google.com/file/d/1ebVDKNcNawgnvQSmhQkfKweU5myhno5q/view"><img
               src="assets/images/page_home_evenements/affiche_activite.webp"
               alt="Programme2"
-              loading="lazy">
+              loading="lazy"> </a>
           </button>
 
           <button
             class="activities-thumb"
             type="button"
-            data-full="assets/images/page_home_evenements/affiche_activite.webp">
-            <img
-              src="assets/images/page_home_evenements/affiche_activite.webp"
+            data-full="assets/images/page_home_evenements/programme3.png">
+            <a href="https://drive.google.com/file/d/1ebVDKNcNawgnvQSmhQkfKweU5myhno5q/view"><img
+              src="assets/images/page_home_evenements/programme3.png"
               alt="Programme3"
-              loading="lazy">
+              loading="lazy"> </a>
           </button>
         </div>
 
@@ -90,7 +90,12 @@
 
         <p class="activities-info-text">
           Vous pouvez participer à l’élaboration du programme en proposant d’animer
-          un atelier, une conférence…
+          un atelier, une conférence… </br>
+          A partir de novembre et ce jusqu’à la fin de l’hiver, le p’tit Café vous ouvre ses
+          portes les samedis après-midi : nous vous proposons soit un atelier parents/enfants, soit un atelier tout public où le café est ouvert en même temps. </br>
+          Afin que les week-ends, vous puissiez aussi profiter de ce lieu d’accueil chaleureux pour les
+          familles. </br>
+          On espère que cette proposition répondra à vos besoins et envies !
         </p>
 
         <a href="app/views/layouts/calendar.php" class="btn-events">
