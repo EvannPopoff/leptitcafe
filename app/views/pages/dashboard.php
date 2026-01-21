@@ -1,5 +1,6 @@
 <?php
 
+echo "coucou";
 $db = \app\config\Database::getInstance();
 
 // On vérifie si l'admin est bien connecté.
