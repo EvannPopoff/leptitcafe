@@ -1,47 +1,47 @@
 <?php
+// Fichier JSON indispensable pour faire communiquer le PHP et JavaScript pour le calendrier.
+
+// On dit au navigateur que le contenu est du JSON
 header('Content-Type: application/json');
 
+// On inclut le fichier de configuration et de connexion à la base de données
 use app\models\managers\EventManager;
-use app\models\managers\SlotManager;
 use app\config\Database;
 
+// On récupère la connexion de la BDD et du manager qu'on a crée
 $db = Database::getInstance();
-$eventManager = new EventManager($db);
-$slotManager = new SlotManager($db);
+$manager = new EventManager($db);
 
-$events = $eventManager->findAll();
-$blockedSlots = $slotManager->findBlockedSlots();
+// On récupère tous les événements
+$events = $manager->findAll();
 
-$fullCalendarData = [];
+// On crée un tableau pour stocker les événements formatés
+$fullCalendarEvents = [];
 
-// 1. Événements normaux
+// On transforme chaque événement pour le format attendu par FullCalendar. Je le mets ici pour la lisibilité en dessous.
 foreach ($events as $event) {
-    $fullCalendarData[] = [
+    $start = $event->getDateEvent() . 'T' . $event->getHour();
+
+// IL faut également d'après la doc, combiner la date et l'heure en un seul champ pour le format "start" de FullCalendar : YYYY-MM-DDTHH:MM:SS
+    $fullCalendarEvents[] = [
         'id' => $event->getIdEvent(),
         'title' => $event->getTitle(),
-        'start' => $event->getDateEvent() . 'T' . $event->getHour(),
+        'start' => $start,
+        'description' => $event->getDescription(),
+
         'extendedProps' => [
-            'type' => 'event',
-            'description' => $event->getDescription(),
-            'place' => $event->getPlace(),
-            'image_url' => $event->getImageUrl(),
-            'top_event' => $event->isTopEvent()
-        ]
+        // On peut ajouter des données personnalisées sur le calendrier pour la personnalisation
+        'place' => $event->getPlace(),
+        'type' => $event->getType(),
+        'image_url' => $event->getImageUrl(),
+        'top_event' => $event->isTopEvent(),
+        'prog_url' => $event->getProgUrl(),
+        'statut' => $event->isStatut(),
+     ]
+
     ];
 }
 
-// 2. Créneaux bloqués (Background)
-foreach ($blockedSlots as $slot) {
-    $fullCalendarData[] = [
-        'id' => 'block_' . $slot['id_creneau'],
-        'start' => $slot['date_creneau'] . 'T' . $slot['heure_debut'],
-        'end' => $slot['date_creneau'] . 'T' . $slot['heure_fin'],
-        'display' => 'background',
-        'color' => '#d3d3d3', 
-        'overlap' => false,
-        'title' => $slot['motif_blocage']
-    ];
-}
-
-echo json_encode($fullCalendarData);
+echo json_encode($fullCalendarEvents);
 exit();
+?>
