@@ -56,58 +56,58 @@ if (!isset($_SESSION['admin_id'])) {
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // logique des événements
     const eventForm = document.getElementById('addEventForm');
-    const submitBtn = document.getElementById('submitBtn');
-    const cancelBtn = document.getElementById('cancelBtn');
-    const deleteBtn = document.getElementById('deleteBtn');
-    const feedback = document.getElementById('formFeedback');
-    const eventIdInput = document.getElementById('event_id');
-    const formTitle = document.getElementById('formTitle');
+    const blockForm = document.getElementById('blockSlotForm');
 
-    function resetUI() {
-        eventForm.reset();
-        if(eventIdInput) eventIdInput.value = "";
-        submitBtn.innerText = "Enregistrer l'événement";
-        formTitle.innerText = "Ajouter un événement";
-        if(cancelBtn) cancelBtn.style.display = "none";
-        if(deleteBtn) deleteBtn.style.display = "none";
-    }
-
+    // --- Gestion Événements ---
     if (eventForm) {
         eventForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const formData = new FormData(this);
-            submitBtn.disabled = true;
+            
             fetch('index.php?page=save-event', { method: 'POST', body: formData })
             .then(r => r.json())
             .then(data => {
                 alert(data.message);
                 if (data.status === 'success') {
-                    resetUI();
-                    if (typeof calendar !== 'undefined') calendar.refetchEvents();
+                    eventForm.reset();
+                    // On vérifie si calendar existe avant de rafraîchir
+                    if (typeof calendar !== 'undefined' && calendar !== null) {
+                        calendar.refetchEvents();
+                    } else {
+                        console.error("Erreur : La variable 'calendar' n'est pas accessible.");
+                    }
                 }
-            })
-            .finally(() => { submitBtn.disabled = false; });
+            });
         });
     }
 
-    // logique de blocage
-    const blockForm = document.getElementById('blockSlotForm');
+    // --- Gestion Blocage ---
     if (blockForm) {
+        console.log("Formulaire de blocage détecté !"); // Test de détection
         blockForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const formData = new FormData(this);
+
             fetch('index.php?page=block-slot', { method: 'POST', body: formData })
-            .then(r => r.json())
+            .then(r => {
+                if(!r.ok) throw new Error("Erreur réseau (vérifie index.php)");
+                return r.json();
+            })
             .then(data => {
                 alert(data.message);
                 if (data.status === 'success') {
                     blockForm.reset();
                     if (typeof calendar !== 'undefined') calendar.refetchEvents();
                 }
+            })
+            .catch(err => {
+                console.error("Erreur Fetch Blocage:", err);
+                alert("Erreur lors de l'envoi. Vérifiez la console (F12).");
             });
         });
+    } else {
+        console.error("Erreur : Formulaire 'blockSlotForm' introuvable dans le HTML.");
     }
 });
 </script>

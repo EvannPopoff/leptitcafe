@@ -11,6 +11,7 @@ require_once 'app/models/entities/Administrateur.php';
 require_once 'app/models/managers/AdministrateurManager.php';
 require_once 'app/models/entities/Event.php';
 require_once 'app/models/managers/EventManager.php';
+require_once 'app/models/managers/SlotManager.php';
 
 // On charge les controllers.
 require_once 'app/controllers/AuthController.php';
