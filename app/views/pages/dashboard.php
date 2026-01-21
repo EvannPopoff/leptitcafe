@@ -11,7 +11,7 @@ $db = \app\config\Database::getInstance();
 ?>
 
 <link rel="stylesheet" href="assets/css/dashboard.css">
-<link rel="stylesheet" href="assets/css/admin-management.css">
+<link rel="stylesheet" href="assets/css/admin-dashboard.css">
 
 <div class="dashboard-container">
     <div class="admin-grid">
