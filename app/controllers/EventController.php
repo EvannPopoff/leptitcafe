@@ -2,6 +2,7 @@
 use app\models\entities\Event;
 use app\models\managers\EventManager;
 use app\config\Database;
+use app\controllers\ImageCompression;
 
 header('Content-Type: application/json');
 
@@ -18,16 +19,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // On récupère l'id qui existe déjà
     $id = !empty($_POST['id']) ? (int)$_POST['id'] : null;
 
-    // Gestion de l'image (identique à ton code)
+    // Gestion de l'image (avec la petite compression qui va bien)
     $imageName = $_POST['old_image'] ?? null; 
-    if (!empty($_FILES['image_event']['name'])) {
-        $imageName = time() . '_' . str_replace(' ', '_', $_FILES['image_event']['name']);
-        move_uploaded_file($_FILES['image_event']['tmp_name'], 'assets/images/events/' . $imageName);
+
+    if (!empty($_FILES['image_event']['tmp_name'])) {
+        // on génère un nom unique et on force l'extension en .jpg
+        $imageName = time() . '.jpg'; 
+        $destination = 'assets/images/events/' . $imageName;
+
+        // on utilise notre helper pour compresser l'image au lieu de juste la déplacer
+        $success = ImageHelper::compressImage($_FILES['image_event']['tmp_name'], $destination);
+        
+        if (!$success) {
+            // si ça foire, on essaie de garder l'ancienne image
+            $imageName = $_POST['old_image'] ?? null;
+        }
     }
 
-    // on prépare les données
+    // on prépare les données pour l'entité
     $data = [
-        'id_evenement' => $id, // On injecte l'ID ici pour l'entité
+        'id_evenement' => $id, 
         'titre' => $_POST['titre'],
         'description' => $_POST['description'] ?? null,
         'date_evenement' => $_POST['date_evenement'],
