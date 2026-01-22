@@ -14,10 +14,8 @@ class EventManager {
         $sql = "SELECT * FROM EVENEMENT ORDER BY date_evenement ASC, heure ASC";
         $stmt = $this->db->query($sql);
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
         $events = [];
         foreach ($results as $data) {
-            // Tableau $data qui contient les clés id_evenement, titre, etc, que le constructeur gère.
             $events[] = new Event($data);
         }
         return $events;
@@ -28,28 +26,48 @@ class EventManager {
         $stmt = $this->db->prepare($sql);
         $stmt->execute(['id' => $id]);
         $data = $stmt->fetch(PDO::FETCH_ASSOC);
-
         return $data ? new Event($data) : null;
     }
 
     public function create(Event $event, int $id_admin): bool {
-    $sql = "INSERT INTO EVENEMENT (titre, description, date_evenement, heure, lieu, type, image_url, mis_en_avant, statut, lien_programme_pdf, id_admin) 
-            VALUES (:titre, :description, :date_evenement, :heure, :lieu, :type, :image_url, :mis_en_avant, :statut, :lien_programme_pdf, :id_admin)";
+        $sql = "INSERT INTO EVENEMENT (titre, description, date_evenement, heure, lieu, type, image_url, mis_en_avant, statut, lien_programme_pdf, id_admin) 
+                VALUES (:titre, :description, :date_evenement, :heure, :lieu, :type, :image_url, :mis_en_avant, :statut, :lien_programme_pdf, :id_admin)";
+        $stmt = $this->db->prepare($sql);
+        return $stmt->execute([
+            'titre' => $event->getTitle(),
+            'description' => $event->getDescription(),
+            'date_evenement' => $event->getDateEvent(),
+            'heure' => $event->getHour(),
+            'lieu' => $event->getPlace(),
+            'type' => $event->getType(),
+            'image_url' => $event->getImageUrl(),
+            'mis_en_avant' => $event->isTopEvent() ? 1 : 0,
+            'statut' => $event->isStatut() ? 1 : 0,
+            'lien_programme_pdf' => $event->getProgUrl(),
+            'id_admin' => $id_admin
+        ]);
+    }
+
+    public function update(Event $event): bool {
+        $sql = "UPDATE EVENEMENT SET 
+                titre = :titre, description = :description, date_evenement = :date_evenement, 
+                heure = :heure, lieu = :lieu, mis_en_avant = :mis_en_avant
+                WHERE id_evenement = :id";
+        $stmt = $this->db->prepare($sql);
+        return $stmt->execute([
+            'titre' => $event->getTitle(),
+            'description' => $event->getDescription(),
+            'date_evenement' => $event->getDateEvent(),
+            'heure' => $event->getHour(),
+            'lieu' => $event->getPlace(),
+            'mis_en_avant' => $event->isTopEvent() ? 1 : 0,
+            'id' => $event->getIdEvent()
+        ]);
+    }
     
-    $stmt = $this->db->prepare($sql);
-    
-    return $stmt->execute([
-        'titre'              => $event->getTitle(),
-        'description'        => $event->getDescription(),
-        'date_evenement'     => $event->getDateEvent(),
-        'heure'              => $event->getHour(),
-        'lieu'               => $event->getPlace(),
-        'type'               => $event->getType(),
-        'image_url'          => $event->getImageUrl(),
-        'mis_en_avant'       => $event->isTopEvent() ? 1 : 0,
-        'statut'             => $event->isStatut() ? 1 : 0,
-        'lien_programme_pdf' => $event->getProgUrl(),
-        'id_admin'           => $id_admin // On envoie l'ID récupéré depuis la session
-    ]);
+    public function delete(int $id): bool {
+        $sql = "DELETE FROM EVENEMENT WHERE id_evenement = :id";
+        $stmt = $this->db->prepare($sql);
+        return $stmt->execute(['id' => $id]);
     }
 }
