@@ -58,7 +58,6 @@
         <div class="activities-container container">
 
             <div class="activities-affiche">
-                <a href="https://drive.google.com/file/d/1ebVDKNcNawgnvQSmhQkfKweU5myhno5q/view" target="_blank" rel="noopener" class="programme">
                 <img src="assets/images/page_home_evenements/affiche_activite.webp" alt="Programme"> </a>
             </div>
 
@@ -76,7 +75,7 @@
                     Ou faire des demandes de chose que vous aimeriez trouver.
                 </p>
 
-                <a href="#agenda-accueil" class="btn-events">Consulter l’Agenda</a>
+                <a href="https://drive.google.com/file/d/1ebVDKNcNawgnvQSmhQkfKweU5myhno5q/view" class="btn-events">Consulter l’Agenda</a>
 
             </div>
 
@@ -102,8 +101,6 @@
             C’est assez simple, prenez contact avec nous par téléphone, en ligne
             ou directement au P’tit Café.
             </p>
-
-            <a href="index.php?page=contact" class="btn-events">Réserver le P'tit Café</a>
 
 
         </div>
