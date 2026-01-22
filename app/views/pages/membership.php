@@ -28,6 +28,7 @@
             <div class="card-adhesion">
                 <h3>Individuelle</h3>
                 <p class="price">7€ / an</p>
+<a href="#" class="btn-choisir">Choisir</a>
                 <ul>
                     <li>1 personne</li>
                     <li>Accès aux activités</li>
@@ -39,6 +40,7 @@
             <div class="card-adhesion">
                 <h3>Famille</h3>
                 <p class="price">20€ / an</p>
+<a href="#" class="btn-choisir">Choisir</a>
                 <ul>
                     <li>Toute la famille</li>
                     <li>Jusqu'à 10 personnes</li>
@@ -50,6 +52,7 @@
             <div class="card-adhesion">
                 <h3>Donateur</h3>
                 <p class="price">Don Libre</p>
+<a href="#" class="btn-don">Faire un don</a>
                 <ul>
                     <li>Soutien au projet</li>
                     <li>Déduction fiscale</li>
