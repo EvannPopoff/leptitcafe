@@ -53,7 +53,7 @@ class EventManager {
         $sql = "UPDATE EVENEMENT SET 
                 titre = :titre, description = :description, date_evenement = :date_evenement, 
                 heure = :heure, lieu = :lieu, image_url = :image_url,
-                mis_en_avant = :mis_en_avant,
+                mis_en_avant = :mis_en_avant
                 WHERE id_evenement = :id";
         $stmt = $this->db->prepare($sql);
 
