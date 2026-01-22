@@ -18,7 +18,8 @@ if (!isset($_SESSION['admin_id'])) {
             </div>
 
             <div class="form-card">
-                <h3 id="formTitle">Ajouter un événement</h3> <div id="formFeedback" class="alert"></div>
+                <h3 id="formTitle">Ajouter un événement</h3>
+                <div id="formFeedback" class="alert"></div>
                 <?php include 'app/views/layouts/event-management.php'; ?>
             </div>
         </aside>
@@ -34,84 +35,70 @@ if (!isset($_SESSION['admin_id'])) {
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const eventForm = document.getElementById('addEventForm');
-<<<<<<< HEAD
     const blockForm = document.getElementById('blockSlotForm');
-
-    // --- Gestion Événements ---
-=======
     const submitBtn = document.getElementById('submitBtn');
     const cancelBtn = document.getElementById('cancelBtn');
-    const deleteBtn = document.getElementById('deleteBtn'); // Nouveau
+    const deleteBtn = document.getElementById('deleteBtn');
     const feedback = document.getElementById('formFeedback');
     const eventIdInput = document.getElementById('event_id');
     const formTitle = document.getElementById('formTitle');
 
     // Reset UI
     function resetUI() {
-        eventForm.reset();
+        if(eventForm) eventForm.reset();
         if(eventIdInput) eventIdInput.value = "";
-        submitBtn.innerText = "Enregistrer l'événement";
-        formTitle.innerText = "Ajouter un événement";
+        if(submitBtn) submitBtn.innerText = "Enregistrer l'événement";
+        if(formTitle) formTitle.innerText = "Ajouter un événement";
         if(cancelBtn) cancelBtn.style.display = "none";
-        if(deleteBtn) deleteBtn.style.display = "none"; // On cache le bouton supprimer
+        if(deleteBtn) deleteBtn.style.display = "none";
     }
 
-    // 2. Logique créer et supprimer
-<<<<<<< HEAD
->>>>>>> parent of 34d9e8a (test slot grisé)
-=======
->>>>>>> parent of 34d9e8a (test slot grisé)
+    // --- Gestion Événements ---
     if (eventForm) {
         eventForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const formData = new FormData(this);
-<<<<<<< HEAD
-<<<<<<< HEAD
             
-            fetch('index.php?page=save-event', { method: 'POST', body: formData })
-            .then(r => r.json())
-=======
-=======
->>>>>>> parent of 34d9e8a (test slot grisé)
-            submitBtn.disabled = true;
-            submitBtn.innerText = "Enregistrement...";
+            if(submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerText = "Enregistrement...";
+            }
 
-            fetch('index.php?page=save-event', {
-                method: 'POST',
-                body: formData
-<<<<<<< HEAD
-            })
+            fetch('index.php?page=save-event', { method: 'POST', body: formData })
             .then(response => response.json())
->>>>>>> parent of 34d9e8a (test slot grisé)
             .then(data => {
-                feedback.style.display = 'block';
-                feedback.innerText = data.message;
-                feedback.className = 'alert ' + (data.status === 'success' ? 'alert-success' : 'alert-error');
+                if(feedback) {
+                    feedback.style.display = 'block';
+                    feedback.innerText = data.message;
+                    feedback.className = 'alert ' + (data.status === 'success' ? 'alert-success' : 'alert-error');
+                }
 
                 if (data.status === 'success') {
-<<<<<<< HEAD
-                    eventForm.reset();
-                    // On vérifie si calendar existe avant de rafraîchir
+                    resetUI();
                     if (typeof calendar !== 'undefined' && calendar !== null) {
                         calendar.refetchEvents();
-                    } else {
-                        console.error("Erreur : La variable 'calendar' n'est pas accessible.");
                     }
                 }
+            })
+            .catch(error => { 
+                console.error('Erreur:', error); 
+                alert("Erreur technique."); 
+            })
+            .finally(() => { 
+                if(submitBtn) submitBtn.disabled = false; 
             });
         });
     }
 
     // --- Gestion Blocage ---
     if (blockForm) {
-        console.log("Formulaire de blocage détecté !"); // Test de détection
         blockForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const formData = new FormData(this);
 
             fetch('index.php?page=block-slot', { method: 'POST', body: formData })
             .then(r => {
-                if(!r.ok) throw new Error("Erreur réseau (vérifie index.php)");
+                if(!r.ok) throw new Error("Erreur réseau");
                 return r.json();
             })
             .then(data => {
@@ -123,51 +110,22 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .catch(err => {
                 console.error("Erreur Fetch Blocage:", err);
-                alert("Erreur lors de l'envoi. Vérifiez la console (F12).");
+                alert("Erreur lors de l'envoi.");
             });
-=======
-                    resetUI();
-                    if (typeof calendar !== 'undefined') {
-                        calendar.refetchEvents();
-                    }
-                }
-            })
-            .catch(error => { console.error('Erreur:', error); alert("Erreur technique."); })
-            .finally(() => { submitBtn.disabled = false; });
-=======
-            })
-            .then(response => response.json())
-            .then(data => {
-                feedback.style.display = 'block';
-                feedback.innerText = data.message;
-                feedback.className = 'alert ' + (data.status === 'success' ? 'alert-success' : 'alert-error');
-
-                if (data.status === 'success') {
-                    resetUI();
-                    if (typeof calendar !== 'undefined') {
-                        calendar.refetchEvents();
-                    }
-                }
-            })
-            .catch(error => { console.error('Erreur:', error); alert("Erreur technique."); })
-            .finally(() => { submitBtn.disabled = false; });
         });
     }
 
     // Logique supprimer
     if (deleteBtn) {
         deleteBtn.addEventListener('click', function() {
-            const id = eventIdInput.value;
+            const id = eventIdInput ? eventIdInput.value : null;
             if (!id) return;
 
             if (confirm("Voulez-vous vraiment supprimer cet événement ?")) {
                 const formData = new FormData();
                 formData.append('id', id);
 
-                fetch('index.php?page=delete-event', {
-                    method: 'POST',
-                    body: formData
-                })
+                fetch('index.php?page=delete-event', { method: 'POST', body: formData })
                 .then(response => response.json())
                 .then(data => {
                     alert(data.message);
@@ -187,49 +145,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (cancelBtn) {
         cancelBtn.addEventListener('click', function() {
             resetUI();
-            feedback.style.display = 'none';
->>>>>>> parent of 34d9e8a (test slot grisé)
+            if(feedback) feedback.style.display = 'none';
         });
-    }
-
-    // Logique supprimer
-    if (deleteBtn) {
-        deleteBtn.addEventListener('click', function() {
-            const id = eventIdInput.value;
-            if (!id) return;
-
-            if (confirm("Voulez-vous vraiment supprimer cet événement ?")) {
-                const formData = new FormData();
-                formData.append('id', id);
-
-                fetch('index.php?page=delete-event', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => response.json())
-                .then(data => {
-                    alert(data.message);
-                    if (data.status === 'success') {
-                        resetUI();
-                        if (typeof calendar !== 'undefined') {
-                            calendar.refetchEvents();
-                        }
-                    }
-                })
-                .catch(error => console.error('Erreur:', error));
-            }
-        });
-    }
-
-    // Bouton annuler
-    if (cancelBtn) {
-        cancelBtn.addEventListener('click', function() {
-            resetUI();
-            feedback.style.display = 'none';
->>>>>>> parent of 34d9e8a (test slot grisé)
-        });
-    } else {
-        console.error("Erreur : Formulaire 'blockSlotForm' introuvable dans le HTML.");
     }
 });
 </script>
