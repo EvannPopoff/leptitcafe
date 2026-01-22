@@ -39,15 +39,7 @@ $events = [
     "title" => "Quinzaine des Droits de l'Enfant",
     "image" => "assets/images/page_home_evenements/event3.webp",
     "text" => "Crée à l'automne 2012 par l'association Jeunes Pousses, cette manifestation annuelle a pour but de mettre en lumière les droits de l'enfant auprès du grand public et de concentrer les membres de l'association sur ce thème durant sa préparation et son déroulement. L'objectif est d'en profiter pour ouvrir notre regard sur différentes pratiques et actions éducatives, de créer un débat, une réflexion mais aussi de tester des outils, tout cela dans le non-jugement, la bienveillance.
-
-
-      Concrètement cela se traduit selon les années par des spectacles, des expositions, des projections, des ateliers parents-enfants, des temps d'échanges entre adultes... La thématique peut ainsi être abordée sous différents angles entre adultes ou en famille, toujours dans un esprit convivial, sans oublier des temps festifs.
-      En 2012, nous avons abordé les droits des enfants dans leur globalité.
-      En 2013, nous avons mis en lumière la personne et l'Oeuvre de Janusz Korczak, inspirateur de la convention international des Droits de l'Enfant
-      En 2014, le droit à l'expression : « Ecoute-moi quand je te parle ! »
-      En 2015, le droit d'être protégé face à toutes sortes de violences : Vivre heureux en famille ?
-      En 2016, le droit à la paix à différente échelle mondiale, familiale : La Paix en famille
-      Du 1er au 18 novembre 2017, la dernière édition de la Quinzaine des Droits de l'Enfant : Rire à Tout Va"
+      Concrètement cela se traduit selon les années par des spectacles, des expositions, des projections, des ateliers parents-enfants, des temps d'échanges entre adultes... La thématique peut ainsi être abordée sous différents angles entre adultes ou en famille, toujours dans un esprit convivial, sans oublier des temps festifs."
   ],
 
 
