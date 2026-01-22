@@ -6,6 +6,7 @@ use app\controllers\ImageCompression; // On pointe sur la classe dans le même d
 
 header('Content-Type: application/json');
 
+// on vérifie que l'admin est connecté comme d'hab pour éviter les petits mâlins
 if (!isset($_SESSION['admin_id'])) {
     echo json_encode(['status' => 'error', 'message' => 'Session expirée.']);
     exit();
@@ -16,22 +17,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $manager = new EventManager($db);
     $id = !empty($_POST['id']) ? (int)$_POST['id'] : null;
 
+    // On récupère le nom de l'ancienne image si elle existe
     $imageName = $_POST['old_image'] ?? null; 
 
-    // ATTENTION : vérifie bien que ton HTML a name="image_event"
+    // Si une nouvelle image est envoyée
     if (!empty($_FILES['image_event']['tmp_name'])) {
-        $imageName = time() . '.jpg'; 
-        $destination = 'assets/images/events/' . $imageName;
+        
+        $newImageName = time() . '.jpg'; 
+        $destination = 'assets/images/events/' . $newImageName;
 
-        // On appelle la classe ImageCompression
+        // On compresse la nouvelle image
         $success = ImageCompression::compressImage($_FILES['image_event']['tmp_name'], $destination);
         
-        if (!$success) {
+        if ($success) {
+            // Nettoyage du dossier
+            // Si c'est une modification et qu'on avait déjà une image avant
+            if ($id && !empty($_POST['old_image'])) {
+                $oldFilePath = 'assets/images/events/' . $_POST['old_image'];
+                
+                // On supprime l'ancien fichier pour ne pas encombrer le serveur
+                if (file_exists($oldFilePath)) {
+                    unlink($oldFilePath);
+                }
+            }
+            // On met à jour le nom pour la base de données avec la nouvelle image
+            $imageName = $newImageName;
+        } else {
+            // si la compression foire, on garde l'ancienne par sécurité
             $imageName = $_POST['old_image'] ?? null;
         }
     }
 
-    // Préparation des données...
+    // on prépare les données pour l'entité
     $data = [
         'id_evenement' => $id, 
         'titre' => $_POST['titre'],
