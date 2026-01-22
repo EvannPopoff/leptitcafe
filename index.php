@@ -15,6 +15,7 @@ require_once 'app/models/entities/Message.php';
 
 // On charge les controllers.
 require_once 'app/controllers/AuthController.php';
+require_once 'app/controllers/ImageCompression.php';
 
 // On récupère la page demandée via l'URL sinon on met "home" par défaut.
 $page = $_GET['page'] ?? 'home';
