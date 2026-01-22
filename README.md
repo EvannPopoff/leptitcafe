@@ -12,7 +12,7 @@ Projet Web SAE - Le P'tit Café - BUT MMI
 ## Ne touchez PAS à :
 - `app/Controllers/`
 - `app/Models/`
-- `api/`
+- 'config/'
 
 IMPORTANT !!! Lien du tuto pour la compréhension de la structure fichiers du projet :
 
