@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $destination = 'assets/images/events/' . $imageName;
 
         // on utilise notre helper pour compresser l'image au lieu de juste la déplacer
-        $success = ImageHelper::compressImage($_FILES['image_event']['tmp_name'], $destination);
+        $success = ImageCompression::compressImage($_FILES['image_event']['tmp_name'], $destination);
         
         if (!$success) {
             // si ça foire, on essaie de garder l'ancienne image
