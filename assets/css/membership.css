@@ -34,7 +34,7 @@
     text-align: center;
 }
 
-/* --- Cards Adhésion (formules) --- */
+/* --- Cards Adhésion--- */
 .formules-adhesion {
     padding: 60px 20px;
     text-align: center;
@@ -78,7 +78,7 @@
     margin-bottom: 8px;
 }
 
-/* checkmark icon */
+
 .card-adhesion li::before {
     content: "✓";
     color: #4a7c59;
@@ -86,7 +86,7 @@
     left: 0;
 }
 
-/* --- Boutons (style orange) --- */
+/* --- Boutons (style orange) - stp applique la class "container" à ton html --- */
 .btn-choisir,
 .btn-don,
 .btn-adherer,
@@ -110,6 +110,8 @@
     color: #ffffff;
     cursor: pointer;
 }
+
+
 
 /* --- Section Etapes (3 étapes) --- */
 .etapes-adhesion {
@@ -143,7 +145,7 @@
     text-align: center;
 }
 
-/* icon box */
+
 .etape-icon {
     width: 120px;
     height: 100px;
@@ -181,7 +183,7 @@
     line-height: 1.5;
 }
 
-/* timeline dots */
+/* timeline points */
 .etapes-timeline {
     display: flex;
     align-items: center;
@@ -251,7 +253,6 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-/* stars */
 .stars {
     color: #294F0C;
     font-size: 18px;
@@ -265,7 +266,6 @@
     margin-bottom: 20px;
 }
 
-/* author info */
 .temoignage-auteur {
     display: flex;
     align-items: center;

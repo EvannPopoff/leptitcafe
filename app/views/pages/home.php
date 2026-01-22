@@ -75,7 +75,7 @@
                     Ou faire des demandes de chose que vous aimeriez trouver.
                 </p>
 
-                <a href="https://drive.google.com/file/d/1ebVDKNcNawgnvQSmhQkfKweU5myhno5q/view" class="btn-events">Consulter l’Agenda</a>
+                <a href="https://drive.google.com/file/d/1ebVDKNcNawgnvQSmhQkfKweU5myhno5q/view" class="btn-events">Consulter le Programme</a>
 
             </div>
 
