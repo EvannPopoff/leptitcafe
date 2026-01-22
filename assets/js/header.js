@@ -7,26 +7,26 @@ const navSlot = document.querySelector("#navSlot");
 const menuSlot = document.querySelector("#menuSlot");
 
 
-function moveNavToDesktop(){
+function moveNavToDesktop() {
   if (nav && navSlot && nav.parentElement !== navSlot) {
     navSlot.appendChild(nav);
   }
 }
 
-function moveNavToMobile(){
+function moveNavToMobile() {
   if (nav && menuSlot && nav.parentElement !== menuSlot) {
     menuSlot.appendChild(nav);
   }
 }
 
-function openMenu(){
+function openMenu() {
   menu.classList.add("is-open");
   menu.setAttribute("aria-hidden", "false");
   document.body.classList.add("no-scroll");
   moveNavToMobile();
 }
 
-function closeMenu(){
+function closeMenu() {
   menu.classList.remove("is-open");
   menu.setAttribute("aria-hidden", "true");
   document.body.classList.remove("no-scroll");
