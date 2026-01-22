@@ -76,7 +76,7 @@
                     Ou faire des demandes de chose que vous aimeriez trouver.
                 </p>
 
-                <a href="app/views/layouts/calendar.php" class="btn-events">Consulter l’Agenda</a>
+                <a href="#agenda-accueil" class="btn-events">Consulter l’Agenda</a>
 
             </div>
 

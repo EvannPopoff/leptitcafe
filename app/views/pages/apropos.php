@@ -64,7 +64,6 @@
     </div>
 
 </section>
-</section>
 
 <section class="values-section">
     <div class="container">
