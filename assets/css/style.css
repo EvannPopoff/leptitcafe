@@ -80,19 +80,23 @@ header {
     display: block;
 }
 
-/* ===== NAV UNIQUE (style desktop par défaut) ===== */
-#navSlot {
-    justify-self: center;
-}
+/* une seule nav pour les deux */
+#navSlot{
+    justify-self: stretch;
+    width: 100%;
+  }
 
 /* La nav est un bloc (son contenu est flex) */
 .main-nav {
-    display: flex;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto; /* liens / bouton */
     align-items: center;
-    gap: 32px;
+    column-gap: 32px;
 }
 
 .main-nav ul {
+    justify-self: center;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -109,6 +113,7 @@ header {
 }
 
 .bouton-contact {
+    justify-self: center;
     background: #DD5D13;
     color: #fff;
     padding: 13px 25px;
