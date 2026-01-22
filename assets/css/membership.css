@@ -18,14 +18,16 @@
 }
 
 .hero-adhesion h1 {
-    font-size: 50px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-family: 'SigmarOne', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem); 
+    margin-bottom: 1rem;
+    color: white;
 }
 
 .hero-adhesion p {
-    font-size: 20px;
-    margin-top: 15px;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
 }
 
 /* --- Section Pourquoi Adhérer --- */
