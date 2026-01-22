@@ -1,4 +1,5 @@
 <?php
+
 // On vérifie si l'admin est bien connecté.
 if (!isset($_SESSION['admin_id'])) {
     header('Location: index.php?page=login');
