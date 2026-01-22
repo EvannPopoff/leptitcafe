@@ -98,7 +98,7 @@
           On espère que cette proposition répondra à vos besoins et envies !
         </p>
 
-        <a href="app/views/layouts/calendar.php" class="btn-events">
+        <a href="index.php?page=contact" class="btn-events">
           Consulter l’agenda
         </a>
       </div>
