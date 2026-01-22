@@ -2,6 +2,7 @@
 use app\models\entities\Event;
 use app\models\managers\EventManager;
 use app\config\Database;
+use app\controllers\ImageCompression; // On pointe sur la classe dans le même dossier
 
 header('Content-Type: application/json');
 
@@ -14,20 +15,42 @@ if (!isset($_SESSION['admin_id'])) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $db = Database::getInstance();
     $manager = new EventManager($db);
-
-    // On récupère l'id qui existe déjà
     $id = !empty($_POST['id']) ? (int)$_POST['id'] : null;
 
-    // Gestion de l'image (identique à ton code)
+    // On récupère le nom de l'ancienne image si elle existe
     $imageName = $_POST['old_image'] ?? null; 
-    if (!empty($_FILES['image_event']['name'])) {
-        $imageName = time() . '_' . str_replace(' ', '_', $_FILES['image_event']['name']);
-        move_uploaded_file($_FILES['image_event']['tmp_name'], 'assets/images/events/' . $imageName);
+
+    // Si une nouvelle image est envoyée
+    if (!empty($_FILES['image_event']['tmp_name'])) {
+        
+        $newImageName = time() . '.jpg'; 
+        $destination = 'assets/images/events/' . $newImageName;
+
+        // On compresse la nouvelle image
+        $success = ImageCompression::compressImage($_FILES['image_event']['tmp_name'], $destination);
+        
+        if ($success) {
+            // Nettoyage du dossier
+            // Si c'est une modification et qu'on avait déjà une image avant
+            if ($id && !empty($_POST['old_image'])) {
+                $oldFilePath = 'assets/images/events/' . $_POST['old_image'];
+                
+                // On supprime l'ancien fichier pour ne pas encombrer le serveur
+                if (file_exists($oldFilePath)) {
+                    unlink($oldFilePath);
+                }
+            }
+            // On met à jour le nom pour la base de données avec la nouvelle image
+            $imageName = $newImageName;
+        } else {
+            // si la compression foire, on garde l'ancienne par sécurité
+            $imageName = $_POST['old_image'] ?? null;
+        }
     }
 
-    // on prépare les données
+    // on prépare les données pour l'entité
     $data = [
-        'id_evenement' => $id, // On injecte l'ID ici pour l'entité
+        'id_evenement' => $id, 
         'titre' => $_POST['titre'],
         'description' => $_POST['description'] ?? null,
         'date_evenement' => $_POST['date_evenement'],
@@ -43,16 +66,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $event = new Event($data);
 
     try {
-        // la logique de bascule pour passer de create à update pour la maj
         if ($id) {
-            // Si on a un ID, on appelle UPDATE
             if ($manager->update($event)) {
                 echo json_encode(['status' => 'success', 'message' => 'L\'événement a été modifié !']);
             } else {
                 echo json_encode(['status' => 'error', 'message' => 'Erreur lors de la modification.']);
             }
         } else {
-            // Si pas d'ID, on appelle CREATE
             if ($manager->create($event, $_SESSION['admin_id'])) {
                 echo json_encode(['status' => 'success', 'message' => 'Nouvel événement créé !']);
             } else {
