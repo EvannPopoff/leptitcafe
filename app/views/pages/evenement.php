@@ -36,6 +36,7 @@
           <article class="recent-card" data-id="3">
             <img src="assets/images/page_home_evenements/event3.webp" alt="Quinzaine des Droits de l'Enfant">
           </article>
+        </div>
 
         <button class="btn-events" id="btnLoadMore" type="button">
           Charger plus
