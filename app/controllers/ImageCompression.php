@@ -1,24 +1,24 @@
 <?php
-namespace app\controllers\ImageCompression;
+namespace app\controllers;
 
-class ImageHelper {
+class ImageCompression {
     public static function compressImage($source, $destination) {
         $info = getimagesize($source);
-        
-        // Création de la ressource selon le format
+        if (!$info) return false;
+
+        // On crée la ressource PHP
         if ($info['mime'] == 'image/jpeg') {
             $image = imagecreatefromjpeg($source);
         } elseif ($info['mime'] == 'image/png') {
             $image = imagecreatefrompng($source);
         } else {
-            return false; 
+            return false;
         }
 
-        // Compression et sauvegarde en JPG (Qualité 75%)
-        imagejpeg($image, $destination, 75);
-        
-        // Nettoyage de la mémoire
+        // On compresse et on sauvegarde en JPG
+        $result = imagejpeg($image, $destination, 75);
         imagedestroy($image);
-        return $destination;
+
+        return $result ? $destination : false;
     }
 }

@@ -2,11 +2,10 @@
 use app\models\entities\Event;
 use app\models\managers\EventManager;
 use app\config\Database;
-use app\controllers\ImageCompression;
+use app\controllers\ImageCompression; // On pointe sur la classe dans le même dossier
 
 header('Content-Type: application/json');
 
-// on vérifie que l'admin est connecté comme d'hab pour éviter les petits mâlins
 if (!isset($_SESSION['admin_id'])) {
     echo json_encode(['status' => 'error', 'message' => 'Session expirée.']);
     exit();
@@ -15,28 +14,24 @@ if (!isset($_SESSION['admin_id'])) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $db = Database::getInstance();
     $manager = new EventManager($db);
-
-    // On récupère l'id qui existe déjà
     $id = !empty($_POST['id']) ? (int)$_POST['id'] : null;
 
-    // Gestion de l'image (avec la petite compression qui va bien)
     $imageName = $_POST['old_image'] ?? null; 
 
+    // ATTENTION : vérifie bien que ton HTML a name="image_event"
     if (!empty($_FILES['image_event']['tmp_name'])) {
-        // on génère un nom unique et on force l'extension en .jpg
         $imageName = time() . '.jpg'; 
         $destination = 'assets/images/events/' . $imageName;
 
-        // on utilise notre helper pour compresser l'image au lieu de juste la déplacer
+        // On appelle la classe ImageCompression
         $success = ImageCompression::compressImage($_FILES['image_event']['tmp_name'], $destination);
         
         if (!$success) {
-            // si ça foire, on essaie de garder l'ancienne image
             $imageName = $_POST['old_image'] ?? null;
         }
     }
 
-    // on prépare les données pour l'entité
+    // Préparation des données...
     $data = [
         'id_evenement' => $id, 
         'titre' => $_POST['titre'],
@@ -54,16 +49,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $event = new Event($data);
 
     try {
-        // la logique de bascule pour passer de create à update pour la maj
         if ($id) {
-            // Si on a un ID, on appelle UPDATE
             if ($manager->update($event)) {
                 echo json_encode(['status' => 'success', 'message' => 'L\'événement a été modifié !']);
             } else {
                 echo json_encode(['status' => 'error', 'message' => 'Erreur lors de la modification.']);
             }
         } else {
-            // Si pas d'ID, on appelle CREATE
             if ($manager->create($event, $_SESSION['admin_id'])) {
                 echo json_encode(['status' => 'success', 'message' => 'Nouvel événement créé !']);
             } else {
