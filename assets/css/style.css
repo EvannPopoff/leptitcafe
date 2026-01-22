@@ -20,9 +20,8 @@ body {
 }
 
 .container {
-    /*me permet d'avoir des marges égales sur toute mes pages
-    A CONDITION D'AJOUTER UNE CLASS .container svp*/
-
+    /*permet d'avoir des marges égales sur toute mes pages
+    A CONDITION D'AJOUTER UNE CLASS .container à chaque page svp*/
     max-width: 1000px;
     margin: 0 auto;
     padding-left: clamp(12px, 3vw, 60px);
@@ -66,12 +65,12 @@ header {
 }
 
 
-.in-header {
-    grid-template-columns: 140px 1fr 170px;
-    margin: 0 auto;
-    height: 90px;
+.in-header{
     display: grid;
+    grid-template-columns: 140px 1fr auto;
     align-items: center;
+    height: 90px;
+    gap: 24px;
 }
 
 
@@ -88,7 +87,12 @@ header {
 }
 
 
-.main-nav ul {
+.main-nav {
+    justify-self: center;
+}
+
+
+.main-nav ul{
     list-style: none;
     margin: 0;
     padding: 0;
@@ -97,6 +101,7 @@ header {
     align-items: center;
     gap: 38px;
 }
+
 
 .main-nav a {
     text-decoration: none;
@@ -108,7 +113,7 @@ header {
 }
 
 
-.bouton-reservation {
+.bouton-contact {
     text-decoration: none;
     background: #DD5D13;
     color: #ffffff;
@@ -117,8 +122,10 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 13px 18px;
+    padding: 13px 25px;
     border-radius: 15px;
+    justify-self: end;
+    white-space: nowrap;
 }
 
 .burger-bouton,
@@ -134,7 +141,7 @@ header {
 @media (max-width: 768px) {
 
     .main-nav,
-    .bouton-reservation {
+    .bouton-contact {
         display: none;
     }
 
