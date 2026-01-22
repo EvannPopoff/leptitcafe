@@ -1,388 +1,746 @@
-/* ================================
-   PAGE ADHÉSION - STYLES
-   ================================ */
+/* ============================================
+   LE P'TIT CAFÉ - ADMIN DASHBOARD CSS
+   ============================================ */
 
-/* --- Hero Section --- */
-.hero-adhesion {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/page_membership/hero-adhesion.jpeg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 120px 40px;
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+/* --- Variables --- */
+:root {
+    --primary: #294F0C;
+    --primary-light: #4a7c59;
+    --secondary: #B9DAA3;
+    --accent: #DD5D13;
+    --accent-hover: #c44f0f;
+    --background: #FFFCF4;
+    --background-light: #ffffff;
+    --white: #FFFFFF;
+    --text-dark: #294F0C;
+    --text-muted: #666666;
+    --border: #294F0C;
+    --border-light: #ddd;
+    --shadow: rgba(41, 79, 12, 0.1);
+    --shadow-strong: rgba(41, 79, 12, 0.2);
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 15px;
+    --transition: all 0.3s ease;
 }
 
-.hero-adhesion h1 {
-    font-size: 50px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.hero-adhesion p {
-    font-size: 20px;
-    margin-top: 15px;
-}
-
-/* --- Section Pourquoi Adhérer --- */
-.pourquoi-adherer {
-    background-color: #ffffff;
-    padding: 60px 20px;
-    text-align: center;
-}
-
-/* --- Cards Adhésion (formules) --- */
-.formules-adhesion {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.cards-container {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-}
-
-.card-adhesion {
-    background-color: #FFFCF4;
-    border: 2px solid #294F0C;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.card-adhesion h3 {
-    font-size: 28px;
-    color: #294F0C;
-}
-
-.card-adhesion .price {
-    font-size: 24px;
-    color: #294F0C;
-}
-
-.card-adhesion ul {
-    list-style: none;
+/* --- Base Reset --- */
+* {
+    margin: 0;
     padding: 0;
-    border-top: 1px solid #ddd;
-    padding-top: 15px;
-    margin-top: 15px;
+    box-sizing: border-box;
 }
 
-.card-adhesion li {
-    position: relative;
-    padding-left: 25px;
-    margin-bottom: 8px;
-}
-
-/* checkmark icon */
-.card-adhesion li::before {
-    content: "✓";
-    color: #4a7c59;
-    position: absolute;
-    left: 0;
-}
-
-/* --- Boutons (style orange) --- */
-.btn-choisir,
-.btn-don,
-.btn-adherer,
-.btn-benevole {
-    display: inline-block;
-    padding: 0.8rem 1.6rem;
-    border: 3px solid #DD5D13;
-    color: #DD5D13;
-    text-decoration: none;
-    border-radius: 15px;
-    font-weight: 600;
-    background-color: transparent;
-}
-
-/* hover effect */
-.btn-choisir:hover,
-.btn-don:hover,
-.btn-adherer:hover,
-.btn-benevole:hover {
-    background-color: #DD5D13;
-    color: #ffffff;
-    cursor: pointer;
-}
-
-/* --- Section Etapes (3 étapes) --- */
-.etapes-adhesion {
-    background-color: #B9DAA3;
-    text-align: center;
-    padding: 60px 20px;
-}
-
-.etapes-adhesion h2 {
-    color: #294F0C;
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-.etapes-intro {
-    color: #294F0C;
-    font-size: 16px;
-    margin-bottom: 40px;
-}
-
-.etapes-container {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-}
-
-.etape {
-    width: 280px;
-    text-align: center;
-}
-
-/* icon box */
-.etape-icon {
-    width: 120px;
-    height: 100px;
-    background-color: #FFFCF4 !important;
-    border-radius: 8px;
-    margin: 0 auto 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.etape-icon i {
-    font-size: 36px;
-    color: #294F0C;
-}
-
-.etape-numero,
-.etape .numero {
-    font-size: 18px;
-    color: #294F0C;
-    display: block;
-    margin-bottom: 5px;
-}
-
-.etape h3 {
-    color: #294F0C;
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.etape p {
-    color: #294F0C;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-/* timeline dots */
-.etapes-timeline {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 30px 0;
-    gap: 0;
-}
-
-.timeline-dot {
-    width: 12px;
-    height: 12px;
-    background-color: #294F0C;
-    border-radius: 50%;
-}
-
-/* dashed line */
-.timeline-line {
-    width: 150px;
-    height: 2px;
-    background: repeating-linear-gradient(
-        to right,
-        #294F0C,
-        #294F0C 5px,
-        transparent 5px,
-        transparent 10px
-    );
-}
-
-.paiement-info {
-    color: #294F0C;
-    font-size: 16px;
-    margin-top: 20px;
-}
-
-/* --- Section Témoignages --- */
-.temoignages {
-    background-color: #ffffff;
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.temoignages h2 {
-    color: #294F0C;
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-.temoignages-intro {
-    color: #666;
-    margin-bottom: 40px;
-}
-
-.temoignages-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-/* testimonial cards */
-.temoignage-card {
-    background: #FFFCF4;
-    border: 2px solid #294F0C;
-    border-radius: 8px;
-    padding: 25px;
-    width: 300px;
-    text-align: left;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-/* stars */
-.stars {
-    color: #294F0C;
-    font-size: 18px;
-    margin-bottom: 15px;
-}
-
-.temoignage-card p {
-    color: #294F0C;
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-/* author info */
-.temoignage-auteur {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.temoignage-auteur .avatar {
-    width: 50px;
-    height: 50px;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.temoignage-auteur span {
-    color: #333;
-    font-size: 14px;
-}
-
-/* --- Section Bénévole (CTA) --- */
-.cta-benevole {
-    background-color: #294F0C;
-    padding: 60px 20px;
-}
-
-.benevole-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    max-width: 1200px;
+/* --- Dashboard Container --- */
+.dashboard-container {
+    max-width: 1400px;
     margin: 0 auto;
+    padding: 2rem;
+    background: var(--background);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.benevole-left h2 {
-    color: #FFFCF4;
-    font-size: 28px;
-    line-height: 1.3;
-    max-width: 250px;
+/* --- Dashboard Header --- */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem 2rem;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--border);
+    box-shadow: 0 2px 8px var(--shadow);
 }
 
-.benevole-image {
-    width: 200px;
-    height: 200px;
-    border-radius: 12px;
+.header-left h1 {
+    font-size: 2rem;
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.header-left p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.header-right .header-plant {
+    width: 80px;
+    height: auto;
+    opacity: 0.9;
+}
+
+/* --- Stats Cards --- */
+.stats-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-radius: var(--radius-sm);
+    color: var(--white);
+    transition: var(--transition);
+    position: relative;
     overflow: hidden;
 }
 
-.benevole-image img {
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: var(--transition);
 }
 
-.benevole-right {
-    max-width: 400px;
+.stat-card:hover::before {
+    transform: scale(1.5);
 }
 
-.benevole-right p {
-    color: #FFFCF4;
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 20px;
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px var(--shadow-strong);
 }
 
-/* ================================
-   RESPONSIVE - MOBILE
-   ================================ */
+.stat-green {
+    background: var(--primary);
+}
+
+.stat-card:nth-child(2) {
+    background: var(--primary-light);
+}
+
+.stat-card:nth-child(3) {
+    background: var(--accent);
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    z-index: 1;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.stat-sub {
+    font-size: 0.85rem;
+    opacity: 0.85;
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+/* --- Section Reservations --- */
+.section-reservations {
+    background: var(--background);
+    border: 2px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+.section-reservations h2 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.section-reservations > p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+/* --- Table Reservations --- */
+.reservations-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.reservations-table thead {
+    background: var(--secondary);
+}
+
+.reservations-table th {
+    padding: 1rem 1.25rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.reservations-table td {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.reservations-table tbody tr {
+    transition: var(--transition);
+}
+
+.reservations-table tbody tr:hover {
+    background: var(--background);
+}
+
+.reservations-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* --- Action Buttons --- */
+.actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-accept,
+.btn-reject {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-accept {
+    background: var(--secondary);
+    color: var(--primary);
+}
+
+.btn-accept:hover {
+    background: var(--primary);
+    color: var(--white);
+    transform: scale(1.1);
+}
+
+.btn-reject {
+    background: #FFE5E5;
+    color: #D64545;
+}
+
+.btn-reject:hover {
+    background: #D64545;
+    color: var(--white);
+    transform: scale(1.1);
+}
+
+/* --- Section Événements --- */
+.section-evenements {
+    background: var(--background);
+    border: 2px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+.section-evenements h2 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.section-evenements > p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.evenements-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.event-card {
+    background: var(--background);
+    border: 2px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 1.25rem;
+    transition: var(--transition);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.event-card:hover {
+    box-shadow: 0 6px 20px var(--shadow);
+    transform: translateY(-2px);
+}
+
+.event-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.event-header i {
+    color: var(--accent);
+    font-size: 1.25rem;
+    margin-top: 2px;
+}
+
+.event-header > div {
+    flex: 1;
+}
+
+.event-header strong {
+    display: block;
+    color: var(--text-dark);
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.event-header span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.btn-more {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 1.25rem;
+    padding: 0.25rem;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+.btn-more:hover {
+    background: var(--secondary);
+    color: var(--primary);
+}
+
+.event-desc {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+/* Bouton Modifier - Style Orange comme les autres pages */
+.btn-modifier {
+    display: inline-block;
+    width: 100%;
+    padding: 0.8rem 1.6rem;
+    border: 3px solid var(--accent);
+    color: var(--accent);
+    background-color: transparent;
+    border-radius: var(--radius-lg);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.btn-modifier:hover {
+    background-color: var(--accent);
+    color: var(--white);
+}
+
+/* --- Section Bottom (Messages + Upload) --- */
+.section-bottom {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+}
+
+/* --- Section Messages --- */
+.section-messages {
+    background: var(--background);
+    border: 2px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 2rem;
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+.section-messages h2 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.section-messages > p {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.search-messages {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 2px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+    transition: var(--transition);
+    background: var(--white);
+}
+
+.search-messages:focus {
+    outline: none;
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 4px rgba(41, 79, 12, 0.1);
+}
+
+.search-messages::placeholder {
+    color: var(--text-muted);
+}
+
+.messages-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.message-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--white);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-light);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.message-item:hover {
+    border-color: var(--border);
+    box-shadow: 0 4px 15px var(--shadow);
+}
+
+.message-date {
+    background: var(--secondary);
+    color: var(--primary);
+    padding: 0.4rem 0.75rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.message-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.message-content strong {
+    display: block;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+}
+
+.message-content p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn-arrow {
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    color: var(--accent);
+    border: 3px solid var(--accent);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.btn-arrow:hover {
+    background: var(--accent);
+    color: var(--white);
+}
+
+/* --- Section Upload --- */
+.section-upload {
+    background: var(--background);
+    border: 2px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 2rem;
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+.section-upload h2 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.section-upload > p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.upload-zone {
+    border: 2px dashed var(--primary);
+    border-radius: var(--radius-sm);
+    padding: 3rem 2rem;
+    text-align: center;
+    background: var(--white);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.upload-zone:hover {
+    border-color: var(--accent);
+    background: var(--background);
+}
+
+.upload-zone i {
+    font-size: 3rem;
+    color: var(--primary);
+    transition: var(--transition);
+}
+
+.upload-zone:hover i {
+    color: var(--accent);
+    transform: translateY(-5px);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .dashboard-container {
+        padding: 1.5rem;
+    }
+
+    .stats-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats-cards .stat-card:last-child {
+        grid-column: span 2;
+    }
+
+    .evenements-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-bottom {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile Large */
 @media (max-width: 768px) {
-    
-    .hero-adhesion {
-        padding: 80px 20px;
-        min-height: 300px;
+    .dashboard-container {
+        padding: 1rem;
     }
 
-    .hero-adhesion h1 {
-        font-size: 28px;
-    }
-
-    .hero-adhesion p {
-        font-size: 16px;
-    }
-
-    /* cards en colonne */
-    .cards-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card-adhesion {
-        width: 100%;
-        max-width: 350px;
-    }
-
-    /* etapes en colonne */
-    .etapes-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-    }
-
-    /* temoignages en colonne */
-    .temoignages-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .temoignage-card {
-        width: 100%;
-        max-width: 350px;
-    }
-
-    /* benevole en colonne */
-    .benevole-content {
+    .dashboard-header {
         flex-direction: column;
         text-align: center;
-        gap: 20px;
+        gap: 1rem;
+        padding: 1.25rem;
+    }
+
+    .header-left h1 {
+        font-size: 1.5rem;
+    }
+
+    .header-right .header-plant {
+        width: 60px;
+    }
+
+    .stats-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-cards .stat-card:last-child {
+        grid-column: span 1;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .evenements-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .section-reservations,
+    .section-evenements,
+    .section-messages,
+    .section-upload {
+        padding: 1.25rem;
+    }
+
+    .section-reservations h2,
+    .section-evenements h2,
+    .section-messages h2,
+    .section-upload h2 {
+        font-size: 1.25rem;
+    }
+
+    /* Table Responsive */
+    .reservations-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .reservations-table th,
+    .reservations-table td {
+        padding: 0.75rem 1rem;
+        font-size: 0.85rem;
     }
 }
+
+/* Mobile Small */
+@media (max-width: 480px) {
+    .dashboard-container {
+        padding: 0.75rem;
+    }
+
+    .dashboard-header {
+        padding: 1rem;
+    }
+
+    .header-left h1 {
+        font-size: 1.25rem;
+    }
+
+    .header-left p {
+        font-size: 0.85rem;
+    }
+
+    .stat-card {
+        padding: 1.25rem;
+    }
+
+    .stat-number {
+        font-size: 1.75rem;
+    }
+
+    .stat-label {
+        font-size: 1rem;
+    }
+
+    .stat-icon {
+        font-size: 2rem;
+    }
+
+    .message-item {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .message-date {
+        order: -1;
+    }
+
+    .message-content {
+        width: 100%;
+        order: 1;
+    }
+
+    .btn-arrow {
+        margin-left: auto;
+    }
+
+    .upload-zone {
+        padding: 2rem 1rem;
+    }
+
+    .upload-zone i {
+        font-size: 2.5rem;
+    }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dashboard-header,
+.stat-card,
+.section-reservations,
+.section-evenements,
+.section-messages,
+.section-upload {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.stat-card:nth-child(1) { animation-delay: 0.1s; }
+.stat-card:nth-child(2) { animation-delay: 0.2s; }
+.stat-card:nth-child(3) { animation-delay: 0.3s; }
+
+.event-card {
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.event-card:nth-child(1) { animation-delay: 0.15s; }
+.event-card:nth-child(2) { animation-delay: 0.25s; }
+.event-card:nth-child(3) { animation-delay: 0.35s; }
+
+.message-item {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.message-item:nth-child(1) { animation-delay: 0.1s; }
+.message-item:nth-child(2) { animation-delay: 0.2s; }
+.message-item:nth-child(3) { animation-delay: 0.3s; }
