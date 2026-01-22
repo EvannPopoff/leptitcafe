@@ -1,5 +1,6 @@
 <form id="addEventForm" enctype="multipart/form-data">
     <input type="hidden" name="id" id="event_id">
+    <input type="hidden" name="old_image" id="f_old_img">
 
     <div class="form-group">
         <label>Titre</label>
