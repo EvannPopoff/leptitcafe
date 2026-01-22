@@ -43,6 +43,7 @@ body {
     margin-bottom: 3rem;
 }
 
+
 .btn-events:hover {
     background-color: #DD5D13;
     color: #ffffff;
@@ -64,8 +65,7 @@ header {
     backdrop-filter: blur(8px);
 }
 
-
-.in-header{
+.in-header {
     display: grid;
     grid-template-columns: 140px 1fr auto;
     align-items: center;
@@ -73,167 +73,153 @@ header {
     gap: 24px;
 }
 
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-
+/* Logo */
 .logo img {
     height: 56px;
     width: auto;
     display: block;
 }
 
-
-.main-nav {
+/* ===== NAV UNIQUE (style desktop par défaut) ===== */
+#navSlot {
     justify-self: center;
 }
 
+/* La nav est un bloc (son contenu est flex) */
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
 
-.main-nav ul{
+.main-nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 38px;
 }
 
-
 .main-nav a {
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.95);
+    color: rgba(255, 255, 255, .95);
     font-size: 18px;
     font-weight: 500;
-    padding: 10px 6px;
-    border-radius: 10px;
 }
 
-
 .bouton-contact {
-    text-decoration: none;
     background: #DD5D13;
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    color: #fff;
     padding: 13px 25px;
     border-radius: 15px;
-    justify-self: end;
+    font-weight: 700;
     white-space: nowrap;
 }
 
 .burger-bouton,
 .close-bouton {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    width: 35px;
+    height: 30px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.burger-bouton img,
+.close-bouton img {
+    width: 35px;
+    height: 30px;
+    display: block;
+}
+
+.mobile-menu {
     display: none;
 }
 
-
-/* =========================
-   HEADER MOBILE
-========================= */
-
+/* MOBILE*/
 @media (max-width: 768px) {
-
-    .main-nav,
-    .bouton-contact {
-        display: none;
-    }
-
-    .burger-bouton {
-        display: flex;
-    }
-
 
     .in-header {
         grid-template-columns: 1fr auto;
         height: 110px;
     }
 
-    .logo img {
-        height: 60px;
+    .in-header {
+        position: relative;
     }
 
     .burger-bouton {
-        background: transparent;
-        border: 0;
-        padding: 0;
-        cursor: pointer;
-        width: 35px;
-        height: 30px;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .burger-bouton img {
-        width: 35px;
-        height: 30px;
-        display: block;
-    }
-
-
-    /* MENU BURGER */
-    .mobile-menu {
-        display: none;
-        position: fixed;
-        inset: 0;
-        z-index: 2000;
-        background: #b7d6a4;
-    }
-
-    .mobile-menu .main-nav {
         display: flex;
-        height: 100%;
-        align-items: center;
-        justify-content: center;
+        position: absolute;
+        top: 50%;
+        right: clamp(12px, 3vw, 60px);
+        transform: translateY(-50%);
     }
 
-    .mobile-menu .main-nav ul {
-        flex-direction: column;
-        gap: 30px;
-        text-align: center;
+    .mobile-menu .close-bouton {
+        display: flex;
+        position: absolute;
+        top: 55px;
+        right: clamp(12px, 3vw, 60px);
+        transform: translateY(-50%);
     }
 
-    .mobile-menu .main-nav a {
-        font-size: 25px;
-        font-weight: 600;
-        color: #ffffff;
-        padding: 0;
+
+    /* La nav ne doit pas être visible dans le header en mobile */
+    #navSlot .main-nav {
+        display: none;
     }
 
     .mobile-menu {
-        display: none;
         position: fixed;
         inset: 0;
         width: 100vw;
         height: 100vh;
         background: #B9DAA3;
+        z-index: 9999;
+        display: none;
+        align-items: center;
+        justify-content: center;
     }
 
     .mobile-menu.is-open {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 0px;
     }
 
-    .mobile-menu.is-open .cta-mobile {
-        display: inline-flex;
-        margin-bottom: 62px;
+    /* quand la nav est dans le menu, on la met en colonne et on centre */
+    #menuSlot .main-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+
+    #menuSlot .main-nav ul {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    #menuSlot .main-nav a {
+        font-size: 25px;
+        font-weight: 600;
+        color: #fff;
+    }
+
+    #menuSlot .bouton-contact {
         font-size: 25px;
         padding: 18px 36px;
         border-radius: 20px;
-        background: #DD5D13;
-        color: #ffffff;
     }
-
 }
+
+.no-scroll{ overflow: hidden; }
+
 
 
 

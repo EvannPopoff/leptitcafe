@@ -102,6 +102,8 @@
             ou directement au P’tit Café.
             </p>
 
+            <a href="index.php?page=contact" class="btn-events">Réserver le P'tit Café</a>
+
 
         </div>
     </section>
