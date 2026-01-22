@@ -32,6 +32,7 @@ class EventManager {
     public function create(Event $event, int $id_admin): bool {
         $sql = "INSERT INTO EVENEMENT (titre, description, date_evenement, heure, lieu, type, image_url, mis_en_avant, statut, lien_programme_pdf, id_admin) 
                 VALUES (:titre, :description, :date_evenement, :heure, :lieu, :type, :image_url, :mis_en_avant, :statut, :lien_programme_pdf, :id_admin)";
+        
         $stmt = $this->db->prepare($sql);
         return $stmt->execute([
             'titre' => $event->getTitle(),
@@ -51,9 +52,10 @@ class EventManager {
     public function update(Event $event): bool {
         $sql = "UPDATE EVENEMENT SET 
                 titre = :titre, description = :description, date_evenement = :date_evenement, 
-                heure = :heure, lieu = :lieu, mis_en_avant = :mis_en_avant
+                heure = :heure, lieu = :lieu, mis_en_avant = :mis_en_avant, image_url = :image_url,
                 WHERE id_evenement = :id";
         $stmt = $this->db->prepare($sql);
+
         return $stmt->execute([
             'titre' => $event->getTitle(),
             'description' => $event->getDescription(),
@@ -61,7 +63,8 @@ class EventManager {
             'heure' => $event->getHour(),
             'lieu' => $event->getPlace(),
             'mis_en_avant' => $event->isTopEvent() ? 1 : 0,
-            'id' => $event->getIdEvent()
+            'id' => $event->getIdEvent(),
+            'image_url' => $event->getImageUrl(),
         ]);
     }
     
